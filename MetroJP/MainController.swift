@@ -9,8 +9,10 @@
 import UIKit
 import Alamofire
 import JTAppleCalendar
+import Floaty
 
-class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate {
+class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate {
+    var fab = Floaty()
     @IBOutlet weak var mainTable: UITableView!
     var data = [Record]();
     
@@ -40,6 +42,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
+        layoutFAB()
         mainTable.dataSource = self
         mainTable.delegate = self
 
@@ -117,6 +120,73 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.beginUpdates()
         tableView.reloadSections([indexPath.section], with: .automatic)
         tableView.endUpdates()
+    }
+    
+    //layout fload a button
+    func layoutFAB() {
+        let itemSearch = FloatyItem()
+        itemSearch.buttonColor = UIColor.blue
+        itemSearch.circleShadowColor = UIColor.red
+        itemSearch.titleShadowColor = UIColor.blue
+        itemSearch.title = "検索"
+        itemSearch.icon = UIImage(named: "ic_search_white_48pt")
+        itemSearch.handler = { (item) in
+            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.fab.close()
+        }
+        
+        
+        let itemRating = FloatyItem()
+        itemRating.buttonColor = UIColor.blue
+        itemRating.circleShadowColor = UIColor.red
+        itemRating.titleShadowColor = UIColor.blue
+        itemRating.title = "お気に入り"
+        itemRating.icon = UIImage(named: "ic_star_border_white_48dp")
+        itemRating.handler = { (item) in
+            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.fab.close()
+        }
+        
+        let itemUpload = FloatyItem()
+        itemUpload.buttonColor = UIColor.blue
+        itemUpload.circleShadowColor = UIColor.red
+        itemUpload.titleShadowColor = UIColor.blue
+        itemUpload.title = "アップロード"
+        itemUpload.icon = UIImage(named: "ic_cloud_upload_white_48pt")
+        itemUpload.handler = { (item) in
+            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            self.fab.close()
+        }
+        
+//        fab.addItem("お気に入り", icon: UIImage(named: "ic_star_border_white_48dp"))
+//
+//        fab.addItem("検索", icon: UIImage(named: "ic_search_white_48pt"), titlePosition: nil) { (item) in
+//            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//            self.fab.close()
+//        }
+//        fab.addItem("アップロード", icon: UIImage(named: "ic_cloud_upload_white_48pt")) { item in
+//            let alert = UIAlertController(title: "Hey", message: "I'm hungry...", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Me too", style: .default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//            self.fab.close()
+//        }
+        fab.addItem(item: itemRating)
+        fab.addItem(item: itemSearch)
+        fab.addItem(item: itemUpload)
+        fab.sticky = true
+        fab.paddingX = fab.frame.width/2
+        
+        fab.fabDelegate = self
+        
+        self.view.addSubview(fab)
     }
 }
 
