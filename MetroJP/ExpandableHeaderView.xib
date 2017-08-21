@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ExpandableHeaderView" customModule="MetroJP" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xx-mb-YZn">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmy-Ah-I9Y">
+                            <rect key="frame" x="10" y="10" width="42" height="30"/>
+                            <accessibility key="accessibilityConfiguration" identifier="lbName"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqH-Af-fhd">
+                            <rect key="frame" x="62" y="10" width="42" height="30"/>
+                            <accessibility key="accessibilityConfiguration" identifier="labelPrice"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <accessibility key="accessibilityConfiguration" identifier="expandableHeaderView"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="eqH-Af-fhd" secondAttribute="bottom" constant="10" id="0Qi-gJ-PRj"/>
+                        <constraint firstItem="Kmy-Ah-I9Y" firstAttribute="leading" secondItem="2xx-mb-YZn" secondAttribute="leading" constant="10" id="1pU-kg-Ioq"/>
+                        <constraint firstItem="eqH-Af-fhd" firstAttribute="top" secondItem="2xx-mb-YZn" secondAttribute="top" constant="10" id="3d2-bO-Bc6"/>
+                        <constraint firstAttribute="trailing" secondItem="eqH-Af-fhd" secondAttribute="trailing" constant="10" id="Cid-jU-e2I"/>
+                        <constraint firstItem="eqH-Af-fhd" firstAttribute="leading" secondItem="Kmy-Ah-I9Y" secondAttribute="trailing" constant="10" id="IS0-ED-TTw"/>
+                        <constraint firstAttribute="bottom" secondItem="Kmy-Ah-I9Y" secondAttribute="bottom" constant="10" id="lse-hV-Lox"/>
+                        <constraint firstItem="Kmy-Ah-I9Y" firstAttribute="top" secondItem="2xx-mb-YZn" secondAttribute="top" constant="10" id="rai-2Z-fS4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <accessibility key="accessibilityConfiguration" identifier="expandableHeaderView"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2xx-mb-YZn" secondAttribute="trailing" id="LvJ-9I-NBD"/>
+                <constraint firstItem="2xx-mb-YZn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="N81-RQ-qD8"/>
+                <constraint firstAttribute="bottom" secondItem="2xx-mb-YZn" secondAttribute="bottom" id="mT6-PS-JWm"/>
+                <constraint firstItem="2xx-mb-YZn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="miF-Yb-omV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lbName" destination="Kmy-Ah-I9Y" id="WjL-ru-kFK"/>
+                <outlet property="lbPrice" destination="eqH-Af-fhd" id="8Px-Ji-owG"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="63"/>
+        </view>
+    </objects>
+</document>
