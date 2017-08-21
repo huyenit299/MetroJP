@@ -79,6 +79,18 @@ class CalendarController: UIViewController {
         }
     }
 
+    
+    @IBAction func goBackList(_ sender: Any) {
+//        let mainContronller = self.storyboard?.instantiateViewControllerWithIdentifier("Main") as! MainController
+//        
+//        // Set "Hello World" as a value to myStringValue
+//        mainContronller.myStringValue = myTextField.text
+//        
+//        // Take user to SecondViewController
+//        self.navigationController?.pushViewController(secondViewController, animated: true)
+        let scr = storyboard?.instantiateViewController(withIdentifier: "Main") as! MainController
+        present(scr, animated: true, completion: nil)
+        }
 }
 
 extension CalendarController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {

@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func goToMainScreen(_ sender: AnyObject) {
-        let scr = storyboard?.instantiateViewController(withIdentifier: "Main") as! MainController
+        let scr = storyboard?.instantiateViewController(withIdentifier: "Slide") as! SlideViewController
         present(scr, animated: true, completion: nil)
 //        navigationController?.pushViewController(scr, animated: true)
     }

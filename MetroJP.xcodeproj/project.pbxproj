@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A03112FF1F4AD5B200B6EA55 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */; };
 		A04750201F3AAFF500E1DE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */; };
 		A04750221F3AAFF500E1DE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750211F3AAFF500E1DE0C /* ViewController.swift */; };
 		A04750251F3AAFF500E1DE0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04750231F3AAFF500E1DE0C /* Main.storyboard */; };
@@ -246,6 +247,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		A047501C1F3AAFF500E1DE0C /* MetroJP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroJP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A04750211F3AAFF500E1DE0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				A047505B1F3ABCA700E1DE0C /* UIViewController.swift */,
 				A09E04901F4A7CFD0007CF9D /* CustomCell.swift */,
 				A09E04A31F4A81370007CF9D /* CalendarController.swift */,
+				A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -841,6 +844,7 @@
 				A04750511F3AB0C500E1DE0C /* MainController.swift in Sources */,
 				A0A290271F44B5DE00A7FD65 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				A0A2901C1F44B5DE00A7FD65 /* ConstraintConfig.swift in Sources */,
+				A03112FF1F4AD5B200B6EA55 /* SlideViewController.swift in Sources */,
 				A0A2901E1F44B5DE00A7FD65 /* ConstraintDescription.swift in Sources */,
 				A0A2901B1F44B5DE00A7FD65 /* ConstraintAttributes.swift in Sources */,
 				A0A290311F44B5DE00A7FD65 /* ConstraintPriorityTarget.swift in Sources */,

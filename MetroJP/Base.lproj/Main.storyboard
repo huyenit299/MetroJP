@@ -102,6 +102,24 @@
             </objects>
             <point key="canvasLocation" x="964" y="40.929535232383813"/>
         </scene>
+        <!--Slide View Controller-->
+        <scene sceneID="AS2-Em-Nd5">
+            <objects>
+                <viewController storyboardIdentifier="Slide" id="NZd-M2-4tc" customClass="SlideViewController" customModule="MetroJP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c9p-h8-NR4"/>
+                        <viewControllerLayoutGuide type="bottom" id="NhN-NU-CAD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cGM-5W-e2a">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2c7-p2-5bl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="700"/>
+        </scene>
         <!--Main Controller-->
         <scene sceneID="ILW-vf-imH">
             <objects>
@@ -198,7 +216,7 @@
         <!--Ib Calendar Data Source-->
         <scene sceneID="Iyh-w6-3GJ">
             <objects>
-                <viewController id="zSH-x2-QKC" customClass="CalendarController" customModule="MetroJP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="calendarCollection" id="zSH-x2-QKC" customClass="CalendarController" customModule="MetroJP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ej9-Hy-mae"/>
                         <viewControllerLayoutGuide type="bottom" id="5Og-53-Uyh"/>
@@ -324,6 +342,14 @@
                                     <constraint firstItem="MZK-2P-fnC" firstAttribute="leading" secondItem="TWs-Nd-IhV" secondAttribute="leading" id="qbF-He-eHS"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkG-In-Zuy">
+                                <rect key="frame" x="0.0" y="404" width="126" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="goBackList:" destination="zSH-x2-QKC" eventType="touchUpInside" id="ENc-Ft-7aD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -335,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lej-ct-ymR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257.8125" y="38.671875"/>
+            <point key="canvasLocation" x="2257.6866764275255" y="38.671875"/>
         </scene>
         <!--Left Menu Controller-->
         <scene sceneID="Pii-pB-xk7">

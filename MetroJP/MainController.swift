@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import JTAppleCalendar
 
-class MainController: SlideMenuController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate {
+class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate {
     @IBOutlet weak var mainTable: UITableView!
     var data = [Record]();
     
@@ -30,19 +30,19 @@ class MainController: SlideMenuController, UITableViewDataSource, UITableViewDel
     ]
     
     var selectIndexPath: IndexPath!
-    override func awakeFromNib() {
-        data.append(Record(id: 1, name: "Huyen", price: 200))
-        data.append(Record(id: 2, name: "Huyen2", price: 200))
-        data.append(Record(id: 3, name: "Huyen3", price: 200))
-        data.append(Record(id: 4, name: "Huyen4", price: 200))
-        data.append(Record(id: 5, name: "Huyen5 Huyen5 Huyen5 Huyen5 Huyen5 Huyen5 Huyen5", price: 200))
-        self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
-
-        let leftController = self.storyboard?.instantiateViewController(withIdentifier: "LeftMenu")
-        self.leftViewController = leftController
-        
-        super.awakeFromNib()
-    }
+//    override func awakeFromNib() {
+//        data.append(Record(id: 1, name: "Huyen", price: 200))
+//        data.append(Record(id: 2, name: "Huyen2", price: 200))
+//        data.append(Record(id: 3, name: "Huyen3", price: 200))
+//        data.append(Record(id: 4, name: "Huyen4", price: 200))
+//        data.append(Record(id: 5, name: "Huyen5 Huyen5 Huyen5 Huyen5 Huyen5 Huyen5 Huyen5", price: 200))
+//       
+//
+//        let leftController = self.storyboard?.instantiateViewController(withIdentifier: "LeftMenu")
+//        self.leftViewController = leftController
+//        
+//        super.awakeFromNib()
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,6 +52,7 @@ class MainController: SlideMenuController, UITableViewDataSource, UITableViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
         mainTable.dataSource = self
         mainTable.delegate = self
 
