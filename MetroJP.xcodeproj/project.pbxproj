@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A03112FF1F4AD5B200B6EA55 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */; };
+		A03113101F4AD95900B6EA55 /* SectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031130F1F4AD95900B6EA55 /* SectionTableCell.swift */; };
 		A04750201F3AAFF500E1DE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */; };
 		A04750221F3AAFF500E1DE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750211F3AAFF500E1DE0C /* ViewController.swift */; };
 		A04750251F3AAFF500E1DE0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04750231F3AAFF500E1DE0C /* Main.storyboard */; };
@@ -248,6 +249,7 @@
 
 /* Begin PBXFileReference section */
 		A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		A031130F1F4AD95900B6EA55 /* SectionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableCell.swift; sourceTree = "<group>"; };
 		A047501C1F3AAFF500E1DE0C /* MetroJP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroJP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A04750211F3AAFF500E1DE0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */,
+				A031130F1F4AD95900B6EA55 /* SectionTableCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				A0A290251F44B5DE00A7FD65 /* ConstraintLayoutGuideDSL.swift in Sources */,
 				A0C0930D1F45866700E4614F /* DateSection.swift in Sources */,
 				A04750281F3AAFF500E1DE0C /* MetroJP.xcdatamodeld in Sources */,
+				A03113101F4AD95900B6EA55 /* SectionTableCell.swift in Sources */,
 				A047505F1F3AC2B600E1DE0C /* Record.swift in Sources */,
 				A0A2901D1F44B5DE00A7FD65 /* ConstraintConstantTarget.swift in Sources */,
 				A0A290201F44B5DE00A7FD65 /* ConstraintInsets.swift in Sources */,

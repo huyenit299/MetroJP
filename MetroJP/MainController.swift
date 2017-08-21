@@ -30,19 +30,6 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     ]
     
     var selectIndexPath: IndexPath!
-//    override func awakeFromNib() {
-//        data.append(Record(id: 1, name: "Huyen", price: 200))
-//        data.append(Record(id: 2, name: "Huyen2", price: 200))
-//        data.append(Record(id: 3, name: "Huyen3", price: 200))
-//        data.append(Record(id: 4, name: "Huyen4", price: 200))
-//        data.append(Record(id: 5, name: "Huyen5 Huyen5 Huyen5 Huyen5 Huyen5 Huyen5 Huyen5", price: 200))
-//       
-//
-//        let leftController = self.storyboard?.instantiateViewController(withIdentifier: "LeftMenu")
-//        self.leftViewController = leftController
-//        
-//        super.awakeFromNib()
-//    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,7 +39,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
+        self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
         mainTable.dataSource = self
         mainTable.delegate = self
 
@@ -86,17 +73,14 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("ddd")
-//        if (data.isEmpty) {
-//            return 0
-//        }
-//        return data.count
+        if (sections[section].price.isEmpty) {
+            return 0
+        }
         return sections[section].price.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainTableViewCell
-//        cell.lblPrice.text = String(describing: sections[indexPath.row].price_right)
         cell.lblPrice.text = sections[indexPath.row].date
         cell.lblName.text = String(describing: sections[indexPath.section].price[indexPath.row])
         
@@ -104,27 +88,16 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-//        if (data.isEmpty) {
-//            return 0
-//        }
-//        return data.count
+        if (sections.isEmpty) {
+            return 0
+        }
         return sections.count
     }
-    
-//    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-//        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "expandableHeaderView") as! ExpandableHeaderView
-//        headerView.customInit(date: sections[index].date, price_right: sections[index].price_right, section: index, delegate: self)
-//        print("hêleee:"+"\(headerView.lbName.text!)")
-//        return index
-//    }
-//
-    
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "expandableHeaderView") as! ExpandableHeaderView
         headerView.customInit(date: sections[section].date, price_right: sections[section].price_right, section: section, delegate: self)
-        print("hêleee:"+"\(headerView.lbPrice.text!)")
-        return headerView.contentView
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -145,8 +118,5 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadSections([indexPath.section], with: .automatic)
         tableView.endUpdates()
     }
-    
-
-    
 }
 
