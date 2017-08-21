@@ -38,10 +38,20 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 
+    var count = 0
+    func menuButtonTapped() {
+        print("aaaab right")
+        self.title = "" + String(count)
+        count = count + 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
+        self.title = "交通費"
+        self.addRightBarButtonWithImage(UIImage(named: "ic_cloud_upload_white_48pt")!)
+        self.navigationItem.rightBarButtonItem?.action = #selector(menuButtonTapped)
+        
         layoutFAB()
         mainTable.dataSource = self
         mainTable.delegate = self
