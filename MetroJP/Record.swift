@@ -9,11 +9,25 @@ import UIKit
 
 class Record {
     var id: Int = 0
-    var name: String = ""
-    var price: Int = 0
-    init (id: Int, name: String, price: Int) {
+    var price: String = ""
+    var date: String = ""
+    var note: String = ""
+    init() {
+    }
+    
+    init (id: Int, price: String, date: String, note: String) {
         self.id = id
-        self.name = name
         self.price = price
+        self.date = date
+        self.note = note
+    }
+    public func setDate (date: String) {
+        self.date = date
+    }
+    public func setPrice (price: String) {
+        self.price = price
+    }
+    public func setNote (note: String) {
+        self.note = note
     }
 }

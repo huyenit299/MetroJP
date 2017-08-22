@@ -23,20 +23,23 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     var data = [Record]();
     var row = -1 //row selecting
     
-    var sections = [
-        Section(date: "🦁 Animation",
-                price_right: "Lion King",
-                price: ["The Lion King", "The Incredibles"],
-                expand: false),
-        Section(date: "💥 Superhero",
-                price_right: "Lion King",
-                price: ["Guardians of the Galaxy"],
-                expand: false),
-        Section(date: "👻 Horror",
-                price_right: "Lion King",
-                price: ["The Walking Dead", "Insidious", "Conjuring"],
-                expand: false)
-    ]
+//    var sections = [
+//        Section(date: "2016/05",
+//                price_right: "5,500",
+//                price: ["2016/05/10", "The Incredibles"],
+//                expand: false),
+//        Section(date: "💥 Superhero",
+//                price_right: "Lion King",
+//                price: ["Guardians of the Galaxy"],
+//                expand: false),
+//        Section(date: "👻 Horror",
+//                price_right: "Lion King",
+//                price: ["The Walking Dead", "Insidious", "Conjuring"],
+//                expand: false)
+//    ]
+    
+    
+     var listSection: Array<DateSection> = []
     
     var selectIndexPath: IndexPath!
     
@@ -52,6 +55,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         count = count + 1
     }
     
+    var listRecord = Array<DateSection>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
@@ -60,6 +65,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationItem.rightBarButtonItem?.action = #selector(menuButtonTapped)
         
         layoutFAB()
+        
+        listRecord = ParseJson().readJson()
         mainTable.dataSource = self
         mainTable.delegate = self
 
@@ -93,41 +100,48 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (sections[section].price.isEmpty) {
+//        if (sections[section].price.isEmpty) {
+//            return 0
+//        }
+//        return sections[section].price.count
+        if (listRecord[section].list.isEmpty) {
             return 0
         }
-        return sections[section].price.count
+        return listRecord[section].list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainTableViewCell
-        cell.lblPrice.text = sections[indexPath.row].date
-        cell.lblName.text = String(describing: sections[indexPath.section].price[indexPath.row])
-//        if (!sections[indexPath.section].expand) {
-//            cell.isHidden = true
-//        } else {
-//            cell.isHidden = false
-//        }
+//        cell.lblPrice.text = sections[indexPath.row].date
+//        cell.lblName.text = String(describing: sections[indexPath.section].price[indexPath.row])
+        cell.lblPrice.text = listRecord[indexPath.section].list[indexPath.row]?.price
+        cell.lblName.text = listRecord[indexPath.section].list[indexPath.row]?.date
+        cell.lblId.text = listRecord[indexPath.section].list[indexPath.row]?.note
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (!sections[indexPath.section].expand) {
+//        if (!sections[indexPath.section].expand) {
+//            return 44
+//        }
+        if (!listRecord[indexPath.section].expand) {
             return 44
         }
         return 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if (sections.isEmpty) {
+        if (listRecord.isEmpty) {
             return 0
         }
-        return sections.count
+        return listRecord.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "expandableHeaderView") as! ExpandableHeaderView
-        headerView.customInit(date: sections[section].date, price_right: sections[section].price_right, section: section, delegate: self)
+//        headerView.customInit(date: sections[section].date, price_right: sections[section].price_right, section: section, delegate: self)
+         headerView.customInit(date: listRecord[section].month, price_right: listRecord[section].totalPrice, section: section, delegate: self)
         return headerView
     }
     
@@ -137,7 +151,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func toggleSection(header: ExpandableHeaderView, section: Int) {
         print("toggleSection")
-        self.sections[section].expand = !self.sections[section].expand
+//        self.sections[section].expand = !self.sections[section].expand
+        self.listRecord[section].expand = !self.listRecord[section].expand
         mainTable.beginUpdates()
         mainTable.reloadSections([section], with: .automatic)
         mainTable.endUpdates()
@@ -145,7 +160,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectIndexPath = indexPath
-        self.sections[indexPath.section].expand = !self.sections[indexPath.section].expand
+//        self.sections[indexPath.section].expand = !self.sections[indexPath.section].expand
+        self.listRecord[indexPath.section].expand = !self.listRecord[indexPath.section].expand
         tableView.beginUpdates()
         tableView.reloadSections([indexPath.section], with: .automatic)
         tableView.endUpdates()
@@ -157,6 +173,16 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        present(scr, animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+//            titles.remove(at: indexPath.item)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     
     func getDateSelected (date: String, id: Int) {
         print("eee="+date)

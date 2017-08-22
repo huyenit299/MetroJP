@@ -8,8 +8,19 @@
 
 import Foundation
 
-struct DateSection {
-    var date: String
-    var price: String
+class DateSection {
+    var month: String = ""
+    var totalPrice: String = ""
+    var list = Array<Record?>()
+    var expand: Bool = false
+    init() {
+    }
+    
+    init (month: String, totalPrice: String, list: Array<Record>) {
+        self.month = month
+        self.totalPrice = totalPrice
+        self.list = list
+    }
+  
 }
 
