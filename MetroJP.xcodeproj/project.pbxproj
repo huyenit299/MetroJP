@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02C52891F4B3B9B00C21309 /* FoldingCellTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */; };
+		A02F565C1F4BD21C00133269 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02F565B1F4BD21C00133269 /* FoldingCell.swift */; };
+		A02F56711F4C064B00133269 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = A02F566D1F4C064B00133269 /* Contents.json */; };
+		A02F56721F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = A02F566E1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.png */; };
+		A02F56731F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A02F566F1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_2x.png */; };
+		A02F56741F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A02F56701F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_3x.png */; };
+		A02F567A1F4C065E00133269 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = A02F56761F4C065E00133269 /* Contents.json */; };
+		A02F567B1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = A02F56771F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.png */; };
+		A02F567C1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A02F56781F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_2x.png */; };
+		A02F567D1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A02F56791F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_3x.png */; };
 		A03112FF1F4AD5B200B6EA55 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */; };
 		A03113101F4AD95900B6EA55 /* SectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A031130F1F4AD95900B6EA55 /* SectionTableCell.swift */; };
 		A03113231F4AEB9C00B6EA55 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03113221F4AEB9300B6EA55 /* Material.framework */; };
@@ -41,13 +51,15 @@
 		A047505C1F3ABCA700E1DE0C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047505B1F3ABCA700E1DE0C /* UIViewController.swift */; };
 		A047505F1F3AC2B600E1DE0C /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047505E1F3AC2B600E1DE0C /* Record.swift */; };
 		A04750621F3AE40E00E1DE0C /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */; };
+		A04995FE1F4BC4730042F11B /* FoldingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */; };
+		A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */; };
 		A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */; };
 		A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */; };
 		A08BD4FA1F46948C004CE47C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F91F46948C004CE47C /* Section.swift */; };
+		A09716C91F4C1F9200205CF8 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; };
+		A09716CA1F4C1F9200205CF8 /* JTAppleCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04901F4A7CFD0007CF9D /* CustomCell.swift */; };
 		A09E04A41F4A81370007CF9D /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04A31F4A81370007CF9D /* CalendarController.swift */; };
-		A09E04C71F4A9FC50007CF9D /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09E04BC1F4A9FBA0007CF9D /* JTAppleCalendar.framework */; };
-		A09E04C81F4A9FC50007CF9D /* JTAppleCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09E04BC1F4A9FBA0007CF9D /* JTAppleCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0A2901A1F44B5DE00A7FD65 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */; };
 		A0A2901B1F44B5DE00A7FD65 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF81F44B5DE00A7FD65 /* ConstraintAttributes.swift */; };
 		A0A2901C1F44B5DE00A7FD65 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF91F44B5DE00A7FD65 /* ConstraintConfig.swift */; };
@@ -84,11 +96,8 @@
 		A0A2903B1F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A290191F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift */; };
 		A0ABAAF31F46DA5900274E30 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */; };
 		A0C0930D1F45866700E4614F /* DateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0930C1F45866700E4614F /* DateSection.swift */; };
-		A0C0931D1F45961B00E4614F /* FoldingCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C093161F45959C00E4614F /* FoldingCell.framework */; };
-		A0C0931E1F45961B00E4614F /* FoldingCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C093161F45959C00E4614F /* FoldingCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; };
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A0C093401F4597C300E4614F /* FoldingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C0933F1F4597C300E4614F /* FoldingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,89 +143,54 @@
 			remoteGlobalIDString = A047501B1F3AAFF500E1DE0C;
 			remoteInfo = MetroJP;
 		};
-		A09E04BB1F4A9FBA0007CF9D /* PBXContainerItemProxy */ = {
+		A09716BD1F4C1F8300205CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+			containerPortal = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6B60DEBC1D5BDA46009174A2;
 			remoteInfo = "JTAppleCalendar iOS";
 		};
-		A09E04BD1F4A9FBA0007CF9D /* PBXContainerItemProxy */ = {
+		A09716BF1F4C1F8300205CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+			containerPortal = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6B60DECA1D5BDA74009174A2;
 			remoteInfo = "JTAppleCalendar tvOS";
 		};
-		A09E04BF1F4A9FBA0007CF9D /* PBXContainerItemProxy */ = {
+		A09716C11F4C1F8300205CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+			containerPortal = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6B60DEFC1D5BE766009174A2;
 			remoteInfo = "JTAppleCalendar iOSTests";
 		};
-		A09E04C11F4A9FBA0007CF9D /* PBXContainerItemProxy */ = {
+		A09716C31F4C1F8300205CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+			containerPortal = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6B60DF211D5BE8A4009174A2;
 			remoteInfo = "JTAppleCalendar tvOSTests";
 		};
-		A09E04C31F4A9FBA0007CF9D /* PBXContainerItemProxy */ = {
+		A09716C51F4C1F8300205CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+			containerPortal = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6B60DF0B1D5BE834009174A2;
 			remoteInfo = "JTAppleCalendar iOS Example";
 		};
-		A09E04C51F4A9FBA0007CF9D /* PBXContainerItemProxy */ = {
+		A09716C71F4C1F8300205CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+			containerPortal = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 6B60DF521D5BFE41009174A2;
 			remoteInfo = "JTAppleCalendar tvOS Example";
 		};
-		A09E04C91F4A9FC50007CF9D /* PBXContainerItemProxy */ = {
+		A09716CB1F4C1F9200205CF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+			containerPortal = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 6B60DEBB1D5BDA46009174A2;
 			remoteInfo = "JTAppleCalendar iOS";
-		};
-		A0C093151F45959C00E4614F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8499D8851D0054A8004B5B37;
-			remoteInfo = FoldingCell;
-		};
-		A0C093171F45959C00E4614F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9D57F31C1EDC7A6F0004599F;
-			remoteInfo = "FoldingCell-Demo";
-		};
-		A0C093191F45959C00E4614F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9DAA51541EDDBAD700DFC539;
-			remoteInfo = "FoldingCell-DemoObjc";
-		};
-		A0C0931B1F45959C00E4614F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8498513C1C5639F9006FA400;
-			remoteInfo = FoldingCellTests;
-		};
-		A0C0931F1F45961B00E4614F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8499D8841D0054A8004B5B37;
-			remoteInfo = FoldingCell;
 		};
 		A0C0932C1F4596CD00E4614F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -283,11 +257,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A0C0931E1F45961B00E4614F /* FoldingCell.framework in Embed Frameworks */,
 				A03113241F4AEB9C00B6EA55 /* Material.framework in Embed Frameworks */,
-				A09E04C81F4A9FC50007CF9D /* JTAppleCalendar.framework in Embed Frameworks */,
 				A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */,
 				A03113341F4AF2EA00B6EA55 /* Floaty.framework in Embed Frameworks */,
+				A09716CA1F4C1F9200205CF8 /* JTAppleCalendar.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +268,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCellTableController.swift; sourceTree = "<group>"; };
+		A02F565B1F4BD21C00133269 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoldingCell.swift; path = "../../../../Downloads/folding-cell-master/FoldingCell/FoldingCell/FoldingCell.swift"; sourceTree = "<group>"; };
+		A02F566D1F4C064B00133269 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A02F566E1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_left_white_48pt.png; sourceTree = "<group>"; };
+		A02F566F1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_left_white_48pt_2x.png; sourceTree = "<group>"; };
+		A02F56701F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_left_white_48pt_3x.png; sourceTree = "<group>"; };
+		A02F56761F4C065E00133269 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A02F56771F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_right_white_48pt.png; sourceTree = "<group>"; };
+		A02F56781F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_right_white_48pt_2x.png; sourceTree = "<group>"; };
+		A02F56791F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_right_white_48pt_3x.png; sourceTree = "<group>"; };
 		A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		A031130F1F4AD95900B6EA55 /* SectionTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableCell.swift; sourceTree = "<group>"; };
 		A031131D1F4AEB9300B6EA55 /* Material.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Material.xcodeproj; path = "../../../Downloads/Material-master 2/Material.xcodeproj"; sourceTree = "<group>"; };
@@ -333,12 +316,14 @@
 		A047505B1F3ABCA700E1DE0C /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		A047505E1F3AC2B600E1DE0C /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoldingCustomView.xib; sourceTree = "<group>"; };
+		A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFoldingCell.swift; sourceTree = "<group>"; };
 		A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableHeaderView.xib; sourceTree = "<group>"; };
 		A08BD4F91F46948C004CE47C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JTAppleCalendar.xcodeproj; path = "../../../Downloads/JTAppleCalendar-master/JTAppleCalendar.xcodeproj"; sourceTree = "<group>"; };
 		A09E04901F4A7CFD0007CF9D /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A09E04A31F4A81370007CF9D /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
-		A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JTAppleCalendar.xcodeproj; path = "../JTAppleCalendar-master 2/JTAppleCalendar.xcodeproj"; sourceTree = "<group>"; };
 		A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		A0A28FF81F44B5DE00A7FD65 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		A0A28FF91F44B5DE00A7FD65 /* ConstraintConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
@@ -376,9 +361,7 @@
 		A0A290191F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A0C0930C1F45866700E4614F /* DateSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
-		A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FoldingCell.xcodeproj; path = "../../../Downloads/folding-cell-master/FoldingCell/FoldingCell.xcodeproj"; sourceTree = "<group>"; };
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		A0C0933F1F4597C300E4614F /* FoldingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoldingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,9 +372,8 @@
 				A03113231F4AEB9C00B6EA55 /* Material.framework in Frameworks */,
 				A03113331F4AF2EA00B6EA55 /* Floaty.framework in Frameworks */,
 				A0ABAAF31F46DA5900274E30 /* UserNotifications.framework in Frameworks */,
-				A0C0931D1F45961B00E4614F /* FoldingCell.framework in Frameworks */,
 				A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */,
-				A09E04C71F4A9FC50007CF9D /* JTAppleCalendar.framework in Frameworks */,
+				A09716C91F4C1F9200205CF8 /* JTAppleCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +394,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A02F566C1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				A02F566D1F4C064B00133269 /* Contents.json */,
+				A02F566E1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.png */,
+				A02F566F1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_2x.png */,
+				A02F56701F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_3x.png */,
+			);
+			name = ic_keyboard_arrow_left_white_48pt.imageset;
+			path = ../../../../Downloads/ic_keyboard_arrow_left_white_48dp/ios/ic_keyboard_arrow_left_white_48pt.imageset;
+			sourceTree = "<group>";
+		};
+		A02F56751F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				A02F56761F4C065E00133269 /* Contents.json */,
+				A02F56771F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.png */,
+				A02F56781F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_2x.png */,
+				A02F56791F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_3x.png */,
+			);
+			name = ic_keyboard_arrow_right_white_48pt.imageset;
+			path = ../../../../Downloads/ic_keyboard_arrow_right_white_48dp/ios/ic_keyboard_arrow_right_white_48pt.imageset;
+			sourceTree = "<group>";
+		};
 		A031131E1F4AEB9300B6EA55 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,11 +471,10 @@
 		A04750131F3AAFF500E1DE0C = {
 			isa = PBXGroup;
 			children = (
+				A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */,
 				A031132D1F4AF2DF00B6EA55 /* Floaty.xcodeproj */,
 				A031131D1F4AEB9300B6EA55 /* Material.xcodeproj */,
-				A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */,
 				A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */,
-				A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */,
 				A047501E1F3AAFF500E1DE0C /* MetroJP */,
 				A04750361F3AAFF500E1DE0C /* MetroJPTests */,
 				A04750411F3AAFF500E1DE0C /* MetroJPUITests */,
@@ -511,6 +516,7 @@
 				A09E04901F4A7CFD0007CF9D /* CustomCell.swift */,
 				A09E04A31F4A81370007CF9D /* CalendarController.swift */,
 				A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */,
+				A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -536,6 +542,8 @@
 		A04750561F3ABAD800E1DE0C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A02F56751F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.imageset */,
+				A02F566C1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.imageset */,
 				A031138D1F4AFC9000B6EA55 /* ic_star_border_white */,
 				A03113641F4AFBF400B6EA55 /* ic_search_white_48pt.imageset */,
 				A03113441F4AFBE500B6EA55 /* ic_cloud_upload_white_48pt.imageset */,
@@ -575,15 +583,15 @@
 			name = ExpandableHeaderView;
 			sourceTree = "<group>";
 		};
-		A09E04B31F4A9FBA0007CF9D /* Products */ = {
+		A09716B51F4C1F8200205CF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A09E04BC1F4A9FBA0007CF9D /* JTAppleCalendar.framework */,
-				A09E04BE1F4A9FBA0007CF9D /* JTAppleCalendar.framework */,
-				A09E04C01F4A9FBA0007CF9D /* JTAppleCalendar iOSTests.xctest */,
-				A09E04C21F4A9FBA0007CF9D /* JTAppleCalendar tvOSTests.xctest */,
-				A09E04C41F4A9FBA0007CF9D /* JTAppleCalendar iOS Example.app */,
-				A09E04C61F4A9FBA0007CF9D /* JTAppleCalendar tvOS Example.app */,
+				A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */,
+				A09716C01F4C1F8300205CF8 /* JTAppleCalendar.framework */,
+				A09716C21F4C1F8300205CF8 /* JTAppleCalendar iOSTests.xctest */,
+				A09716C41F4C1F8300205CF8 /* JTAppleCalendar tvOSTests.xctest */,
+				A09716C61F4C1F8300205CF8 /* JTAppleCalendar iOS Example.app */,
+				A09716C81F4C1F8300205CF8 /* JTAppleCalendar tvOS Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -638,17 +646,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A0C0930F1F45959C00E4614F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A0C093161F45959C00E4614F /* FoldingCell.framework */,
-				A0C093181F45959C00E4614F /* FoldingCell-Demo.app */,
-				A0C0931A1F45959C00E4614F /* FoldingCell-DemoObjc.app */,
-				A0C0931C1F45959C00E4614F /* FoldingCellTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A0C093221F4596CC00E4614F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -666,7 +663,9 @@
 		A0C0933E1F4597A100E4614F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A0C0933F1F4597C300E4614F /* FoldingCell.xib */,
+				A02F565B1F4BD21C00133269 /* FoldingCell.swift */,
+				A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */,
+				A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -686,11 +685,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				A0C093201F45961B00E4614F /* PBXTargetDependency */,
 				A0C0933D1F4596DC00E4614F /* PBXTargetDependency */,
-				A09E04CA1F4A9FC50007CF9D /* PBXTargetDependency */,
 				A03113261F4AEB9D00B6EA55 /* PBXTargetDependency */,
 				A03113361F4AF2EB00B6EA55 /* PBXTargetDependency */,
+				A09716CC1F4C1F9200205CF8 /* PBXTargetDependency */,
 			);
 			name = MetroJP;
 			productName = MetroJP;
@@ -780,12 +778,8 @@
 					ProjectRef = A031132D1F4AF2DF00B6EA55 /* Floaty.xcodeproj */;
 				},
 				{
-					ProductGroup = A0C0930F1F45959C00E4614F /* Products */;
-					ProjectRef = A0C0930E1F45959C00E4614F /* FoldingCell.xcodeproj */;
-				},
-				{
-					ProductGroup = A09E04B31F4A9FBA0007CF9D /* Products */;
-					ProjectRef = A09E04B21F4A9FBA0007CF9D /* JTAppleCalendar.xcodeproj */;
+					ProductGroup = A09716B51F4C1F8200205CF8 /* Products */;
+					ProjectRef = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 				},
 				{
 					ProductGroup = A031131E1F4AEB9300B6EA55 /* Products */;
@@ -816,74 +810,46 @@
 			remoteRef = A03113311F4AF2E000B6EA55 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A09E04BC1F4A9FBA0007CF9D /* JTAppleCalendar.framework */ = {
+		A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = JTAppleCalendar.framework;
-			remoteRef = A09E04BB1F4A9FBA0007CF9D /* PBXContainerItemProxy */;
+			remoteRef = A09716BD1F4C1F8300205CF8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A09E04BE1F4A9FBA0007CF9D /* JTAppleCalendar.framework */ = {
+		A09716C01F4C1F8300205CF8 /* JTAppleCalendar.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = JTAppleCalendar.framework;
-			remoteRef = A09E04BD1F4A9FBA0007CF9D /* PBXContainerItemProxy */;
+			remoteRef = A09716BF1F4C1F8300205CF8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A09E04C01F4A9FBA0007CF9D /* JTAppleCalendar iOSTests.xctest */ = {
+		A09716C21F4C1F8300205CF8 /* JTAppleCalendar iOSTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "JTAppleCalendar iOSTests.xctest";
-			remoteRef = A09E04BF1F4A9FBA0007CF9D /* PBXContainerItemProxy */;
+			remoteRef = A09716C11F4C1F8300205CF8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A09E04C21F4A9FBA0007CF9D /* JTAppleCalendar tvOSTests.xctest */ = {
+		A09716C41F4C1F8300205CF8 /* JTAppleCalendar tvOSTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "JTAppleCalendar tvOSTests.xctest";
-			remoteRef = A09E04C11F4A9FBA0007CF9D /* PBXContainerItemProxy */;
+			remoteRef = A09716C31F4C1F8300205CF8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A09E04C41F4A9FBA0007CF9D /* JTAppleCalendar iOS Example.app */ = {
+		A09716C61F4C1F8300205CF8 /* JTAppleCalendar iOS Example.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "JTAppleCalendar iOS Example.app";
-			remoteRef = A09E04C31F4A9FBA0007CF9D /* PBXContainerItemProxy */;
+			remoteRef = A09716C51F4C1F8300205CF8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A09E04C61F4A9FBA0007CF9D /* JTAppleCalendar tvOS Example.app */ = {
+		A09716C81F4C1F8300205CF8 /* JTAppleCalendar tvOS Example.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "JTAppleCalendar tvOS Example.app";
-			remoteRef = A09E04C51F4A9FBA0007CF9D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A0C093161F45959C00E4614F /* FoldingCell.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FoldingCell.framework;
-			remoteRef = A0C093151F45959C00E4614F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A0C093181F45959C00E4614F /* FoldingCell-Demo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "FoldingCell-Demo.app";
-			remoteRef = A0C093171F45959C00E4614F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A0C0931A1F45959C00E4614F /* FoldingCell-DemoObjc.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "FoldingCell-DemoObjc.app";
-			remoteRef = A0C093191F45959C00E4614F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A0C0931C1F45959C00E4614F /* FoldingCellTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FoldingCellTests.xctest;
-			remoteRef = A0C0931B1F45959C00E4614F /* PBXContainerItemProxy */;
+			remoteRef = A09716C71F4C1F8300205CF8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		A0C0932D1F4596CD00E4614F /* Alamofire.framework */ = {
@@ -946,15 +912,20 @@
 				A047502D1F3AAFF500E1DE0C /* LaunchScreen.storyboard in Resources */,
 				A03113731F4AFBF400B6EA55 /* ic_search_white_48pt_2x.png in Resources */,
 				A031132B1F4AEEF900B6EA55 /* ic_add_circle_outline_white_3x.png in Resources */,
+				A02F56741F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_3x.png in Resources */,
+				A02F567A1F4C065E00133269 /* Contents.json in Resources */,
 				A03113511F4AFBE500B6EA55 /* Contents.json in Resources */,
 				A047502A1F3AAFF500E1DE0C /* Assets.xcassets in Resources */,
 				A031132A1F4AEEF900B6EA55 /* ic_add_circle_outline_white_2x.png in Resources */,
 				A047505A1F3ABB5000E1DE0C /* ic_menu_black_24dp.png in Resources */,
 				A03113901F4AFC9000B6EA55 /* ic_star_border_white_48dp.png in Resources */,
+				A02F567B1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.png in Resources */,
+				A02F567D1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_3x.png in Resources */,
 				A03113721F4AFBF400B6EA55 /* ic_search_white_48pt.png in Resources */,
 				A03113521F4AFBE500B6EA55 /* ic_cloud_upload_white_48pt.png in Resources */,
+				A02F567C1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_2x.png in Resources */,
+				A04995FE1F4BC4730042F11B /* FoldingCustomView.xib in Resources */,
 				A03113531F4AFBE500B6EA55 /* ic_cloud_upload_white_48pt_2x.png in Resources */,
-				A0C093401F4597C300E4614F /* FoldingCell.xib in Resources */,
 				A0A290381F44B5DE00A7FD65 /* Info.plist in Resources */,
 				A04750251F3AAFF500E1DE0C /* Main.storyboard in Resources */,
 				A03113711F4AFBF400B6EA55 /* Contents.json in Resources */,
@@ -962,6 +933,9 @@
 				A031132C1F4AEEF900B6EA55 /* ic_add_circle_outline_white.png in Resources */,
 				A03113911F4AFC9000B6EA55 /* ic_star_border_white_48dp_2x.png in Resources */,
 				A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */,
+				A02F56711F4C064B00133269 /* Contents.json in Resources */,
+				A02F56731F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt_2x.png in Resources */,
+				A02F56721F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +978,7 @@
 				A0A290281F44B5DE00A7FD65 /* ConstraintMaker.swift in Sources */,
 				A0A290291F44B5DE00A7FD65 /* ConstraintMakerEditable.swift in Sources */,
 				A04750511F3AB0C500E1DE0C /* MainController.swift in Sources */,
+				A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */,
 				A0A290271F44B5DE00A7FD65 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				A0A2901C1F44B5DE00A7FD65 /* ConstraintConfig.swift in Sources */,
 				A03112FF1F4AD5B200B6EA55 /* SlideViewController.swift in Sources */,
@@ -1012,6 +987,7 @@
 				A0A290311F44B5DE00A7FD65 /* ConstraintPriorityTarget.swift in Sources */,
 				A09E04A41F4A81370007CF9D /* CalendarController.swift in Sources */,
 				A04750531F3AB4F700E1DE0C /* SlideMenuController.swift in Sources */,
+				A02F565C1F4BD21C00133269 /* FoldingCell.swift in Sources */,
 				A0A290391F44B5DE00A7FD65 /* LayoutConstraint.swift in Sources */,
 				A0A290321F44B5DE00A7FD65 /* ConstraintRelatableTarget.swift in Sources */,
 				A04750221F3AAFF500E1DE0C /* ViewController.swift in Sources */,
@@ -1022,6 +998,7 @@
 				A047505F1F3AC2B600E1DE0C /* Record.swift in Sources */,
 				A0A2901D1F44B5DE00A7FD65 /* ConstraintConstantTarget.swift in Sources */,
 				A0A290201F44B5DE00A7FD65 /* ConstraintInsets.swift in Sources */,
+				A02C52891F4B3B9B00C21309 /* FoldingCellTableController.swift in Sources */,
 				A0A290211F44B5DE00A7FD65 /* ConstraintInsetTarget.swift in Sources */,
 				A0A290361F44B5DE00A7FD65 /* ConstraintViewDSL.swift in Sources */,
 				A0A2901A1F44B5DE00A7FD65 /* Constraint.swift in Sources */,
@@ -1077,15 +1054,10 @@
 			target = A047501B1F3AAFF500E1DE0C /* MetroJP */;
 			targetProxy = A047503F1F3AAFF500E1DE0C /* PBXContainerItemProxy */;
 		};
-		A09E04CA1F4A9FC50007CF9D /* PBXTargetDependency */ = {
+		A09716CC1F4C1F9200205CF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "JTAppleCalendar iOS";
-			targetProxy = A09E04C91F4A9FC50007CF9D /* PBXContainerItemProxy */;
-		};
-		A0C093201F45961B00E4614F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FoldingCell;
-			targetProxy = A0C0931F1F45961B00E4614F /* PBXContainerItemProxy */;
+			targetProxy = A09716CB1F4C1F9200205CF8 /* PBXContainerItemProxy */;
 		};
 		A0C0933D1F4596DC00E4614F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -11,10 +11,17 @@ import Alamofire
 import JTAppleCalendar
 import Floaty
 
-class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate {
+protocol DateSelectedProtocol {
+    func getDateSelected (date: String, id: Int)//id of row
+}
+
+class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate, DateSelectedProtocol {
+    
+    
     var fab = Floaty()
     @IBOutlet weak var mainTable: UITableView!
     var data = [Record]();
+    var row = -1 //row selecting
     
     var sections = [
         Section(date: "🦁 Animation",
@@ -96,8 +103,19 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell: MainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainTableViewCell
         cell.lblPrice.text = sections[indexPath.row].date
         cell.lblName.text = String(describing: sections[indexPath.section].price[indexPath.row])
-        
+//        if (!sections[indexPath.section].expand) {
+//            cell.isHidden = true
+//        } else {
+//            cell.isHidden = false
+//        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (!sections[indexPath.section].expand) {
+            return 44
+        }
+        return 0
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -118,6 +136,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func toggleSection(header: ExpandableHeaderView, section: Int) {
+        print("toggleSection")
         self.sections[section].expand = !self.sections[section].expand
         mainTable.beginUpdates()
         mainTable.reloadSections([section], with: .automatic)
@@ -130,6 +149,17 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.beginUpdates()
         tableView.reloadSections([indexPath.section], with: .automatic)
         tableView.endUpdates()
+        
+        row = indexPath.row
+        let scr = storyboard?.instantiateViewController(withIdentifier: "calendarCollection") as! CalendarController
+        scr.tableProtocol = self
+        self.navigationController?.pushViewController(scr, animated: true)
+//        present(scr, animated: true, completion: nil)
+    }
+    
+    
+    func getDateSelected (date: String, id: Int) {
+        print("eee="+date)
     }
     
     //layout fload a button
@@ -173,21 +203,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.present(alert, animated: true, completion: nil)
             self.fab.close()
         }
-        
-//        fab.addItem("お気に入り", icon: UIImage(named: "ic_star_border_white_48dp"))
-//
-//        fab.addItem("検索", icon: UIImage(named: "ic_search_white_48pt"), titlePosition: nil) { (item) in
-//            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//            self.fab.close()
-//        }
-//        fab.addItem("アップロード", icon: UIImage(named: "ic_cloud_upload_white_48pt")) { item in
-//            let alert = UIAlertController(title: "Hey", message: "I'm hungry...", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "Me too", style: .default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//            self.fab.close()
-//        }
+
         fab.addItem(item: itemRating)
         fab.addItem(item: itemSearch)
         fab.addItem(item: itemUpload)

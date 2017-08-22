@@ -17,17 +17,72 @@ class CalendarController: UIViewController {
     let black = UIColor.black
     let gray = UIColor.gray
     let shade = UIColor(colorWithHexValue: 0x4E4E4E)
+    var currentMonth = 7, currentYear = 2017
+    
+    var tableProtocol: DateSelectedProtocol?
+    var selectedDate: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.calendarView.isScrollEnabled = false
+//        self.calendarView.scrollToDate(Date())
+//        changeMonth(month: currentMonth, year: currentYear)
+        self.calendarView.visibleDates {[unowned self] (visibleDates: DateSegmentInfo) in
+            self.setupViewsOfCalendar(from: visibleDates)
+        }
 
-        // Do any additional setup after loading the view.
     }
-
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var lbMonthYear: UILabel!
+    @IBOutlet weak var lbYear: UILabel!
+    @IBOutlet weak var lbMonth: UILabel!
+    @IBOutlet weak var lbDayOfWeek: UILabel!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    /**
+     Change calendar to a month-year
+     **/
+    func changeMonth(month: Int, year: Int) {
+        var dateComponent = DateComponents()
+        dateComponent.year = year
+        dateComponent.month = month
+        dateComponent.day = 1
+        let date = Calendar.current.date(from: dateComponent)!
+        self.calendarView.scrollToDate(date)
+        
+    }
+    
+    @IBAction func btnNextClick(_ sender: Any) {
+        if (currentMonth == 12) {
+            currentMonth = 1
+            currentYear = currentYear + 1
+        } else {
+            currentMonth = currentMonth + 1
+        }
+//        changeMonth(month: currentMonth, year: currentYear)
+        self.calendarView.scrollToSegment(.next)
+        self.calendarView.visibleDates {[unowned self] (visibleDates: DateSegmentInfo) in
+        self.setupViewsOfCalendar(from: visibleDates)
+        }
+    }
+    
+    @IBAction func btnPreviousClick(_ sender: Any) {
+        if (currentMonth == 1) {
+            currentMonth = 12
+            currentYear = currentYear - 1
+        } else {
+            currentMonth = currentMonth - 1
+        }
+//        changeMonth(month: currentMonth, year: currentYear)
+        self.calendarView.scrollToSegment(.previous)
+        self.calendarView.visibleDates {[unowned self] (visibleDates: DateSegmentInfo) in
+            self.setupViewsOfCalendar(from: visibleDates)
+        }
+    }
+    
     func handleCellConfiguration(cell: JTAppleCell?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
         handleCellTextColor(view: cell, cellState: cellState)
@@ -56,23 +111,8 @@ class CalendarController: UIViewController {
     // Function to handle the calendar selection
     func handleCellSelection(view: JTAppleCell?, cellState: CellState) {
         guard let myCustomCell = view as? CustomCell else {return }
-        //        switch cellState.selectedPosition() {
-        //        case .full:
-        //            myCustomCell.backgroundColor = .green
-        //        case .left:
-        //            myCustomCell.backgroundColor = .yellow
-        //        case .right:
-        //            myCustomCell.backgroundColor = .red
-        //        case .middle:
-        //            myCustomCell.backgroundColor = .blue
-        //        case .none:
-        //            myCustomCell.backgroundColor = nil
-        //        }
-        //
+
         if cellState.isSelected {
-//            myCustomCell.dateLabel.layer.cornerRadius =  30
-//            myCustomCell.dateLabel.layer.masksToBounds = true
-//            myCustomCell.dateLabel.layer.backgroundColor = UIColor.yellow.cgColor
             myCustomCell.selectedView.isHidden = false
         } else {
             myCustomCell.selectedView.isHidden = true
@@ -81,16 +121,12 @@ class CalendarController: UIViewController {
 
     
     @IBAction func goBackList(_ sender: Any) {
-//        let mainContronller = self.storyboard?.instantiateViewControllerWithIdentifier("Main") as! MainController
-//        
-//        // Set "Hello World" as a value to myStringValue
-//        mainContronller.myStringValue = myTextField.text
-//        
-//        // Take user to SecondViewController
-//        self.navigationController?.pushViewController(secondViewController, animated: true)
         let scr = storyboard?.instantiateViewController(withIdentifier: "Main") as! MainController
+        scr.getDateSelected(date: selectedDate, id: 1)
         present(scr, animated: true, completion: nil)
-        }
+    }
+    
+    
 }
 
 extension CalendarController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
@@ -99,7 +135,7 @@ extension CalendarController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDa
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         let startDate = formatter.date(from: "2017 01 01")!
-        let endDate = formatter.date(from: "2017 12 31")!
+        let endDate = formatter.date(from: "2050 12 31")!
         let parameter = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameter
     }
@@ -112,24 +148,40 @@ extension CalendarController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDa
         } else {
             cell.selectedView.isHidden = false
         }
-//        cell.selectedView.isHidden = true
         handleCellConfiguration(cell: cell, cellState: cellState)
         return cell
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-//        guard let validCell = cell as? CustomCell else {return}
-//        validCell.selectedView.isHidden = false
         handleCellConfiguration(cell: cell, cellState: cellState)
+  
+        selectedDate = formatter.string(from: date) //pass Date here
+//        print(newDate) //New formatted Date string
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-//        guard let validCell = cell as? CustomCell else {return}
-//        validCell.selectedView.isHidden = true
         handleCellConfiguration(cell: cell, cellState: cellState)
     }
     
     
+    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo) {
+        guard let startDate = visibleDates.monthDates.first?.date else {
+            return
+        }
+        let month = Calendar.current.dateComponents([.month], from: startDate).month!
+        let monthName = DateFormatter().monthSymbols[(month-1) % 12]
+        // 0 indexed array
+        let year = Calendar.current.component(.year, from: startDate)
+         let date = Calendar.current.component(.day, from: startDate)
+        lbMonth.text = String(date) + " " + monthName + " " + String(year)
+
+        self.currentMonth = month
+        self.currentYear = year
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        setupViewsOfCalendar(from: visibleDates)
+    }
 }
 
 extension UIColor {
@@ -142,4 +194,16 @@ extension UIColor {
         )
     }
 }
+
+extension UIViewController {
+    func performSegueToReturnBack()  {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+}
+
+
 

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func goToMainScreen(_ sender: AnyObject) {
         let scr = storyboard?.instantiateViewController(withIdentifier: "Slide") as! SlideViewController
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "FoldingCellTable") as! FoldingCellTableController
         present(scr, animated: true, completion: nil)
 //        navigationController?.pushViewController(scr, animated: true)
     }
