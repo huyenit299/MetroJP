@@ -101,6 +101,7 @@
 		A0C0930D1F45866700E4614F /* DateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0930C1F45866700E4614F /* DateSection.swift */; };
 		A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; };
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -368,6 +369,7 @@
 		A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A0C0930C1F45866700E4614F /* DateSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +479,7 @@
 		A04750131F3AAFF500E1DE0C = {
 			isa = PBXGroup;
 			children = (
+				A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */,
 				A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */,
 				A031132D1F4AF2DF00B6EA55 /* Floaty.xcodeproj */,
 				A031131D1F4AEB9300B6EA55 /* Material.xcodeproj */,
@@ -1012,6 +1015,7 @@
 				A04750221F3AAFF500E1DE0C /* ViewController.swift in Sources */,
 				A0A290251F44B5DE00A7FD65 /* ConstraintLayoutGuideDSL.swift in Sources */,
 				A0C0930D1F45866700E4614F /* DateSection.swift in Sources */,
+				A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */,
 				A04750281F3AAFF500E1DE0C /* MetroJP.xcdatamodeld in Sources */,
 				A09716D01F4C39AD00205CF8 /* FavoriteViewController.swift in Sources */,
 				A03113101F4AD95900B6EA55 /* SectionTableCell.swift in Sources */,
@@ -1334,6 +1338,16 @@
 			);
 			currentVersion = A04750271F3AAFF500E1DE0C /* MetroJP.xcdatamodel */;
 			path = MetroJP.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */,
+			);
+			currentVersion = A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */;
+			path = SaveData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
