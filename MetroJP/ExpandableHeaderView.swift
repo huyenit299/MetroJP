@@ -10,13 +10,25 @@ import UIKit
 
 protocol ExpandableHeaderViewDelegate {
     func toggleSection(header: ExpandableHeaderView, section: Int)
+    func clickMore(section: Int)
+    func clickAdd(section: Int, month: String)
 }
 class ExpandableHeaderView: UITableViewHeaderFooterView {
     var delegate: ExpandableHeaderViewDelegate?
     var section: Int!
+
     @IBOutlet weak var lbName: UILabel!
 
+    @IBOutlet weak var btnAddNew: UIButton!
     @IBOutlet weak var lbPrice: UILabel!
+
+    @IBAction func addNewRecord(_ sender: Any) {
+        delegate?.clickAdd(section: section, month: lbName.text!)
+    }
+
+    @IBAction func btnMore(_ sender: Any) {
+        delegate?.clickMore(section: section)
+    }
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)

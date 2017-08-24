@@ -1,22 +1,17 @@
 //
-//  FavoriteViewController.swift
+//  CreateNewRecordControllerViewController.swift
 //  MetroJP
 //
-//  Created by Huyen Nguyen on 8/22/17.
+//  Created by Huyen Nguyen on 8/24/17.
 //  Copyright © 2017 HuyenNguyen. All rights reserved.
 //
 
 import UIKit
 
-class FavoriteViewController: UITabBarController {
+class CreateNewRecordControllerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let screenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        self.tabBar.frame = CGRect(origin: CGPoint(x: 0,y :64), size: CGSize(width: screenWidth, height: 60))
-//        let newTabbar = UITabBarItem(title: "3", image: nil, tag: 0)
-//        self.tabBar.items?.append(newTabbar)
 
         // Do any additional setup after loading the view.
     }

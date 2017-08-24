@@ -122,12 +122,27 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 68
     }
     
+    
     func toggleSection(header: ExpandableHeaderView, section: Int) {
         print("toggleSection")
         self.listRecord[section].expand = !self.listRecord[section].expand
         mainTable.beginUpdates()
         mainTable.reloadSections([section], with: .automatic)
         mainTable.endUpdates()
+    }
+    
+    func clickMore(section: Int) {
+        print("more nè")
+        let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func clickAdd(section: Int, month: String) {
+        print("add new")
+        
+        let scr = storyboard?.instantiateViewController(withIdentifier: "CreateNewRecord") as! CreateNewRecordControllerViewController
+        present(scr, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -154,7 +169,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func getDateSelected (date: String, id: Int) {
-        print("eee="+date)
+        
+        
     }
     
     //layout fload a button
@@ -180,10 +196,12 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemRating.title = "お気に入り"
         itemRating.icon = UIImage(named: "ic_star_border_white_48dp")
         itemRating.handler = { (item) in
-            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            self.fab.close()
+            let scr = self.storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteViewController
+            self.present(scr, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//            self.fab.close()
         }
         
         let itemUpload = FloatyItem()

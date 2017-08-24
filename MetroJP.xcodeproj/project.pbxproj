@@ -102,6 +102,7 @@
 		A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; };
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */; };
+		A0D1C6301F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,6 +371,7 @@
 		A0C0930C1F45866700E4614F /* DateSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveData.xcdatamodel; sourceTree = "<group>"; };
+		A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewRecordControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -528,6 +530,7 @@
 				A09E04A31F4A81370007CF9D /* CalendarController.swift */,
 				A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */,
 				A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */,
+				A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -981,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0D1C6301F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift in Sources */,
 				A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */,
 				A08BD4FA1F46948C004CE47C /* Section.swift in Sources */,
 				A0A2902C1F44B5DE00A7FD65 /* ConstraintMakerPriortizable.swift in Sources */,
