@@ -9,6 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
+var type: Int!
 class CalendarController: UIViewController {
     let formatter = DateFormatter()
     var prePostVisibility: ((CellState, CustomCell?)->())?
@@ -19,10 +20,13 @@ class CalendarController: UIViewController {
     let shade = UIColor(colorWithHexValue: 0x4E4E4E)
     var currentMonth = 7, currentYear = 2017
     
+    
     var tableProtocol: DateSelectedProtocol?
     var selectedDate: String = ""
+    var data: String!
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print("data=" + data)
         self.calendarView.isScrollEnabled = false
 //        self.calendarView.scrollToDate(Date())
 //        changeMonth(month: currentMonth, year: currentYear)
@@ -31,6 +35,7 @@ class CalendarController: UIViewController {
         }
 
     }
+    
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var lbMonthYear: UILabel!
     @IBOutlet weak var lbYear: UILabel!
@@ -121,8 +126,10 @@ class CalendarController: UIViewController {
 
     
     @IBAction func goBackList(_ sender: Any) {
-        let scr = storyboard?.instantiateViewController(withIdentifier: "Main") as! MainController
-        scr.getDateSelected(date: selectedDate, id: 1)
+        
+        let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "Main") as! MainController
+        scr.getDateSelected(date: selectedDate, id: type)
         present(scr, animated: true, completion: nil)
     }
     

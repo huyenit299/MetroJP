@@ -71,6 +71,7 @@
 		A09AEB671F55591F00414FC4 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AEB661F55591F00414FC4 /* StationViewController.swift */; };
 		A09AEB711F55712400414FC4 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09AEB6E1F55711100414FC4 /* IQKeyboardManager.framework */; };
 		A09AEB721F55712400414FC4 /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09AEB6E1F55711100414FC4 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A09AEB761F55754C00414FC4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AEB751F55754C00414FC4 /* Constant.swift */; };
 		A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04901F4A7CFD0007CF9D /* CustomCell.swift */; };
 		A09E04A41F4A81370007CF9D /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04A31F4A81370007CF9D /* CalendarController.swift */; };
 		A0A2901A1F44B5DE00A7FD65 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */; };
@@ -394,6 +395,7 @@
 		A09AEB601F55292700414FC4 /* TrafficItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficItemView.swift; sourceTree = "<group>"; };
 		A09AEB661F55591F00414FC4 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IQKeyboardManager.xcodeproj; path = "../../../Downloads/IQKeyboardManager-master/IQKeyboardManager.xcodeproj"; sourceTree = "<group>"; };
+		A09AEB751F55754C00414FC4 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A09E04901F4A7CFD0007CF9D /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A09E04A31F4A81370007CF9D /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -693,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				A09716D41F4C43E400205CF8 /* ParseJson.swift */,
+				A09AEB751F55754C00414FC4 /* Constant.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1170,6 +1173,7 @@
 				A02C52891F4B3B9B00C21309 /* FoldingCellTableController.swift in Sources */,
 				A0A290211F44B5DE00A7FD65 /* ConstraintInsetTarget.swift in Sources */,
 				A0A290361F44B5DE00A7FD65 /* ConstraintViewDSL.swift in Sources */,
+				A09AEB761F55754C00414FC4 /* Constant.swift in Sources */,
 				A0A2901A1F44B5DE00A7FD65 /* Constraint.swift in Sources */,
 				A0A290341F44B5DE00A7FD65 /* ConstraintView.swift in Sources */,
 				A0A2902E1F44B5DE00A7FD65 /* ConstraintMultiplierTarget.swift in Sources */,

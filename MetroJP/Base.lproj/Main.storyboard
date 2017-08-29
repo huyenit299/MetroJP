@@ -418,6 +418,7 @@
                             <constraint firstAttribute="trailing" secondItem="TWs-Nd-IhV" secondAttribute="trailing" id="xbW-O4-772"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="R7S-y7-4n6"/>
                     <connections>
                         <outlet property="calendarView" destination="auY-PK-WpQ" id="1Ee-UA-MW2"/>
                         <outlet property="lbMonth" destination="lcf-6r-FNZ" id="psX-Mp-w3I"/>
@@ -453,7 +454,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QKs-Cg-Csc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2936" y="34"/>
+            <point key="canvasLocation" x="3519" y="55"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ygY-eH-WR6">
@@ -855,7 +856,16 @@ Vmlldw0KAA
                                     <color key="textShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="lhJ-0v-nJA"/>
+                                    <navigationItem title="Title" id="lhJ-0v-nJA">
+                                        <barButtonItem key="rightBarButtonItem" id="gDm-e5-cJm">
+                                            <string key="title" base64-UTF8="YES">
+5a6M5LqGDQoAA
+</string>
+                                            <connections>
+                                                <action selector="saveDataClick:" destination="Du1-sA-ZeX" id="tD7-AC-acq"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IyZ-vV-wTh">
@@ -982,6 +992,9 @@ Vmlldw0KAA
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <segue destination="zSH-x2-QKC" kind="show" id="tcH-6F-ULZ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1015,6 +1028,9 @@ Vmlldw0KAA
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <segue destination="zSH-x2-QKC" kind="show" id="0AW-eX-nLx"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1126,13 +1142,17 @@ Vmlldw0KAA
                         <outlet property="lbDate" destination="pkZ-sx-etf" id="NlB-yC-iN8"/>
                         <outlet property="navigationBar" destination="mKE-XN-SCt" id="LZ2-WR-sWn"/>
                         <outlet property="tableStation" destination="IyZ-vV-wTh" id="Dfb-Sd-RUB"/>
+                        <outlet property="tfAmount" destination="Kvv-Ux-CWF" id="xsV-jz-cTe"/>
                         <outlet property="tfDate" destination="IyZ-vV-wTh" id="4Ja-Wy-vop"/>
+                        <outlet property="tfFrom" destination="rIS-6K-k1p" id="ZAs-Ae-rTv"/>
+                        <outlet property="tfNote" destination="gGN-tX-uc1" id="2H8-4i-NXG"/>
                         <outlet property="tfTarget" destination="IyZ-vV-wTh" id="bDY-DJ-EBO"/>
+                        <outlet property="tfTo" destination="qmn-MA-g7Y" id="kEs-C9-q0l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFe-Rh-MEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7432.5" y="89.788732394366193"/>
+            <point key="canvasLocation" x="2923" y="90"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MlB-hP-6dI">
@@ -1284,4 +1304,7 @@ Vmlldw0KAA
         <image name="ic_keyboard_arrow_left_white_48pt.png" width="48" height="48"/>
         <image name="ic_keyboard_arrow_right_white_48pt.png" width="48" height="48"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tcH-6F-ULZ"/>
+    </inferredMetricsTieBreakers>
 </document>

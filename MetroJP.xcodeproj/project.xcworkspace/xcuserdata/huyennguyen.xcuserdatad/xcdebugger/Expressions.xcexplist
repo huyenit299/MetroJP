@@ -3,13 +3,32 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
+         contextName = "CalendarController.viewDidLoad() -&gt; ():CalendarController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "type">
+            </PersistentString>
+            <PersistentString
+               value = "tableProtocol">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "tableStation.bottomAnchor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "StationViewController.getDateSelected(date : String, id : Int) -&gt; ():StationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "type">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
