@@ -36,6 +36,8 @@
 		A03113741F4AFBF400B6EA55 /* ic_search_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A03113681F4AFBF400B6EA55 /* ic_search_white_48pt_3x.png */; };
 		A03113901F4AFC9000B6EA55 /* ic_star_border_white_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = A031138E1F4AFC9000B6EA55 /* ic_star_border_white_48dp.png */; };
 		A03113911F4AFC9000B6EA55 /* ic_star_border_white_48dp_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A031138F1F4AFC9000B6EA55 /* ic_star_border_white_48dp_2x.png */; };
+		A03732001F5421F800745869 /* NewRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03731FF1F5421F800745869 /* NewRecordController.swift */; };
+		A03DD5AD1F53D90900FB203A /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03DD5AC1F53D90900FB203A /* StationTableViewCell.swift */; };
 		A04750201F3AAFF500E1DE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */; };
 		A04750221F3AAFF500E1DE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750211F3AAFF500E1DE0C /* ViewController.swift */; };
 		A04750251F3AAFF500E1DE0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04750231F3AAFF500E1DE0C /* Main.storyboard */; };
@@ -53,6 +55,7 @@
 		A04750621F3AE40E00E1DE0C /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */; };
 		A04995FE1F4BC4730042F11B /* FoldingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */; };
 		A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */; };
+		A05E49EC1F53B3FE00A43262 /* NewRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05E49EB1F53B3FE00A43262 /* NewRecordViewController.swift */; };
 		A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */; };
 		A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */; };
 		A08BD4FA1F46948C004CE47C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F91F46948C004CE47C /* Section.swift */; };
@@ -61,6 +64,13 @@
 		A09716D01F4C39AD00205CF8 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */; };
 		A09716D21F4C435200205CF8 /* HardData.json in Resources */ = {isa = PBXBuildFile; fileRef = A09716D11F4C435200205CF8 /* HardData.json */; };
 		A09716D51F4C43E400205CF8 /* ParseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09716D41F4C43E400205CF8 /* ParseJson.swift */; };
+		A09AEB4F1F55055A00414FC4 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09AEB4C1F55052300414FC4 /* SnapKit.framework */; };
+		A09AEB501F55055A00414FC4 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09AEB4C1F55052300414FC4 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A09AEB5D1F5528D500414FC4 /* TrafficItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09AEB5C1F5528D500414FC4 /* TrafficItemView.xib */; };
+		A09AEB611F55292700414FC4 /* TrafficItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AEB601F55292700414FC4 /* TrafficItemView.swift */; };
+		A09AEB671F55591F00414FC4 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AEB661F55591F00414FC4 /* StationViewController.swift */; };
+		A09AEB711F55712400414FC4 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09AEB6E1F55711100414FC4 /* IQKeyboardManager.framework */; };
+		A09AEB721F55712400414FC4 /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09AEB6E1F55711100414FC4 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04901F4A7CFD0007CF9D /* CustomCell.swift */; };
 		A09E04A41F4A81370007CF9D /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04A31F4A81370007CF9D /* CalendarController.swift */; };
 		A0A2901A1F44B5DE00A7FD65 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */; };
@@ -199,6 +209,48 @@
 			remoteGlobalIDString = 6B60DEBB1D5BDA46009174A2;
 			remoteInfo = "JTAppleCalendar iOS";
 		};
+		A09AEB4B1F55052300414FC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09AEB461F55052200414FC4 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
+		A09AEB4D1F55052300414FC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09AEB461F55052200414FC4 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit Tests";
+		};
+		A09AEB511F55055A00414FC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09AEB461F55052200414FC4 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
+		A09AEB6D1F55711100414FC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CD2C4A61C5A615600975A7A;
+			remoteInfo = IQKeyboardManager;
+		};
+		A09AEB6F1F55711100414FC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CD5970C1D1C5EBE00AB28D3;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		A09AEB731F55712400414FC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CD2C4A51C5A615600975A7A;
+			remoteInfo = IQKeyboardManager;
+		};
 		A0C0932C1F4596CD00E4614F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */;
@@ -268,6 +320,8 @@
 				A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */,
 				A03113341F4AF2EA00B6EA55 /* Floaty.framework in Embed Frameworks */,
 				A09716CA1F4C1F9200205CF8 /* JTAppleCalendar.framework in Embed Frameworks */,
+				A09AEB501F55055A00414FC4 /* SnapKit.framework in Embed Frameworks */,
+				A09AEB721F55712400414FC4 /* IQKeyboardManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +356,8 @@
 		A03113681F4AFBF400B6EA55 /* ic_search_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search_white_48pt_3x.png; sourceTree = "<group>"; };
 		A031138E1F4AFC9000B6EA55 /* ic_star_border_white_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_star_border_white_48dp.png; sourceTree = "<group>"; };
 		A031138F1F4AFC9000B6EA55 /* ic_star_border_white_48dp_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_star_border_white_48dp_2x.png; sourceTree = "<group>"; };
+		A03731FF1F5421F800745869 /* NewRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecordController.swift; sourceTree = "<group>"; };
+		A03DD5AC1F53D90900FB203A /* StationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		A047501C1F3AAFF500E1DE0C /* MetroJP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroJP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A04750211F3AAFF500E1DE0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +381,7 @@
 		A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoldingCustomView.xib; sourceTree = "<group>"; };
 		A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFoldingCell.swift; sourceTree = "<group>"; };
+		A05E49EB1F53B3FE00A43262 /* NewRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecordViewController.swift; sourceTree = "<group>"; };
 		A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableHeaderView.xib; sourceTree = "<group>"; };
 		A08BD4F91F46948C004CE47C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -332,6 +389,11 @@
 		A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteViewController.swift; path = ../FavoriteViewController.swift; sourceTree = "<group>"; };
 		A09716D11F4C435200205CF8 /* HardData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HardData.json; sourceTree = "<group>"; };
 		A09716D41F4C43E400205CF8 /* ParseJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseJson.swift; sourceTree = "<group>"; };
+		A09AEB461F55052200414FC4 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../../../Downloads/SnapKit-develop 2/SnapKit.xcodeproj"; sourceTree = "<group>"; };
+		A09AEB5C1F5528D500414FC4 /* TrafficItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrafficItemView.xib; sourceTree = "<group>"; };
+		A09AEB601F55292700414FC4 /* TrafficItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrafficItemView.swift; sourceTree = "<group>"; };
+		A09AEB661F55591F00414FC4 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IQKeyboardManager.xcodeproj; path = "../../../Downloads/IQKeyboardManager-master/IQKeyboardManager.xcodeproj"; sourceTree = "<group>"; };
 		A09E04901F4A7CFD0007CF9D /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A09E04A31F4A81370007CF9D /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
@@ -386,7 +448,9 @@
 				A03113231F4AEB9C00B6EA55 /* Material.framework in Frameworks */,
 				A03113331F4AF2EA00B6EA55 /* Floaty.framework in Frameworks */,
 				A0ABAAF31F46DA5900274E30 /* UserNotifications.framework in Frameworks */,
+				A09AEB4F1F55055A00414FC4 /* SnapKit.framework in Frameworks */,
 				A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */,
+				A09AEB711F55712400414FC4 /* IQKeyboardManager.framework in Frameworks */,
 				A09716C91F4C1F9200205CF8 /* JTAppleCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +549,8 @@
 		A04750131F3AAFF500E1DE0C = {
 			isa = PBXGroup;
 			children = (
+				A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */,
+				A09AEB461F55052200414FC4 /* SnapKit.xcodeproj */,
 				A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */,
 				A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */,
 				A031132D1F4AF2DF00B6EA55 /* Floaty.xcodeproj */,
@@ -535,6 +601,9 @@
 				A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */,
 				A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */,
 				A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */,
+				A05E49EB1F53B3FE00A43262 /* NewRecordViewController.swift */,
+				A03731FF1F5421F800745869 /* NewRecordController.swift */,
+				A09AEB661F55591F00414FC4 /* StationViewController.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -590,6 +659,9 @@
 				A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */,
 				A031130F1F4AD95900B6EA55 /* SectionTableCell.swift */,
 				A0BCF0381F503339000D5BA9 /* StationItemView.swift */,
+				A03DD5AC1F53D90900FB203A /* StationTableViewCell.swift */,
+				A09AEB5C1F5528D500414FC4 /* TrafficItemView.xib */,
+				A09AEB601F55292700414FC4 /* TrafficItemView.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -623,6 +695,24 @@
 				A09716D41F4C43E400205CF8 /* ParseJson.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		A09AEB471F55052200414FC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A09AEB4C1F55052300414FC4 /* SnapKit.framework */,
+				A09AEB4E1F55052300414FC4 /* SnapKit Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A09AEB691F55710F00414FC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A09AEB6E1F55711100414FC4 /* IQKeyboardManager.framework */,
+				A09AEB701F55711100414FC4 /* IQKeyboardManagerSwift.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A0A28FF61F44B5BF00A7FD65 /* SnapKit */ = {
@@ -718,6 +808,8 @@
 				A03113261F4AEB9D00B6EA55 /* PBXTargetDependency */,
 				A03113361F4AF2EB00B6EA55 /* PBXTargetDependency */,
 				A09716CC1F4C1F9200205CF8 /* PBXTargetDependency */,
+				A09AEB521F55055A00414FC4 /* PBXTargetDependency */,
+				A09AEB741F55712400414FC4 /* PBXTargetDependency */,
 			);
 			name = MetroJP;
 			productName = MetroJP;
@@ -807,12 +899,20 @@
 					ProjectRef = A031132D1F4AF2DF00B6EA55 /* Floaty.xcodeproj */;
 				},
 				{
+					ProductGroup = A09AEB691F55710F00414FC4 /* Products */;
+					ProjectRef = A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */;
+				},
+				{
 					ProductGroup = A09716B51F4C1F8200205CF8 /* Products */;
 					ProjectRef = A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */;
 				},
 				{
 					ProductGroup = A031131E1F4AEB9300B6EA55 /* Products */;
 					ProjectRef = A031131D1F4AEB9300B6EA55 /* Material.xcodeproj */;
+				},
+				{
+					ProductGroup = A09AEB471F55052200414FC4 /* Products */;
+					ProjectRef = A09AEB461F55052200414FC4 /* SnapKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -879,6 +979,34 @@
 			fileType = wrapper.application;
 			path = "JTAppleCalendar tvOS Example.app";
 			remoteRef = A09716C71F4C1F8300205CF8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09AEB4C1F55052300414FC4 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = A09AEB4B1F55052300414FC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09AEB4E1F55052300414FC4 /* SnapKit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit Tests.xctest";
+			remoteRef = A09AEB4D1F55052300414FC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09AEB6E1F55711100414FC4 /* IQKeyboardManager.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IQKeyboardManager.framework;
+			remoteRef = A09AEB6D1F55711100414FC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A09AEB701F55711100414FC4 /* IQKeyboardManagerSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IQKeyboardManagerSwift.framework;
+			remoteRef = A09AEB6F1F55711100414FC4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		A0C0932D1F4596CD00E4614F /* Alamofire.framework */ = {
@@ -948,6 +1076,7 @@
 				A031132A1F4AEEF900B6EA55 /* ic_add_circle_outline_white_2x.png in Resources */,
 				A09716D21F4C435200205CF8 /* HardData.json in Resources */,
 				A047505A1F3ABB5000E1DE0C /* ic_menu_black_24dp.png in Resources */,
+				A09AEB5D1F5528D500414FC4 /* TrafficItemView.xib in Resources */,
 				A03113901F4AFC9000B6EA55 /* ic_star_border_white_48dp.png in Resources */,
 				A02F567B1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.png in Resources */,
 				A02F567D1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_3x.png in Resources */,
@@ -1008,13 +1137,17 @@
 				A04750551F3AB62F00E1DE0C /* LeftController.swift in Sources */,
 				A0A2902F1F44B5DE00A7FD65 /* ConstraintOffsetTarget.swift in Sources */,
 				A0A290231F44B5DE00A7FD65 /* ConstraintLayoutGuide.swift in Sources */,
+				A09AEB671F55591F00414FC4 /* StationViewController.swift in Sources */,
+				A03732001F5421F800745869 /* NewRecordController.swift in Sources */,
 				A0A290281F44B5DE00A7FD65 /* ConstraintMaker.swift in Sources */,
 				A0A290291F44B5DE00A7FD65 /* ConstraintMakerEditable.swift in Sources */,
+				A05E49EC1F53B3FE00A43262 /* NewRecordViewController.swift in Sources */,
 				A04750511F3AB0C500E1DE0C /* MainController.swift in Sources */,
 				A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */,
 				A0A290271F44B5DE00A7FD65 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				A0A2901C1F44B5DE00A7FD65 /* ConstraintConfig.swift in Sources */,
 				A03112FF1F4AD5B200B6EA55 /* SlideViewController.swift in Sources */,
+				A03DD5AD1F53D90900FB203A /* StationTableViewCell.swift in Sources */,
 				A0A2901E1F44B5DE00A7FD65 /* ConstraintDescription.swift in Sources */,
 				A0A2901B1F44B5DE00A7FD65 /* ConstraintAttributes.swift in Sources */,
 				A0A290311F44B5DE00A7FD65 /* ConstraintPriorityTarget.swift in Sources */,
@@ -1040,6 +1173,7 @@
 				A0A2901A1F44B5DE00A7FD65 /* Constraint.swift in Sources */,
 				A0A290341F44B5DE00A7FD65 /* ConstraintView.swift in Sources */,
 				A0A2902E1F44B5DE00A7FD65 /* ConstraintMultiplierTarget.swift in Sources */,
+				A09AEB611F55292700414FC4 /* TrafficItemView.swift in Sources */,
 				A0A290301F44B5DE00A7FD65 /* ConstraintPriority.swift in Sources */,
 				A04750201F3AAFF500E1DE0C /* AppDelegate.swift in Sources */,
 				A0A2903B1F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift in Sources */,
@@ -1094,6 +1228,16 @@
 			isa = PBXTargetDependency;
 			name = "JTAppleCalendar iOS";
 			targetProxy = A09716CB1F4C1F9200205CF8 /* PBXContainerItemProxy */;
+		};
+		A09AEB521F55055A00414FC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			targetProxy = A09AEB511F55055A00414FC4 /* PBXContainerItemProxy */;
+		};
+		A09AEB741F55712400414FC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManager;
+			targetProxy = A09AEB731F55712400414FC4 /* PBXContainerItemProxy */;
 		};
 		A0C0933D1F4596DC00E4614F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

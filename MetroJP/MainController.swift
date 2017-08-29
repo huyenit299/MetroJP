@@ -140,8 +140,12 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func clickAdd(section: Int, month: String) {
         print("add new")
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "NewRecord") as! NewRecordViewController
         
-        let scr = storyboard?.instantiateViewController(withIdentifier: "CreateNewRecord") as! CreateNewRecordControllerViewController
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "NewRecordController") as! NewRecordController
+        
+        let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "CreateNewRecord") as! CreateNewRecordControllerViewController
         present(scr, animated: true, completion: nil)
     }
     
