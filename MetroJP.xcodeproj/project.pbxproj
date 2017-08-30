@@ -74,6 +74,7 @@
 		A09AEB761F55754C00414FC4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AEB751F55754C00414FC4 /* Constant.swift */; };
 		A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04901F4A7CFD0007CF9D /* CustomCell.swift */; };
 		A09E04A41F4A81370007CF9D /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09E04A31F4A81370007CF9D /* CalendarController.swift */; };
+		A0A1EB551F569C2C00A04C3F /* RecordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1EB541F569C2C00A04C3F /* RecordError.swift */; };
 		A0A2901A1F44B5DE00A7FD65 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */; };
 		A0A2901B1F44B5DE00A7FD65 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF81F44B5DE00A7FD65 /* ConstraintAttributes.swift */; };
 		A0A2901C1F44B5DE00A7FD65 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A28FF91F44B5DE00A7FD65 /* ConstraintConfig.swift */; };
@@ -398,6 +399,7 @@
 		A09AEB751F55754C00414FC4 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A09E04901F4A7CFD0007CF9D /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A09E04A31F4A81370007CF9D /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		A0A1EB541F569C2C00A04C3F /* RecordError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordError.swift; sourceTree = "<group>"; };
 		A0A28FF71F44B5DE00A7FD65 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		A0A28FF81F44B5DE00A7FD65 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
 		A0A28FF91F44B5DE00A7FD65 /* ConstraintConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
@@ -696,6 +698,7 @@
 			children = (
 				A09716D41F4C43E400205CF8 /* ParseJson.swift */,
 				A09AEB751F55754C00414FC4 /* Constant.swift */,
+				A0A1EB541F569C2C00A04C3F /* RecordError.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1143,6 +1146,7 @@
 				A09AEB671F55591F00414FC4 /* StationViewController.swift in Sources */,
 				A03732001F5421F800745869 /* NewRecordController.swift in Sources */,
 				A0A290281F44B5DE00A7FD65 /* ConstraintMaker.swift in Sources */,
+				A0A1EB551F569C2C00A04C3F /* RecordError.swift in Sources */,
 				A0A290291F44B5DE00A7FD65 /* ConstraintMakerEditable.swift in Sources */,
 				A05E49EC1F53B3FE00A43262 /* NewRecordViewController.swift in Sources */,
 				A04750511F3AB0C500E1DE0C /* MainController.swift in Sources */,

@@ -46,7 +46,55 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func saveDataClick(_ sender: Any) {
-        print("aaa+"+tfNote.text!)
+        if (tfDate.text?.isEmpty)! {
+            let alert = UIAlertController(title: "", message: RecordError().LACK_DATE, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if (tfTarget.text?.isEmpty)! {
+            let alert = UIAlertController(title: "", message: RecordError().LACK_TARGET, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if (tfFrom.text?.isEmpty)! {
+            let alert = UIAlertController(title: "", message: RecordError().LACK_FROM, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if (tfTo.text?.isEmpty)! {
+            let alert = UIAlertController(title: "", message: RecordError().LACK_TO, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if (tfAmount.text?.isEmpty)! {
+            let alert = UIAlertController(title: "", message: RecordError().LACK_PRICE, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        var traffic: String = ""
+        if (!listStations.isEmpty) {
+            for station in listStations {
+                if (station.select) {
+                    traffic += String(station.id) + ","
+                }
+            }
+        }
+        if (traffic.isEmpty) {
+            let alert = UIAlertController(title: "", message: RecordError().LACK_TRAFFIC, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
     }
 
     func initData() {
