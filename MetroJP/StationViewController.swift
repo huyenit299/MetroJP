@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var fromDate: String = ""
 var toDate: String = ""
@@ -46,6 +47,12 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func saveDataClick(_ sender: Any) {
+        do {
+            try
+                DatabaseManagement.shared.queryAllTraffic()
+        }catch {
+        }
+        
         if (tfDate.text?.isEmpty)! {
             let alert = UIAlertController(title: "", message: RecordError().LACK_DATE, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -95,10 +102,41 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
             self.present(alert, animated: true, completion: nil)
             return
         }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let record = NSEntityDescription.insertNewObject(forEntityName: "RecordTraffic", into: context)
+        record.setValue(tfDate.text, forKey: "date")
+        record.setValue(tfTarget.text, forKey: "target")
+        record.setValue(tfFrom.text, forKey: "from")
+        record.setValue(tfTo.text, forKey: "to")
+        record.setValue(tfAmount.text, forKey: "price")
+        record.setValue(tfNote.text, forKey: "note")
+        record.setValue(traffic, forKey: "listTraffic")
+        record.setValue(1, forKey: "id")
+        do {
+            try context.save()
+            print("SAVE record")
+        }
+        catch {
+            print("error")
+        }
+        
+        do {
+            try
+                DatabaseManagement.shared.addTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!)
+            }catch {
+            }
+        
+        do {
+            try
+                DatabaseManagement.shared.queryAllTraffic()
+        }catch {
+        }
     }
 
     func initData() {
-        let station1 = Station(id: 1, name: "JR", select: false)
+        let station1 = Station(id: 1, name: "JR", select: true)
         let station2 = Station(id: 1, name: "地下鉄", select: false)
         let station3 = Station(id: 1, name: "私鉄", select: false)
         let station4 = Station(id: 1, name: "高速", select: false)
