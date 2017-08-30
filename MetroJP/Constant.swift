@@ -10,4 +10,5 @@ import UIKit
 class Constant {
   public let TYPE_FROM = 1
   public let TYPE_TO = 2
+  public let TYPE_RECORD = 3
 }

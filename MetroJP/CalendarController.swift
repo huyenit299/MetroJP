@@ -9,7 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
-var type: Int!
+var type: Int = 0
 class CalendarController: UIViewController {
     let formatter = DateFormatter()
     var prePostVisibility: ((CellState, CustomCell?)->())?

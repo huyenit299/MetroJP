@@ -8,16 +8,17 @@
 
 import UIKit
 
+var fromDate: String = ""
+var toDate: String = ""
+var recordDate: String = ""
 class StationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DateSelectedProtocol {
     var listStations: Array<Station> = []
-
-    @IBAction func saveStationRecord(_ sender: Any) {
-    }
     @IBOutlet weak var tfNote: UITextField!
     @IBOutlet weak var tfAmount: UITextField!
     @IBOutlet weak var tfFrom: UITextField!
-    @IBOutlet weak var tfTarget: UITableView!
-    @IBOutlet weak var tfDate: UITableView!
+
+    @IBOutlet weak var tfDate: UITextField!
+    @IBOutlet weak var tfTarget: UITextField!
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var tableStation: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
@@ -30,6 +31,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         navigationBar.topItem?.title = "外出先編集"
         navigationBar.backItem?.title = "Back"
         
+        tfDate.delegate = self
         tfFrom.delegate = self
         tfTo.delegate = self
         
@@ -109,34 +111,47 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if (textField == tfFrom) {
-            print("aaa+"+lbDate.text!)
+        switch textField {
+        case tfFrom:
             type = Constant().TYPE_FROM
+            break
+        case tfTo:
+            type = Constant().TYPE_TO
+            break
+        case tfDate:
+            type = Constant().TYPE_RECORD
+            break
+        default:
+            break
+        }
+        
+        if (textField == tfFrom || textField == tfTo || textField == tfDate) {
             let scr = storyboard?.instantiateViewController(withIdentifier: "calendarCollection") as! CalendarController
             scr.tableProtocol = self
-            type = Constant().TYPE_FROM
-            scr.data = "1"
-            self.navigationController?.pushViewController(scr, animated: true)
-        }
-        else if (textField == tfTo) {
-            type = Constant().TYPE_TO
-                        let scr = storyboard?.instantiateViewController(withIdentifier: "calendarCollection") as! CalendarController
-            scr.tableProtocol = self
-            scr.data = "2"
-
-            type = Constant().TYPE_TO
             self.navigationController?.pushViewController(scr, animated: true)
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tfDate.text = recordDate
+        tfFrom.text = fromDate
+        tfTo.text = toDate
+    }
     
     //get date selected
     func getDateSelected(date: String, id: Int) {
-        print("here i come=" + String(id))
-        if (id == Constant().TYPE_FROM) {
-            tfFrom.text = date
-        } else if (id == Constant().TYPE_TO) {
-            tfTo.text? = date
+        switch id {
+        case Constant().TYPE_FROM:
+            fromDate = date
+            break
+        case Constant().TYPE_TO:
+            toDate = date
+            break
+        case Constant().TYPE_RECORD:
+            recordDate = date
+            break
+        default:
+            break
         }
     }
 }

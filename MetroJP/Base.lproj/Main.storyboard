@@ -145,7 +145,7 @@
                                         <rect key="frame" x="0.0" y="28" width="280" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nxx-QR-FJR" id="IRb-Pz-mEx">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="51.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqz-s4-fCa">
@@ -895,7 +895,7 @@ Vmlldw0KAA
                                             </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="0.0"/>
@@ -904,6 +904,9 @@ Vmlldw0KAA
                                                     <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="zSH-x2-QKC" kind="presentation" id="055-Es-eWs"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZH-Nk-kdh">
                                             <rect key="frame" x="20" y="60" width="300" height="30"/>
@@ -991,9 +994,9 @@ Vmlldw0KAA
                                                     <rect key="frame" x="69.5" y="0.0" width="250.5" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     <connections>
-                                                        <segue destination="zSH-x2-QKC" kind="show" id="tcH-6F-ULZ"/>
+                                                        <segue destination="zSH-x2-QKC" kind="presentation" id="tcH-6F-ULZ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1025,11 +1028,11 @@ Vmlldw0KAA
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="q5y-sA-L8q"/>
                                                     </constraints>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                                     <connections>
-                                                        <segue destination="zSH-x2-QKC" kind="show" id="0AW-eX-nLx"/>
+                                                        <segue destination="zSH-x2-QKC" kind="presentation" id="0AW-eX-nLx"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1073,7 +1076,7 @@ Vmlldw0KAA
                                             </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-Se-t7K">
                                             <rect key="frame" x="20" y="170" width="300" height="30"/>
@@ -1143,10 +1146,10 @@ Vmlldw0KAA
                         <outlet property="navigationBar" destination="mKE-XN-SCt" id="LZ2-WR-sWn"/>
                         <outlet property="tableStation" destination="IyZ-vV-wTh" id="Dfb-Sd-RUB"/>
                         <outlet property="tfAmount" destination="Kvv-Ux-CWF" id="xsV-jz-cTe"/>
-                        <outlet property="tfDate" destination="IyZ-vV-wTh" id="4Ja-Wy-vop"/>
+                        <outlet property="tfDate" destination="HGl-CO-gkg" id="Hr2-pP-Zd3"/>
                         <outlet property="tfFrom" destination="rIS-6K-k1p" id="ZAs-Ae-rTv"/>
                         <outlet property="tfNote" destination="gGN-tX-uc1" id="2H8-4i-NXG"/>
-                        <outlet property="tfTarget" destination="IyZ-vV-wTh" id="bDY-DJ-EBO"/>
+                        <outlet property="tfTarget" destination="TX9-wq-931" id="CBL-g9-siY"/>
                         <outlet property="tfTo" destination="qmn-MA-g7Y" id="kEs-C9-q0l"/>
                     </connections>
                 </viewController>
