@@ -12,7 +12,7 @@ import CoreData
 var fromDate: String = ""
 var toDate: String = ""
 var recordDate: String = ""
-class StationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DateSelectedProtocol {
+class StationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DateSelectedProtocol, SelectSwitchDelegate {
     var listTraffic: Array<TrafficModel> = []
     @IBOutlet weak var tfNote: UITextField!
     @IBOutlet weak var tfAmount: UITextField!
@@ -30,7 +30,6 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         initData()
         
         navigationBar.topItem?.title = "外出先編集"
-        navigationBar.backItem?.title = "Back"
         
         tfDate.delegate = self
         tfFrom.delegate = self
@@ -41,6 +40,11 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
 
         tableStation.dataSource = self
         tableStation.delegate = self
+    }
+    
+    
+    @IBAction func backClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveDataClick(_ sender: Any) {
@@ -143,6 +147,8 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrafficItemView") as! TrafficItemView
         cell.lbStation.text = listTraffic[indexPath.row].name
         cell.selectStation.setOn(listTraffic[indexPath.row].select, animated: false)
+        cell.row = indexPath.row
+        cell.delegate = self
         return cell
     }
     
@@ -154,10 +160,10 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         return 50
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("select="+String(indexPath.row))
-        listTraffic[indexPath.row].select = !listTraffic[indexPath.row].select
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("select="+String(indexPath.row))
+//        listTraffic[indexPath.row].select = !listTraffic[indexPath.row].select
+//    }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
@@ -203,4 +209,10 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
             break
         }
     }
+    
+    func clickSwitch(row: Int) {
+        print("select11="+String(row))
+        listTraffic[row].select = !listTraffic[row].select
+    }
+
 }

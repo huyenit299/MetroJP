@@ -126,11 +126,9 @@ class CalendarController: UIViewController {
 
     
     @IBAction func goBackList(_ sender: Any) {
-        
         let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
-//        let scr = storyboard?.instantiateViewController(withIdentifier: "Main") as! MainController
         scr.getDateSelected(date: selectedDate, id: type)
-        present(scr, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

@@ -145,7 +145,7 @@
                                         <rect key="frame" x="0.0" y="28" width="280" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nxx-QR-FJR" id="IRb-Pz-mEx">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqz-s4-fCa">
@@ -441,7 +441,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6aW-pi-kwt" id="Od3-J8-QnU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -638,7 +638,7 @@
                                         <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="r2J-BT-0DN" id="CUc-5P-3Zk" customClass="StationItemView" customModule="MetroJP" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsk-NA-ejX">
@@ -753,7 +753,7 @@ Vmlldw0KAA
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YUC-qv-3oo" id="yVN-We-SGh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOq-39-4WK">
@@ -856,7 +856,16 @@ Vmlldw0KAA
                                     <color key="textShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="lhJ-0v-nJA">
+                                    <navigationItem id="lhJ-0v-nJA">
+                                        <string key="title" base64-UTF8="YES">
+5aSW5Ye65YWI57eo6ZuGDQoAA
+</string>
+                                        <barButtonItem key="leftBarButtonItem" image="ic_keyboard_arrow_left_white_48pt.png" style="done" id="1L1-Q2-bs4">
+                                            <color key="tintColor" red="0.1136646754" green="0.48567053809999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backClick:" destination="Du1-sA-ZeX" id="HRD-db-S4B"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" id="gDm-e5-cJm">
                                             <string key="title" base64-UTF8="YES">
 5a6M5LqGDQoAA
@@ -865,6 +874,9 @@ Vmlldw0KAA
                                                 <action selector="saveDataClick:" destination="Du1-sA-ZeX" id="tD7-AC-acq"/>
                                             </connections>
                                         </barButtonItem>
+                                        <string key="userLabel" base64-UTF8="YES">
+5aSW5Ye65YWI57eo6ZuGICAAICAAA
+</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

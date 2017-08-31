@@ -20,6 +20,9 @@
                     <subviews>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thh-WR-X3A">
                             <rect key="frame" x="306" y="9.5" width="51" height="31"/>
+                            <connections>
+                                <action selector="switchSelect:" destination="iN0-l3-epB" eventType="valueChanged" id="EdT-hN-QHv"/>
+                            </connections>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6J-Gp-F7X">
                             <rect key="frame" x="20" y="0.0" width="276" height="50"/>
