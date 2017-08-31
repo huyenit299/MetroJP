@@ -1,14 +1,14 @@
 //
-//  Station.swift
+//  Traffic.swift
 //  MetroJP
 //
-//  Created by Huyen Nguyen on 8/25/17.
+//  Created by Huyen Nguyen on 8/31/17.
 //  Copyright © 2017 HuyenNguyen. All rights reserved.
 //
 
 import Foundation
 
-class Station {
+class TrafficModel {
     var id: Int = 0
     var name: String = ""
     var select: Bool = false
@@ -21,5 +21,4 @@ class Station {
         self.name = name
         self.select = select
     }
-
 }

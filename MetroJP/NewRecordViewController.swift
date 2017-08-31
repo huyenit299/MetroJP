@@ -11,13 +11,13 @@ import UIKit
 class NewRecordViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableSection: UITableView!
-    var listStations: Array<Station> = []
+    var listStations: Array<TrafficModel> = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        let station1 = Station(id: 1, name: "JR", select: false)
-        let station2 = Station(id: 1, name: "地下鉄", select: false)
-        let station3 = Station(id: 1, name: "私鉄", select: false)
-        let station4 = Station(id: 1, name: "高速", select: false)
+        let station1 = TrafficModel(id: 1, name: "JR", select: false)
+        let station2 = TrafficModel(id: 1, name: "地下鉄", select: false)
+        let station3 = TrafficModel(id: 1, name: "私鉄", select: false)
+        let station4 = TrafficModel(id: 1, name: "高速", select: false)
         listStations.append(station1)
         listStations.append(station2)
         listStations.append(station3)

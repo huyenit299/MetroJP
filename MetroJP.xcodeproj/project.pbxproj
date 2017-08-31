@@ -60,6 +60,7 @@
 		A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */; };
 		A08BD4FA1F46948C004CE47C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F91F46948C004CE47C /* Section.swift */; };
 		A09346061F57F80F0067E589 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09346051F57F80F0067E589 /* LeftPaddedTextField.swift */; };
+		A093461E1F5803B90067E589 /* Traffic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A093461D1F5803B90067E589 /* Traffic.swift */; };
 		A09716C91F4C1F9200205CF8 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; };
 		A09716CA1F4C1F9200205CF8 /* JTAppleCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A09716D01F4C39AD00205CF8 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */; };
@@ -122,7 +123,6 @@
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */; };
 		A0D1C6301F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */; };
-		A0F7F29A1F5023930036F4FE /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F7F2991F5023930036F4FE /* Station.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -451,6 +451,7 @@
 		A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableHeaderView.xib; sourceTree = "<group>"; };
 		A08BD4F91F46948C004CE47C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		A09346051F57F80F0067E589 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
+		A093461D1F5803B90067E589 /* Traffic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traffic.swift; sourceTree = "<group>"; };
 		A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JTAppleCalendar.xcodeproj; path = "../../../Downloads/JTAppleCalendar-master/JTAppleCalendar.xcodeproj"; sourceTree = "<group>"; };
 		A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteViewController.swift; path = ../FavoriteViewController.swift; sourceTree = "<group>"; };
 		A09716D11F4C435200205CF8 /* HardData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HardData.json; sourceTree = "<group>"; };
@@ -510,7 +511,6 @@
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveData.xcdatamodel; sourceTree = "<group>"; };
 		A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewRecordControllerViewController.swift; sourceTree = "<group>"; };
-		A0F7F2991F5023930036F4FE /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -724,8 +724,8 @@
 				A0C0930C1F45866700E4614F /* DateSection.swift */,
 				A047505E1F3AC2B600E1DE0C /* Record.swift */,
 				A09716D11F4C435200205CF8 /* HardData.json */,
-				A0F7F2991F5023930036F4FE /* Station.swift */,
 				A0A1EB921F56DA3500A04C3F /* RecordTraffic.swift */,
+				A093461D1F5803B90067E589 /* Traffic.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1271,6 +1271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D1C6301F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift in Sources */,
+				A093461E1F5803B90067E589 /* Traffic.swift in Sources */,
 				A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */,
 				A08BD4FA1F46948C004CE47C /* Section.swift in Sources */,
 				A0A2902C1F44B5DE00A7FD65 /* ConstraintMakerPriortizable.swift in Sources */,
@@ -1280,7 +1281,6 @@
 				A0A290351F44B5DE00A7FD65 /* ConstraintView+Extensions.swift in Sources */,
 				A0A2902D1F44B5DE00A7FD65 /* ConstraintMakerRelatable.swift in Sources */,
 				A0A2903A1F44B5DE00A7FD65 /* LayoutConstraintItem.swift in Sources */,
-				A0F7F29A1F5023930036F4FE /* Station.swift in Sources */,
 				A04750621F3AE40E00E1DE0C /* MainTableViewCell.swift in Sources */,
 				A0A290371F44B5DE00A7FD65 /* Debugging.swift in Sources */,
 				A09716D51F4C43E400205CF8 /* ParseJson.swift in Sources */,

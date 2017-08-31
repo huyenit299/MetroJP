@@ -13,7 +13,7 @@ var fromDate: String = ""
 var toDate: String = ""
 var recordDate: String = ""
 class StationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DateSelectedProtocol {
-    var listStations: Array<Station> = []
+    var listTraffic: Array<TrafficModel> = []
     @IBOutlet weak var tfNote: UITextField!
     @IBOutlet weak var tfAmount: UITextField!
     @IBOutlet weak var tfFrom: UITextField!
@@ -39,20 +39,11 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         let nib = UINib(nibName: "TrafficItemView", bundle: nil)
         tableStation.register(nib, forCellReuseIdentifier: "TrafficItemView")
 
-        
         tableStation.dataSource = self
         tableStation.delegate = self
-
-
     }
     
     @IBAction func saveDataClick(_ sender: Any) {
-//        do {
-//            try
-//                DatabaseManagement.shared.queryAllTraffic()
-//        }catch {
-//        }
-        
         if (tfDate.text?.isEmpty)! {
             let alert = UIAlertController(title: "", message: RecordError().LACK_DATE, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -89,10 +80,10 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         var traffic: String = ""
-        if (!listStations.isEmpty) {
-            for station in listStations {
-                if (station.select) {
-                    traffic += String(station.id) + ","
+        if (!listTraffic.isEmpty) {
+            for t in listTraffic {
+                if (t.select) {
+                    traffic += String(t.id) + ","
                 }
             }
         }
@@ -124,39 +115,19 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         
         do {
             try
-                DatabaseManagement.shared.addTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!)
+                DatabaseManagement.shared.addRecordTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!)
             }catch {
             }
         
         do {
             try
-                DatabaseManagement.shared.queryAllTraffic()
+                DatabaseManagement.shared.queryAllRecordTraffic()
         }catch {
         }
     }
 
     func initData() {
-        let station1 = Station(id: 1, name: "JR", select: true)
-        let station2 = Station(id: 1, name: "地下鉄", select: false)
-        let station3 = Station(id: 1, name: "私鉄", select: false)
-        let station4 = Station(id: 1, name: "高速", select: false)
-        listStations.append(station1)
-        listStations.append(station2)
-        listStations.append(station3)
-        listStations.append(station4)
-        listStations.append(station1)
-        listStations.append(station1)
-        listStations.append(station2)
-        listStations.append(station3)
-        listStations.append(station4)
-        listStations.append(station1)
-        listStations.append(station2)
-        listStations.append(station3)
-        listStations.append(station4)
-        listStations.append(station1)
-        listStations.append(station2)
-        listStations.append(station3)
-        listStations.append(station4)
+        listTraffic = DatabaseManagement.shared.queryAllTraffic()
     }
     
     override func didReceiveMemoryWarning() {
@@ -164,23 +135,14 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listStations.count
+        return listTraffic.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrafficItemView") as! TrafficItemView
-        cell.lbStation.text = "label " + String(indexPath.row)
+        cell.lbStation.text = listTraffic[indexPath.row].name
+        cell.selectStation.setOn(listTraffic[indexPath.row].select, animated: false)
         return cell
     }
     
@@ -189,11 +151,12 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("select="+String(indexPath.row))
+        listTraffic[indexPath.row].select = !listTraffic[indexPath.row].select
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
