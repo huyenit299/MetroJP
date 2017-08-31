@@ -18,7 +18,7 @@ class RecordTrafficModel {
     var traffic: String = ""
     var note: String = ""
     
-    init(id: Int,date: String, target: String, from: String, to: String, traffic: String, price: String, note: String) {
+    init(id: Int, date: String, target: String, from: String, to: String, traffic: String, price: String, note: String) {
         self.id = id
         self.date = date
         self.target = target

@@ -8,12 +8,11 @@
 import SQLite
 
 class DatabaseManagement {
-    static let shared:DatabaseManagement = DatabaseManagement()
+    static var shared = DatabaseManagement()
     private let db: Connection?
-    
     let tblTraffic = Table("RecordTraffic")
     let id = Expression<Int64>("id")
-    let date = Expression<String?>("date")
+    let date = Expression<String>("date")
     let target = Expression<String>("target")
     let from = Expression<String>("from")
     let to = Expression<String>("to")
@@ -23,7 +22,7 @@ class DatabaseManagement {
     
     private init() {
         do {
-            db = try Connection("/Users/huyennguyen/Documents/ios/MetroJP/MetroJP.sqlite")
+            db = try Connection("/Users/huyennguyen/Documents/ios/MetroJP/MetroJPDB.sqlite")
             print ("open database")
         } catch {
             db = nil
@@ -44,22 +43,21 @@ class DatabaseManagement {
     }
     
     func queryAllTraffic() -> [RecordTrafficModel] {
-        var listTraffic = [RecordTrafficModel]()
-        
-    
+        var listTraffic: Array<RecordTrafficModel> = []
         if (db != nil) {
             do {
-                for traffic in try db!.prepare(self.tblTraffic) {
-                    let newTraffic = RecordTrafficModel(id: Int(traffic[id]), date: traffic[date]!, target: traffic[target], from: traffic[from], to: traffic[to], traffic: traffic[traffics], price: traffic[price], note: traffic[note])
-                    listTraffic.append(newTraffic)
+                let list = try self.db!.prepare(self.tblTraffic)
+                 for t in list {
+                    print("id: \(t[id]) ; target = \(String(describing: t[price]))")
+                    listTraffic.append(RecordTrafficModel(id: Int((t[id])), date: (t[date]), target: (t[target]), from: (t[from]), to: (t[to]), traffic: (t[traffics]), price: (t[price]), note: (t[note])))
                 }
             } catch {
-                print("Cannot get list of traffic")
+                print(error)
             }
         }
-        for traffic in listTraffic {
-            print("each traffic = \(traffic)")
-        }
+//        for traffic in listTraffic {
+//            print("each traffic = \(traffic)")
+//        }
         return listTraffic
     }
     

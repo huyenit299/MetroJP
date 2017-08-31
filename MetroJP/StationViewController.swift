@@ -47,11 +47,11 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func saveDataClick(_ sender: Any) {
-        do {
-            try
-                DatabaseManagement.shared.queryAllTraffic()
-        }catch {
-        }
+//        do {
+//            try
+//                DatabaseManagement.shared.queryAllTraffic()
+//        }catch {
+//        }
         
         if (tfDate.text?.isEmpty)! {
             let alert = UIAlertController(title: "", message: RecordError().LACK_DATE, preferredStyle: .alert)

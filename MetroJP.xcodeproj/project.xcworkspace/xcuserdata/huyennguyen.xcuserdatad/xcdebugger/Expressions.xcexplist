@@ -33,6 +33,29 @@
          contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "DatabaseManagement.queryAllTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "t[date]">
+            </PersistentString>
+            <PersistentString
+               value = "item[self.date]">
+            </PersistentString>
+            <PersistentString
+               value = "t[target]">
+            </PersistentString>
+            <PersistentString
+               value = "list">
+            </PersistentString>
+            <PersistentString
+               value = "t[1]">
+            </PersistentString>
+            <PersistentString
+               value = "list.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "StationViewController.getDateSelected(date : String, id : Int) -&gt; ():StationViewController.swift">
          <PersistentStrings>
             <PersistentString
