@@ -204,9 +204,6 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func clickAdd(section: Int, month: String) {
         print("add new")
-//        let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
-//        present(scr, animated: true, completion: nil)
-        
         let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
         self.navigationController?.pushViewController(scr, animated: true)
     }
@@ -274,6 +271,18 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.fab.close()
         }
 
+        let addRecord = FloatyItem()
+        addRecord.buttonColor = UIColor.blue
+        addRecord.circleShadowColor = UIColor.red
+        addRecord.titleShadowColor = UIColor.blue
+        addRecord.title = "Add new record"
+        addRecord.icon = UIImage(named: "ic_add_circle_outline_white")
+        addRecord.handler = { (item) in
+            let scr = self.storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
+            self.navigationController?.pushViewController(scr, animated: true)
+        }
+        
+        fab.addItem(item: addRecord)
         fab.addItem(item: itemRating)
         fab.addItem(item: itemSearch)
         fab.addItem(item: itemUpload)
