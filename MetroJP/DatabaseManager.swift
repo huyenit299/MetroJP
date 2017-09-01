@@ -65,6 +65,25 @@ class DatabaseManagement {
         return listRecordTraffic
     }
     
+    func queryRecordTraffic(trafficId: Int64) -> RecordTrafficModel {
+        var record = RecordTrafficModel()
+        if (db != nil) {
+            do {
+                 let tbTrafficFilter = tblRecordTraffic.filter(id == trafficId)
+                 let list = try self.db!.prepare(tbTrafficFilter)
+                 for t in list {
+                    print("id: \(t[id]) ; target = \(String(describing: t[price]))")
+                    record = RecordTrafficModel(id: Int(t[id]), date: t[date], target: t[target], from: t[from], to: t[to], traffic: t[traffics], price: t[price], note: t[note])
+                }
+                 //
+            } catch {
+                print(error)
+            }
+        }
+        return record
+    }
+
+    
     func updateRecordTraffic(trafficId:Int64, newTraffic: RecordTrafficModel) -> Bool {
         let tbTrafficFilter = tblRecordTraffic.filter(id == trafficId)
         do {

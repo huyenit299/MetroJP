@@ -175,25 +175,25 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        print("hello")
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "expandableHeaderView") as! ExpandableHeaderView
          headerView.customInit(date: listRecord[section].month, price_right: listRecord[section].totalPrice, section: section, delegate: self)
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 68
+        return 44
     }
     
     
     func toggleSection(header: ExpandableHeaderView, section: Int) {
         self.listRecord[section].expand = !self.listRecord[section].expand
         mainTable.beginUpdates()
-        mainTable.reloadSections([section], with: .automatic)
+        mainTable.reloadSections([section], with: .none)
         mainTable.endUpdates()
     }
     
     func clickMore(section: Int) {
-        print("more nè")
         let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -201,25 +201,18 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func clickAdd(section: Int, month: String) {
         print("add new")
-//        let scr = storyboard?.instantiateViewController(withIdentifier: "NewRecord") as! NewRecordViewController
-        
-//        let scr = storyboard?.instantiateViewController(withIdentifier: "NewRecordController") as! NewRecordController
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
+//        present(scr, animated: true, completion: nil)
         
         let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
-//        let scr = storyboard?.instantiateViewController(withIdentifier: "CreateNewRecord") as! CreateNewRecordControllerViewController
-        present(scr, animated: true, completion: nil)
+        self.navigationController?.pushViewController(scr, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectIndexPath = indexPath
-        self.listRecord[indexPath.section].expand = !self.listRecord[indexPath.section].expand
-        tableView.beginUpdates()
-        tableView.reloadSections([indexPath.section], with: .automatic)
-        tableView.endUpdates()
-        
         row = indexPath.row
-        let scr = storyboard?.instantiateViewController(withIdentifier: "calendarCollection") as! CalendarController
-        scr.tableProtocol = self
+        let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
+        scr.id = (listRecord[indexPath.section].list[indexPath.row]?.id)!
         self.navigationController?.pushViewController(scr, animated: true)
     }
     

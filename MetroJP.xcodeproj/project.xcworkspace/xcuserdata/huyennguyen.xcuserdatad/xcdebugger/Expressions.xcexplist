@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "StationViewController.getDateSelected(date : String, id : Int) -&gt; ():StationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "StationViewController.saveDataClick(Any) -&gt; ():StationViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -22,10 +30,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
+         contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "tableStation.bottomAnchor">
+               value = "t[date]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -48,18 +56,18 @@
                value = "list">
             </PersistentString>
             <PersistentString
-               value = "t[1]">
+               value = "list.count">
             </PersistentString>
             <PersistentString
-               value = "list.count">
+               value = "t[1]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "StationViewController.getDateSelected(date : String, id : Int) -&gt; ():StationViewController.swift">
+         contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "type">
+               value = "tableStation.bottomAnchor">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -24,6 +24,8 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableStation: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var tfTo: UITextField!
+    var id: Int = -1
+    var record = RecordTrafficModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -132,6 +134,30 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func initData() {
         listTraffic = DatabaseManagement.shared.queryAllTraffic()
+        if (id >= 0) {
+            let record = DatabaseManagement.shared.queryRecordTraffic(trafficId: Int64(id)) as RecordTrafficModel
+            recordDate = record.date
+            fromDate = record.from
+            toDate = record.to
+            tfFrom.text = record.from
+            tfTo.text = record.to
+            tfNote.text = record.note
+            tfAmount.text = record.price
+            tfTarget.text = record.target
+            let traffic = record.traffic
+            if (!traffic.isEmpty) {
+                let listTraffic = traffic.components(separatedBy: ",") as Array<String>
+                if (!listTraffic.isEmpty) {
+                    for id in listTraffic {
+                        for t in self.listTraffic {
+                            if(!id.isEmpty && (Int(id) == t.id)) {
+                                t.select = true
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
