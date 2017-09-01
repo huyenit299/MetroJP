@@ -49,10 +49,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
                 cursor = cursor + 1
             }
-            return cursor
-        } else {
-            return -1
         }
+        return -1
     }
     
     func initPullToRefresh() {
@@ -159,8 +157,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainTableViewCell
         cell.lblPrice.text = listRecord[indexPath.section].list[indexPath.row]?.price
-        cell.lblName.text = listRecord[indexPath.section].list[indexPath.row]?.date
-        cell.lblId.text = listRecord[indexPath.section].list[indexPath.row]?.note
+        cell.lblName.text = listRecord[indexPath.section].list[indexPath.row]?.note
+        cell.lblId.text = listRecord[indexPath.section].list[indexPath.row]?.date
 
         return cell
     }
