@@ -75,7 +75,6 @@ class DatabaseManagement {
                     print("id: \(t[id]) ; target = \(String(describing: t[price]))")
                     record = RecordTrafficModel(id: Int(t[id]), date: t[date], target: t[target], from: t[from], to: t[to], traffic: t[traffics], price: t[price], note: t[note])
                 }
-                 //
             } catch {
                 print(error)
             }
@@ -129,3 +128,5 @@ class DatabaseManagement {
         return listTraffic
     }
 }
+
+

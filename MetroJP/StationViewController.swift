@@ -17,7 +17,6 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tfNote: UITextField!
     @IBOutlet weak var tfAmount: UITextField!
     @IBOutlet weak var tfFrom: UITextField!
-
     @IBOutlet weak var tfDate: UITextField!
     @IBOutlet weak var tfTarget: UITextField!
     @IBOutlet weak var lbDate: UILabel!
@@ -29,9 +28,15 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initData()
+        let rightButton: UIBarButtonItem = UIBarButtonItem(title: "完了", style: UIBarButtonItemStyle.plain, target: self, action: #selector(menuButtonTapped))
+         navigationItem.rightBarButtonItem = rightButton
         
-        navigationBar.topItem?.title = "外出先編集"
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_keyboard_arrow_left_white_48pt")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(backClick))
+        navigationItem.leftBarButtonItem = leftButton
+
+        self.title = "外出先編集"
+        
+        initData()
         
         tfDate.delegate = self
         tfFrom.delegate = self
@@ -44,12 +49,8 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         tableStation.delegate = self
     }
     
-    
-    @IBAction func backClick(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func saveDataClick(_ sender: Any) {
+    func menuButtonTapped() {
+        print("aaaab right")
         if (tfDate.text?.isEmpty)! {
             let alert = UIAlertController(title: "", message: RecordError().LACK_DATE, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -119,20 +120,40 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
             print("error")
         }
         
-        do {
-            try
-                DatabaseManagement.shared.addRecordTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!)
+        if (id <= 0) {
+            do {
+                try
+                    DatabaseManagement.shared.addRecordTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!)
+                changedData = true
             }catch {
+                print(error)
             }
+        } else {
+            do {
+                let recordTraffic = RecordTrafficModel(id: id, date: tfDate.text!, target: tfTarget.text!, from: tfFrom.text!, to: tfTo.text!, traffic: traffic, price: tfAmount.text!, note: tfNote.text!)
+                try
+                    DatabaseManagement.shared.updateRecordTraffic(trafficId: Int64(id), newTraffic: recordTraffic)
+                changedData = true
+            }catch {
+                print(error)
+            }
+        }
         
         do {
             try
                 DatabaseManagement.shared.queryAllRecordTraffic()
         }catch {
+             print(error)
         }
     }
-
+    
+    @IBAction func backClick(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+   
     func initData() {
+        print("init data")
         listTraffic = DatabaseManagement.shared.queryAllTraffic()
         if (id >= 0) {
             let record = DatabaseManagement.shared.queryRecordTraffic(trafficId: Int64(id)) as RecordTrafficModel
@@ -186,11 +207,6 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         return 50
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("select="+String(indexPath.row))
-//        listTraffic[indexPath.row].select = !listTraffic[indexPath.row].select
-//    }
-
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case tfFrom:

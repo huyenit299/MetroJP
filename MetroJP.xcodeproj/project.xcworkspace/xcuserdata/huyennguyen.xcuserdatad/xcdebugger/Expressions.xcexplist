@@ -30,17 +30,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "t[date]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "DatabaseManagement.queryAllTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
          <PersistentStrings>
             <PersistentString
@@ -64,10 +53,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "t[date]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "tableStation.bottomAnchor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StationViewController.backClick(Any) -&gt; ():StationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "changeFlag">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

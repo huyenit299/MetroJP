@@ -158,14 +158,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9O-on-JmK">
-                                                    <rect key="frame" x="70" y="15" width="140" height="21.5"/>
+                                                    <rect key="frame" x="70" y="15" width="180" height="21.5"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="lbName"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yv-fv-fG4">
-                                                    <rect key="frame" x="220" y="15" width="50" height="21.5"/>
+                                                    <rect key="frame" x="260" y="15" width="50" height="21.5"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="lbPrice"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="1oH-YQ-w1Q"/>
@@ -844,43 +844,8 @@ Vmlldw0KAA
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" backIndicatorImage="cm_arrow_back_white" backIndicatorTransitionMaskImage="cm_arrow_back_white" translatesAutoresizingMaskIntoConstraints="NO" id="mKE-XN-SCt" userLabel="Station">
-                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="LYr-YV-2ja"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="0.12738725889999999" blue="0.1913446499" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="textShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem id="lhJ-0v-nJA">
-                                        <string key="title" base64-UTF8="YES">
-5aSW5Ye65YWI57eo6ZuGDQoAA
-</string>
-                                        <barButtonItem key="leftBarButtonItem" image="ic_keyboard_arrow_left_white_48pt.png" style="done" id="1L1-Q2-bs4">
-                                            <color key="tintColor" red="0.1136646754" green="0.48567053809999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="backClick:" destination="Du1-sA-ZeX" id="HRD-db-S4B"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" id="gDm-e5-cJm">
-                                            <string key="title" base64-UTF8="YES">
-5a6M5LqGDQoAA
-</string>
-                                            <connections>
-                                                <action selector="saveDataClick:" destination="Du1-sA-ZeX" id="tD7-AC-acq"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <string key="userLabel" base64-UTF8="YES">
-5aSW5Ye65YWI57eo6ZuGICAAICAAA
-</string>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IyZ-vV-wTh">
-                                <rect key="frame" x="0.0" y="70" width="320" height="498"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="KOd-tf-ZQ1">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
@@ -1143,18 +1108,14 @@ Vmlldw0KAA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="mKE-XN-SCt" secondAttribute="trailing" id="5Gy-wt-LcV"/>
+                            <constraint firstItem="IyZ-vV-wTh" firstAttribute="top" secondItem="qSg-lF-hOu" secondAttribute="bottom" id="J1J-GG-If4"/>
                             <constraint firstItem="edq-XD-so8" firstAttribute="top" secondItem="IyZ-vV-wTh" secondAttribute="bottom" id="QxL-zn-PVO"/>
                             <constraint firstAttribute="trailing" secondItem="IyZ-vV-wTh" secondAttribute="trailing" id="S4v-ON-Sfl"/>
-                            <constraint firstItem="mKE-XN-SCt" firstAttribute="leading" secondItem="4PK-cm-8Ra" secondAttribute="leading" id="cO7-ub-lkq"/>
-                            <constraint firstItem="IyZ-vV-wTh" firstAttribute="top" secondItem="qSg-lF-hOu" secondAttribute="bottom" constant="50" id="giT-4s-Dy3"/>
-                            <constraint firstItem="mKE-XN-SCt" firstAttribute="top" secondItem="qSg-lF-hOu" secondAttribute="bottom" id="y8p-7j-07I"/>
                             <constraint firstItem="IyZ-vV-wTh" firstAttribute="leading" secondItem="4PK-cm-8Ra" secondAttribute="leading" id="ywh-ha-eB4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lbDate" destination="pkZ-sx-etf" id="NlB-yC-iN8"/>
-                        <outlet property="navigationBar" destination="mKE-XN-SCt" id="LZ2-WR-sWn"/>
                         <outlet property="tableStation" destination="IyZ-vV-wTh" id="Dfb-Sd-RUB"/>
                         <outlet property="tfAmount" destination="Kvv-Ux-CWF" id="xsV-jz-cTe"/>
                         <outlet property="tfDate" destination="HGl-CO-gkg" id="Hr2-pP-Zd3"/>
@@ -1314,7 +1275,6 @@ Vmlldw0KAA
         </scene>
     </scenes>
     <resources>
-        <image name="cm_arrow_back_white" width="24" height="24"/>
         <image name="ic_keyboard_arrow_left_white_48pt.png" width="48" height="48"/>
         <image name="ic_keyboard_arrow_right_white_48pt.png" width="48" height="48"/>
     </resources>

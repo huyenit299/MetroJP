@@ -15,9 +15,9 @@ protocol DateSelectedProtocol {
     func getDateSelected (date: String, id: Int)//id of row
 }
 
-class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate, DateSelectedProtocol {
-    
-    
+var changedData = false
+class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate {
+
     var fab = Floaty()
     @IBOutlet weak var mainTable: UITableView!
 //    var data = [Record]();
@@ -30,9 +30,14 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print("back e=" + String(changedData))
+        if (changedData) {
+            self.initData()
+            self.mainTable.reloadData()
+            changedData = false
+        }
     }
-
+    
     //check this month exist or not in list date section
     func checkMonthExist(record: RecordTrafficModel, list: Array<DateSection>) ->  Int {
         if (!list.isEmpty) {
