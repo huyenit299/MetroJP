@@ -61,6 +61,12 @@
 		A08BD4FA1F46948C004CE47C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F91F46948C004CE47C /* Section.swift */; };
 		A09346061F57F80F0067E589 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09346051F57F80F0067E589 /* LeftPaddedTextField.swift */; };
 		A093461E1F5803B90067E589 /* Traffic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A093461D1F5803B90067E589 /* Traffic.swift */; };
+		A094E5641F5902C000FBDEE5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A094E5631F5902C000FBDEE5 /* Utils.swift */; };
+		A094E5911F591AA100FBDEE5 /* DGElasticPullToRefreshConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A094E58C1F591AA100FBDEE5 /* DGElasticPullToRefreshConstants.swift */; };
+		A094E5921F591AA100FBDEE5 /* DGElasticPullToRefreshExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A094E58D1F591AA100FBDEE5 /* DGElasticPullToRefreshExtensions.swift */; };
+		A094E5931F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A094E58E1F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingView.swift */; };
+		A094E5941F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A094E58F1F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingViewCircle.swift */; };
+		A094E5951F591AA100FBDEE5 /* DGElasticPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A094E5901F591AA100FBDEE5 /* DGElasticPullToRefreshView.swift */; };
 		A09716C91F4C1F9200205CF8 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; };
 		A09716CA1F4C1F9200205CF8 /* JTAppleCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A09716D01F4C39AD00205CF8 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */; };
@@ -452,6 +458,12 @@
 		A08BD4F91F46948C004CE47C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		A09346051F57F80F0067E589 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
 		A093461D1F5803B90067E589 /* Traffic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traffic.swift; sourceTree = "<group>"; };
+		A094E5631F5902C000FBDEE5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A094E58C1F591AA100FBDEE5 /* DGElasticPullToRefreshConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DGElasticPullToRefreshConstants.swift; path = "../../../../Downloads/DGElasticPullToRefresh-master/DGElasticPullToRefresh/DGElasticPullToRefreshConstants.swift"; sourceTree = "<group>"; };
+		A094E58D1F591AA100FBDEE5 /* DGElasticPullToRefreshExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DGElasticPullToRefreshExtensions.swift; path = "../../../../Downloads/DGElasticPullToRefresh-master/DGElasticPullToRefresh/DGElasticPullToRefreshExtensions.swift"; sourceTree = "<group>"; };
+		A094E58E1F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DGElasticPullToRefreshLoadingView.swift; path = "../../../../Downloads/DGElasticPullToRefresh-master/DGElasticPullToRefresh/DGElasticPullToRefreshLoadingView.swift"; sourceTree = "<group>"; };
+		A094E58F1F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingViewCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DGElasticPullToRefreshLoadingViewCircle.swift; path = "../../../../Downloads/DGElasticPullToRefresh-master/DGElasticPullToRefresh/DGElasticPullToRefreshLoadingViewCircle.swift"; sourceTree = "<group>"; };
+		A094E5901F591AA100FBDEE5 /* DGElasticPullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DGElasticPullToRefreshView.swift; path = "../../../../Downloads/DGElasticPullToRefresh-master/DGElasticPullToRefresh/DGElasticPullToRefreshView.swift"; sourceTree = "<group>"; };
 		A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JTAppleCalendar.xcodeproj; path = "../../../Downloads/JTAppleCalendar-master/JTAppleCalendar.xcodeproj"; sourceTree = "<group>"; };
 		A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteViewController.swift; path = ../FavoriteViewController.swift; sourceTree = "<group>"; };
 		A09716D11F4C435200205CF8 /* HardData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HardData.json; sourceTree = "<group>"; };
@@ -654,6 +666,7 @@
 		A047501E1F3AAFF500E1DE0C /* MetroJP */ = {
 			isa = PBXGroup;
 			children = (
+				A094E58B1F591A8B00FBDEE5 /* PullToRefresh */,
 				A09716D31F4C43BE00205CF8 /* Utils */,
 				A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */,
 				A08BD4E51F4693F5004CE47C /* ExpandableHeaderView */,
@@ -753,6 +766,18 @@
 			name = ExpandableHeaderView;
 			sourceTree = "<group>";
 		};
+		A094E58B1F591A8B00FBDEE5 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				A094E58C1F591AA100FBDEE5 /* DGElasticPullToRefreshConstants.swift */,
+				A094E58D1F591AA100FBDEE5 /* DGElasticPullToRefreshExtensions.swift */,
+				A094E58E1F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingView.swift */,
+				A094E58F1F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingViewCircle.swift */,
+				A094E5901F591AA100FBDEE5 /* DGElasticPullToRefreshView.swift */,
+			);
+			name = PullToRefresh;
+			sourceTree = "<group>";
+		};
 		A09716B51F4C1F8200205CF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +799,7 @@
 				A0A1EB541F569C2C00A04C3F /* RecordError.swift */,
 				A0A1EB6C1F56CCF100A04C3F /* DatabaseManager.swift */,
 				A09346051F57F80F0067E589 /* LeftPaddedTextField.swift */,
+				A094E5631F5902C000FBDEE5 /* Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1308,15 +1334,20 @@
 				A04750531F3AB4F700E1DE0C /* SlideMenuController.swift in Sources */,
 				A02F565C1F4BD21C00133269 /* FoldingCell.swift in Sources */,
 				A0A290391F44B5DE00A7FD65 /* LayoutConstraint.swift in Sources */,
+				A094E5641F5902C000FBDEE5 /* Utils.swift in Sources */,
 				A0A290321F44B5DE00A7FD65 /* ConstraintRelatableTarget.swift in Sources */,
 				A04750221F3AAFF500E1DE0C /* ViewController.swift in Sources */,
 				A0A290251F44B5DE00A7FD65 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				A094E5951F591AA100FBDEE5 /* DGElasticPullToRefreshView.swift in Sources */,
 				A0C0930D1F45866700E4614F /* DateSection.swift in Sources */,
 				A09346061F57F80F0067E589 /* LeftPaddedTextField.swift in Sources */,
 				A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */,
 				A04750281F3AAFF500E1DE0C /* MetroJP.xcdatamodeld in Sources */,
 				A09716D01F4C39AD00205CF8 /* FavoriteViewController.swift in Sources */,
 				A03113101F4AD95900B6EA55 /* SectionTableCell.swift in Sources */,
+				A094E5921F591AA100FBDEE5 /* DGElasticPullToRefreshExtensions.swift in Sources */,
+				A094E5911F591AA100FBDEE5 /* DGElasticPullToRefreshConstants.swift in Sources */,
+				A094E5931F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingView.swift in Sources */,
 				A0A1EB931F56DA3500A04C3F /* RecordTraffic.swift in Sources */,
 				A047505F1F3AC2B600E1DE0C /* Record.swift in Sources */,
 				A0A2901D1F44B5DE00A7FD65 /* ConstraintConstantTarget.swift in Sources */,
@@ -1335,6 +1366,7 @@
 				A0A2903B1F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift in Sources */,
 				A0A2901F1F44B5DE00A7FD65 /* ConstraintDSL.swift in Sources */,
 				A0A290331F44B5DE00A7FD65 /* ConstraintRelation.swift in Sources */,
+				A094E5941F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */,
 				A0A290261F44B5DE00A7FD65 /* ConstraintLayoutSupport.swift in Sources */,
 				A0A290221F44B5DE00A7FD65 /* ConstraintItem.swift in Sources */,
 				A0A2902A1F44B5DE00A7FD65 /* ConstraintMakerExtendable.swift in Sources */,

@@ -20,9 +20,11 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var fab = Floaty()
     @IBOutlet weak var mainTable: UITableView!
-    var data = [Record]();
+//    var data = [Record]();
     var row = -1 //row selecting
-    var listSection: Array<DateSection> = []
+    
+    var listRecord = Array<DateSection>()
+    var listRecordTraffic: Array<RecordTrafficModel> = []
     
     var selectIndexPath: IndexPath!
     
@@ -31,14 +33,68 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
 
+    //check this month exist or not in list date section
+    func checkMonthExist(record: RecordTrafficModel, list: Array<DateSection>) ->  Int {
+        if (!list.isEmpty) {
+            let recordMonth = Utils.convertStringDateToStringDate(formatFromStyle: Constant.DATE_STANDARD, formatToStyle: Constant.MONTH_YEAR_STANDARD, dateString: record.date)
+            var cursor = 0
+            for item in list {
+                if recordMonth == item.month {
+                   return cursor
+                }
+                cursor = cursor + 1
+            }
+            return cursor
+        } else {
+            return -1
+        }
+    }
+    
+    func initPullToRefresh() {
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
+        mainTable.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            print("pull to refresh")
+            self?.initData()
+            self?.mainTable.reloadData()
+            // Do not forget to call dg_stopLoading() at the end
+            self?.mainTable.dg_stopLoading()
+            }, loadingView: loadingView)
+        mainTable.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
+        mainTable.dg_setPullToRefreshBackgroundColor(mainTable.backgroundColor!)
+    }
+    
+    func initData() {
+        listRecord.removeAll()
+        listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic()
+        if (!listRecordTraffic.isEmpty) {
+            for item in listRecordTraffic {
+                var list: Array<RecordTrafficModel> = []
+                let position = checkMonthExist(record: item, list: listRecord)
+                print("position =" + String(position))
+                if (position == -1) {//not existed yet
+                    list.append(item)
+                    let dateSection = DateSection(month: Utils.convertStringDateToStringDate(formatFromStyle: Constant.DATE_STANDARD, formatToStyle: Constant.MONTH_YEAR_STANDARD, dateString: item.date), totalPrice: item.price, list: list)
+                    listRecord.append(dateSection)
+                } else {
+                    list = listRecord[position].list as! Array<RecordTrafficModel>
+                    list.append(item)
+                    let price = Int(item.price)
+                    let totalPrice = Int(listRecord[position].totalPrice)! + price!
+                    listRecord[position].totalPrice = String(totalPrice)
+                    listRecord[position].list = list
+                }
+            }
+        }
+    }
+    
     var count = 0
     func menuButtonTapped() {
         print("aaaab right")
         self.title = "" + String(count)
         count = count + 1
     }
-    
-    var listRecord = Array<DateSection>()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +105,10 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         layoutFAB()
         
-        listRecord = ParseJson().readJson()
+//        listRecord = ParseJson().readJson()
+        
+        initData()
+        
         mainTable.dataSource = self
         mainTable.delegate = self
 
@@ -71,6 +130,9 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         selectIndexPath = IndexPath(row: -1, section: -1)
         let nib = UINib(nibName: "ExpandableHeaderView", bundle: nil)
         mainTable.register(nib, forHeaderFooterViewReuseIdentifier: "expandableHeaderView")
+        
+        
+        initPullToRefresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,7 +186,6 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func toggleSection(header: ExpandableHeaderView, section: Int) {
-        print("toggleSection")
         self.listRecord[section].expand = !self.listRecord[section].expand
         mainTable.beginUpdates()
         mainTable.reloadSections([section], with: .automatic)
@@ -202,10 +263,6 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemRating.handler = { (item) in
             let scr = self.storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteViewController
             self.present(scr, animated: true, completion: nil)
-//            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//            self.fab.close()
         }
         
         let itemUpload = FloatyItem()

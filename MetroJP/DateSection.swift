@@ -11,12 +11,12 @@ import Foundation
 class DateSection {
     var month: String = ""
     var totalPrice: String = ""
-    var list = Array<Record?>()
+    var list = Array<RecordTrafficModel?>()
     var expand: Bool = false
     init() {
     }
     
-    init (month: String, totalPrice: String, list: Array<Record>) {
+    init (month: String, totalPrice: String, list: Array<RecordTrafficModel>) {
         self.month = month
         self.totalPrice = totalPrice
         self.list = list

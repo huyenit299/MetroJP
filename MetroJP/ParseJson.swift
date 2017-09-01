@@ -20,7 +20,7 @@ class ParseJson {
                     print("string-" + String(describing: object))
                     let items = object["data"] as! [AnyObject]
                     for item in items {
-                        var dateSection = DateSection()
+                        let dateSection = DateSection()
                         if let month = item["month"] as? String {
                                 print(String(describing: month))
                             dateSection.month = month
@@ -31,17 +31,17 @@ class ParseJson {
                         }
                         
                         let list_detail = item["data"] as! [AnyObject]
-                        var listData = Array<Record>()
+                        var listData = Array<RecordTrafficModel>()
                         for detail in list_detail {
-                            var record = Record()
+                            let record = RecordTrafficModel()
                             if let date = detail["date"] as? String {
-                                record.setDate(date: date)
+                                record.date = date
                             }
                             if let note = detail["note"] as? String {
-                                record.setNote(note: note)
+                                record.note = note
                             }
                             if let price = detail["price"] as? String {
-                                record.setPrice(price: price)
+                                record.price = price
                             }
                             listData.append(record)
                         }

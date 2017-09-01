@@ -17,7 +17,8 @@ class RecordTrafficModel {
     var price: String = ""
     var traffic: String = ""
     var note: String = ""
-    
+    init() {
+    }
     init(id: Int, date: String, target: String, from: String, to: String, traffic: String, price: String, note: String) {
         self.id = id
         self.date = date
