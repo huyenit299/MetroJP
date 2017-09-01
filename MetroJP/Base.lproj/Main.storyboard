@@ -832,6 +832,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fO6-i7-TFL">
+                                <rect key="frame" x="98" y="28" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -858,6 +866,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JI-Na-sjJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5424" y="-413"/>
+        </scene>
+        <!--Favorite Controller-->
+        <scene sceneID="n3d-9u-6Qj">
+            <objects>
+                <viewController storyboardIdentifier="FavoriteController" id="Hqi-kB-IOJ" customClass="FavoriteController" customModule="MetroJP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tsz-tS-CUF"/>
+                        <viewControllerLayoutGuide type="bottom" id="uay-RE-tzU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nj9-JB-2G8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pT3-Fo-nPD">
+                                <rect key="frame" x="100" y="30" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pT3-Fo-nPD" firstAttribute="top" secondItem="nj9-JB-2G8" secondAttribute="top" constant="30" id="41Q-NN-oIB"/>
+                            <constraint firstItem="pT3-Fo-nPD" firstAttribute="centerX" secondItem="nj9-JB-2G8" secondAttribute="centerX" id="dkB-Cr-Pza"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ret-x6-pi3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6180" y="-560"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="gKO-0n-688">

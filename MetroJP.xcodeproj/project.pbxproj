@@ -69,6 +69,7 @@
 		A094E5AA1F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = A094E5A61F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt.png */; };
 		A094E5AB1F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A094E5A71F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt_2x.png */; };
 		A094E5AC1F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A094E5A81F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt_3x.png */; };
+		A094E5C21F597C5800FBDEE5 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A094E5C11F597C5800FBDEE5 /* FavoriteController.swift */; };
 		A09716C91F4C1F9200205CF8 /* JTAppleCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; };
 		A09716CA1F4C1F9200205CF8 /* JTAppleCalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09716BE1F4C1F8300205CF8 /* JTAppleCalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A09716D01F4C39AD00205CF8 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */; };
@@ -467,6 +468,7 @@
 		A094E5A61F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_down_white_48pt.png; sourceTree = "<group>"; };
 		A094E5A71F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_down_white_48pt_2x.png; sourceTree = "<group>"; };
 		A094E5A81F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_keyboard_arrow_down_white_48pt_3x.png; sourceTree = "<group>"; };
+		A094E5C11F597C5800FBDEE5 /* FavoriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JTAppleCalendar.xcodeproj; path = "../../../Downloads/JTAppleCalendar-master/JTAppleCalendar.xcodeproj"; sourceTree = "<group>"; };
 		A09716CF1F4C39AD00205CF8 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoriteViewController.swift; path = ../FavoriteViewController.swift; sourceTree = "<group>"; };
 		A09716D11F4C435200205CF8 /* HardData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HardData.json; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */,
 				A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */,
 				A09AEB661F55591F00414FC4 /* StationViewController.swift */,
+				A094E5C11F597C5800FBDEE5 /* FavoriteController.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -1343,6 +1346,7 @@
 				A0A2901B1F44B5DE00A7FD65 /* ConstraintAttributes.swift in Sources */,
 				A0A290311F44B5DE00A7FD65 /* ConstraintPriorityTarget.swift in Sources */,
 				A0BCF0391F503339000D5BA9 /* StationItemView.swift in Sources */,
+				A094E5C21F597C5800FBDEE5 /* FavoriteController.swift in Sources */,
 				A09E04A41F4A81370007CF9D /* CalendarController.swift in Sources */,
 				A04750531F3AB4F700E1DE0C /* SlideMenuController.swift in Sources */,
 				A02F565C1F4BD21C00133269 /* FoldingCell.swift in Sources */,

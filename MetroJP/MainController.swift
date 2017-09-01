@@ -273,7 +273,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemRating.title = "お気に入り"
         itemRating.icon = UIImage(named: "ic_star_border_white_48dp")
         itemRating.handler = { (item) in
-            let scr = self.storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteViewController
+            let scr = self.storyboard?.instantiateViewController(withIdentifier: "FavoriteController") as! FavoriteController
             self.navigationController?.pushViewController(scr, animated: true)
         }
         
