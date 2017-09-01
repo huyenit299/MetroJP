@@ -36,7 +36,6 @@
 		A03113741F4AFBF400B6EA55 /* ic_search_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A03113681F4AFBF400B6EA55 /* ic_search_white_48pt_3x.png */; };
 		A03113901F4AFC9000B6EA55 /* ic_star_border_white_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = A031138E1F4AFC9000B6EA55 /* ic_star_border_white_48dp.png */; };
 		A03113911F4AFC9000B6EA55 /* ic_star_border_white_48dp_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A031138F1F4AFC9000B6EA55 /* ic_star_border_white_48dp_2x.png */; };
-		A03732001F5421F800745869 /* NewRecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03731FF1F5421F800745869 /* NewRecordController.swift */; };
 		A03DD5AD1F53D90900FB203A /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03DD5AC1F53D90900FB203A /* StationTableViewCell.swift */; };
 		A04750201F3AAFF500E1DE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */; };
 		A04750221F3AAFF500E1DE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750211F3AAFF500E1DE0C /* ViewController.swift */; };
@@ -55,7 +54,6 @@
 		A04750621F3AE40E00E1DE0C /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */; };
 		A04995FE1F4BC4730042F11B /* FoldingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */; };
 		A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */; };
-		A05E49EC1F53B3FE00A43262 /* NewRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05E49EB1F53B3FE00A43262 /* NewRecordViewController.swift */; };
 		A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */; };
 		A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */; };
 		A08BD4FA1F46948C004CE47C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F91F46948C004CE47C /* Section.swift */; };
@@ -132,7 +130,6 @@
 		A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; };
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */; };
-		A0D1C6301F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -431,7 +428,6 @@
 		A03113681F4AFBF400B6EA55 /* ic_search_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search_white_48pt_3x.png; sourceTree = "<group>"; };
 		A031138E1F4AFC9000B6EA55 /* ic_star_border_white_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_star_border_white_48dp.png; sourceTree = "<group>"; };
 		A031138F1F4AFC9000B6EA55 /* ic_star_border_white_48dp_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_star_border_white_48dp_2x.png; sourceTree = "<group>"; };
-		A03731FF1F5421F800745869 /* NewRecordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecordController.swift; sourceTree = "<group>"; };
 		A03DD5AC1F53D90900FB203A /* StationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		A047501C1F3AAFF500E1DE0C /* MetroJP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroJP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A047501F1F3AAFF500E1DE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -456,7 +452,6 @@
 		A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoldingCustomView.xib; sourceTree = "<group>"; };
 		A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFoldingCell.swift; sourceTree = "<group>"; };
-		A05E49EB1F53B3FE00A43262 /* NewRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRecordViewController.swift; sourceTree = "<group>"; };
 		A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableHeaderView.xib; sourceTree = "<group>"; };
 		A08BD4F91F46948C004CE47C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -530,7 +525,6 @@
 		A0C0930C1F45866700E4614F /* DateSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveData.xcdatamodel; sourceTree = "<group>"; };
-		A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewRecordControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,9 +691,6 @@
 				A09E04A31F4A81370007CF9D /* CalendarController.swift */,
 				A03112FE1F4AD5B200B6EA55 /* SlideViewController.swift */,
 				A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */,
-				A0D1C62F1F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift */,
-				A05E49EB1F53B3FE00A43262 /* NewRecordViewController.swift */,
-				A03731FF1F5421F800745869 /* NewRecordController.swift */,
 				A09AEB661F55591F00414FC4 /* StationViewController.swift */,
 			);
 			path = MetroJP;
@@ -1321,7 +1312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0D1C6301F4EF78B0000F4C5 /* CreateNewRecordControllerViewController.swift in Sources */,
 				A093461E1F5803B90067E589 /* Traffic.swift in Sources */,
 				A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */,
 				A08BD4FA1F46948C004CE47C /* Section.swift in Sources */,
@@ -1340,11 +1330,9 @@
 				A0A2902F1F44B5DE00A7FD65 /* ConstraintOffsetTarget.swift in Sources */,
 				A0A290231F44B5DE00A7FD65 /* ConstraintLayoutGuide.swift in Sources */,
 				A09AEB671F55591F00414FC4 /* StationViewController.swift in Sources */,
-				A03732001F5421F800745869 /* NewRecordController.swift in Sources */,
 				A0A290281F44B5DE00A7FD65 /* ConstraintMaker.swift in Sources */,
 				A0A1EB551F569C2C00A04C3F /* RecordError.swift in Sources */,
 				A0A290291F44B5DE00A7FD65 /* ConstraintMakerEditable.swift in Sources */,
-				A05E49EC1F53B3FE00A43262 /* NewRecordViewController.swift in Sources */,
 				A04750511F3AB0C500E1DE0C /* MainController.swift in Sources */,
 				A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */,
 				A0A290271F44B5DE00A7FD65 /* ConstraintLayoutSupportDSL.swift in Sources */,

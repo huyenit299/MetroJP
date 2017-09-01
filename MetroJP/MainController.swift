@@ -274,7 +274,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemRating.icon = UIImage(named: "ic_star_border_white_48dp")
         itemRating.handler = { (item) in
             let scr = self.storyboard?.instantiateViewController(withIdentifier: "Favorite") as! FavoriteViewController
-            self.present(scr, animated: true, completion: nil)
+            self.navigationController?.pushViewController(scr, animated: true)
         }
         
         let itemUpload = FloatyItem()
