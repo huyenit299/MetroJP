@@ -157,7 +157,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainTableViewCell
         cell.lblPrice.text = listRecord[indexPath.section].list[indexPath.row]?.price
-        cell.lblName.text = listRecord[indexPath.section].list[indexPath.row]?.note
+        cell.lblName.text = listRecord[indexPath.section].list[indexPath.row]?.target
         cell.lblId.text = listRecord[indexPath.section].list[indexPath.row]?.date
 
         return cell
@@ -220,9 +220,22 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         return true
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+            let alert = UIAlertController(title: "", message: "削除しますよろしいですか", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "キアソセル", style: .default,
+            handler: {(alert:UIAlertAction!) in
+                tableView.setEditing(false, animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                    if DatabaseManagement.shared.deleteRecordTraffic(trafficId: Int64(self.listRecord[indexPath.section].list[indexPath.row]!.id)) {
+                        self.listRecord[indexPath.section].list.remove(at: indexPath.row)
+                        tableView.reloadData()
+                    }
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -241,7 +254,13 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemSearch.icon = UIImage(named: "ic_search_white_48pt")
         itemSearch.handler = { (item) in
             let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: { (item) in
+                let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.fab.close()
+                }
+))
             self.present(alert, animated: true, completion: nil)
             self.fab.close()
         }
