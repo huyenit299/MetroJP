@@ -102,8 +102,39 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
             print("update")
         }
         let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
-            print("Delete")
-            
+            let alert = UIAlertController(title: "", message: "削除しますよろしいですか", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "キアソセル", style: .default,
+                                          handler: {(alert:UIAlertAction!) in
+                                            tableView.setEditing(false, animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                var destinationId = -1
+                switch self.selectingtab {
+                case Constant.MY_LIST:
+                    destinationId = Int(self.myList[indexPath.row].id)
+                    break
+                case Constant.SHARED_LIST:
+                    destinationId = Int(self.sharedList[indexPath.row].id)
+                    break
+                default:
+                    break
+                }
+
+                if DatabaseManagement.shared.deleteDestination(destinationId: Int64(destinationId)){
+                    switch self.selectingtab {
+                    case Constant.MY_LIST:
+                        self.myList.remove(at: indexPath.row)
+                        break
+                    case Constant.SHARED_LIST:
+                        self.sharedList.remove(at: indexPath.row)
+                        break
+                    default:
+                        break
+                    }
+                    tableView.reloadData()
+                }
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
         return [delete, update]
     }
