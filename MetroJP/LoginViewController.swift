@@ -1,18 +1,20 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  MetroJP
 //
-//  Created by Huyen Nguyen on 8/9/17.
+//  Created by Huyen Nguyen on 9/5/17.
 //  Copyright © 2017 HuyenNguyen. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
-    
-    @IBOutlet weak var lbUsername: UITextField!
-    @IBOutlet weak var lbPassword: UITextField!
+class LoginViewController: UIViewController {
+
+
+    @IBOutlet weak var tfLogin: UIButton!
+    @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var tfUsername: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         //storing core data
@@ -25,24 +27,34 @@ class ViewController: UIViewController {
             if result.count > 0 {
                 for res in result as! [NSManagedObject] {
                     if let username = res.value(forKey: "username") as? String {
-                        lbUsername.text = username
+                        tfUsername.text = username
                     }
                     
                     if let password = res.value(forKey: "password") as? String {
-                        lbPassword.text = password
+                        tfPassword.text = password
                     }
                 }
             }
         }
         catch {
+            print(error)
         }
+
     }
 
+    @IBAction func btnLoginClick(_ sender: Any) {
+        let username = tfUsername.text
+        let password = tfPassword.text
+        saveUserToCoreData(username: username!, password: password!)
+        let scr = storyboard?.instantiateViewController(withIdentifier: "Slide") as! SlideViewController
+        present(scr, animated: true, completion: nil)
+    }
+    @IBOutlet weak var btnRegisterClick: UIButton!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func saveUserToCoreData(username: String, password: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -54,23 +66,9 @@ class ViewController: UIViewController {
             print("SAVE")
         }
         catch {
+            print(error)
         }
     }
 
-    @IBAction func btnRegisterClick(_ sender: Any) {
-        let scr = storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
-        self.navigationController?.pushViewController(scr, animated: true)
-        
-    }
-    @IBAction func goToMainScreen(_ sender: AnyObject) {
-        let username = lbUsername.text
-        let password = lbPassword.text
-        saveUserToCoreData(username: username!, password: password!)
 
-        let scr = storyboard?.instantiateViewController(withIdentifier: "Slide") as! SlideViewController
-//        let scr = storyboard?.instantiateViewController(withIdentifier: "FoldingCellTable") as! FoldingCellTableController
-        present(scr, animated: true, completion: nil)
-//        navigationController?.pushViewController(scr, animated: true)
-    }
 }
-

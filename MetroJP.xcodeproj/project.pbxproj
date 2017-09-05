@@ -55,6 +55,7 @@
 		A04995FE1F4BC4730042F11B /* FoldingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */; };
 		A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */; };
 		A04AB0741F5E52350025A25E /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AB0731F5E52350025A25E /* Destination.swift */; };
+		A04AB0931F5EA4A50025A25E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AB0921F5EA4A50025A25E /* RegisterViewController.swift */; };
 		A080F8AC1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A080F8AB1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift */; };
 		A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */; };
 		A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */; };
@@ -456,6 +457,7 @@
 		A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoldingCustomView.xib; sourceTree = "<group>"; };
 		A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFoldingCell.swift; sourceTree = "<group>"; };
 		A04AB0731F5E52350025A25E /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		A04AB0921F5EA4A50025A25E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A080F8AB1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableHeaderView.xib; sourceTree = "<group>"; };
@@ -699,6 +701,7 @@
 				A02C52881F4B3B9B00C21309 /* FoldingCellTableController.swift */,
 				A09AEB661F55591F00414FC4 /* StationViewController.swift */,
 				A094E5C11F597C5800FBDEE5 /* FavoriteController.swift */,
+				A04AB0921F5EA4A50025A25E /* RegisterViewController.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -1387,6 +1390,7 @@
 				A0A1EB6D1F56CCF100A04C3F /* DatabaseManager.swift in Sources */,
 				A09AEB611F55292700414FC4 /* TrafficItemView.swift in Sources */,
 				A0A290301F44B5DE00A7FD65 /* ConstraintPriority.swift in Sources */,
+				A04AB0931F5EA4A50025A25E /* RegisterViewController.swift in Sources */,
 				A04750201F3AAFF500E1DE0C /* AppDelegate.swift in Sources */,
 				A0A2903B1F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift in Sources */,
 				A0A2901F1F44B5DE00A7FD65 /* ConstraintDSL.swift in Sources */,
