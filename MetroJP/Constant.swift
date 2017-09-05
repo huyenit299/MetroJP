@@ -13,5 +13,6 @@ class Constant {
   public let TYPE_RECORD = 3
   public static let DATE_STANDARD = "yyyy MM dd"
   public static let MONTH_YEAR_STANDARD = "yyyy MM"
-    
+  public static let MY_LIST = 0
+  public static let SHARED_LIST = 1
 }

@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "FavoriteController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:FavoriteController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sharedList.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "StationViewController.saveDataClick(Any) -&gt; ():StationViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -28,6 +36,17 @@
                value = "tableProtocol">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "t[date]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
       </ContextState>
       <ContextState
          contextName = "DatabaseManagement.queryAllTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
@@ -49,17 +68,6 @@
             </PersistentString>
             <PersistentString
                value = "t[1]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "t[date]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

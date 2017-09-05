@@ -25,6 +25,10 @@ class DatabaseManagement {
     //table traffic
     let tblTraffic = Table("Traffic")
     let name = Expression<String>("name")
+    
+    //table destination
+    let tblDestination = Table("Destination")
+    let type = Expression<Int>("type")
 
     
     private init() {
@@ -127,6 +131,86 @@ class DatabaseManagement {
         }
         return listTraffic
     }
+    
+    /*
+     *Destination
+     */
+    func addDestination(_name: String, _type: Int) -> Int64? {
+        do {
+            let insert = tblDestination.insert(name <- _name, type <- _type)
+            let id = try db!.run(insert)
+            print("addDestination successfully")
+            return id
+        } catch {
+            print("Cannot insert to database")
+            return nil
+        }
+    }
+    
+    func queryAllDestination(_type: Int) -> [Destination] {
+        var listDestination: Array<Destination> = []
+        if (db != nil) {
+            do {
+                let tbDestinationFilter = tblDestination.filter(type == _type)
+                let list = try self.db!.prepare(tbDestinationFilter)
+                for t in list {
+                    listDestination.append(Destination(id: (t[id]), name: (t[name]), type: (t[type])))
+                }
+            } catch {
+                print(error)
+            }
+        }
+        return listDestination
+    }
+    
+    func queryDestination(destinationId: Int64) -> Destination {
+        var destination = Destination()
+        if (db != nil) {
+            do {
+                let tbDestinationFilter = tblDestination.filter(id == destinationId)
+                let list = try self.db!.prepare(tbDestinationFilter)
+                for t in list {
+                    destination = Destination(id: t[id], name: t[name], type: t[type])
+                }
+            } catch {
+                print(error)
+            }
+        }
+        return destination
+    }
+    
+    
+    func updateDestination(destinationId: Int64, newDestination: Destination) -> Bool {
+        let tbDestinationFilter = tblDestination.filter(id == destinationId)
+        do {
+            let update = tbDestinationFilter.update([
+                name <- newDestination.name, type <- newDestination.type])
+            if try db!.run(update) > 0 {
+                print("updateDestination successfully")
+                return true
+            }
+        } catch {
+            print("Update failed: \(error)")
+        }
+        
+        return false
+    }
+    
+    func deleteDestination(destinationId: Int64) -> Bool {
+        do {
+            let tbDestinationFilter = tblDestination.filter(id == destinationId)
+            try db!.run(tbDestinationFilter.delete())
+            print("deleteDestination sucessfully")
+            return true
+        } catch {
+            
+            print("Delete failed")
+        }
+        return false
+    }
+    /*
+     *End Destination
+     */
 }
 
 

@@ -8,38 +8,49 @@
 
 import UIKit
 
-class FavoriteController: UIViewController {
-
+class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
+    var myList = Array<Destination>();
+    var sharedList = Array<Destination>();
+    var selectingtab = Constant.MY_LIST
+    @IBOutlet weak var segmentController: UISegmentedControl!
+    @IBOutlet weak var tableFavorite: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    var dataSearching = Array<Destination>()
+    var isSearching: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let mySegmentedControl = UISegmentedControl (items: ["One","Two","Three"])
+        self.title = "お気に入り"
+        navigationItem.leftBarButtonItem?.title = "Back"
         
-        let xPostion:CGFloat = 10
-        let yPostion:CGFloat = 150
-        let elementWidth:CGFloat = 300
-        let elementHeight:CGFloat = 30
+        searchBar.showsCancelButton = true
+        searchBar.showsScopeBar = true
+        myList = DatabaseManagement.shared.queryAllDestination(_type: Constant.MY_LIST)
+        self.tableFavorite.dataSource = self
+        self.tableFavorite.delegate = self
+        searchBar.delegate = self
+        segmentController.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
         
-        mySegmentedControl.frame = CGRect(x: xPostion, y: yPostion, width: elementWidth, height: elementHeight)
-        
-        // Make second segment selected
-        mySegmentedControl.selectedSegmentIndex = 1
-        
-        //Change text color of UISegmentedControl
-        mySegmentedControl.tintColor = UIColor.yellow
-        
-        //Change UISegmentedControl background colour
-        mySegmentedControl.backgroundColor = UIColor.black
-        
-        // Add function to handle Value Changed events
-        mySegmentedControl.addTarget(self, action: #selector(segmentedValueChanged), for: .valueChanged)
-        
-        self.view.addSubview(mySegmentedControl)
     }
     
     func segmentedValueChanged(_ sender:UISegmentedControl!)
     {
+        selectingtab = sender.selectedSegmentIndex
         print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
+        switch sender.selectedSegmentIndex {
+        case Constant.MY_LIST:
+            if (myList.isEmpty) {
+                myList = DatabaseManagement.shared.queryAllDestination(_type: Constant.MY_LIST)
+            }
+            break
+        case Constant.SHARED_LIST:
+            if (sharedList.isEmpty) {
+                sharedList = DatabaseManagement.shared.queryAllDestination(_type: Constant.SHARED_LIST)
+            }
+            break
+        default:
+            break
+        }
+        tableFavorite.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,15 +58,95 @@ class FavoriteController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (isSearching) {
+            return dataSearching.count
+        } else {
+        switch selectingtab {
+        case Constant.MY_LIST:
+            return myList.count
+        case Constant.SHARED_LIST:
+            return sharedList.count
+        default:
+            return 0
+        }
+      }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FavoriteTableViewCell
+        if (isSearching) {
+            cell.lbName.text = dataSearching[indexPath.row].name
+        } else {
+            switch selectingtab {
+            case Constant.MY_LIST:
+                cell.lbName.text = myList[indexPath.row].name
+                break
+            case Constant.SHARED_LIST:
+                cell.lbName.text = sharedList[indexPath.row].name
+                break
+            default:
+                break
+            }
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        let update = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            print("update")
+        }
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
+            print("Delete")
+            
+        }
+        return [delete, update]
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        // Hide the cancel button
+        searchBar.showsCancelButton = false
+        searchBar.endEditing(true)
+    }
+    
+    func filterTableView(ind:Int,text:String) {
+        switch ind {
+        case Constant.MY_LIST:
+            //fix of not searching when backspacing
+            dataSearching = myList.filter({ (mod) -> Bool in
+                return mod.name.lowercased().contains(text.lowercased())
+            })
+            self.tableFavorite.reloadData()
+        case Constant.SHARED_LIST:
+            //fix of not searching when backspacing
+            dataSearching = sharedList.filter({ (mod) -> Bool in
+                return mod.name.lowercased().contains(text.lowercased())
+            })
+            self.tableFavorite.reloadData()
+        default:
+            print("no type")
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchBar.text == nil || searchBar.text == "") {
+            isSearching = false
+            view.endEditing(true)
+            tableFavorite.reloadData()
+        } else {
+            isSearching = true
+            filterTableView(ind: selectingtab, text: searchBar.text!)
+        }
+    }
 }

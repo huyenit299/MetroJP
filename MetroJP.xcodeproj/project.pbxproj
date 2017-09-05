@@ -54,6 +54,8 @@
 		A04750621F3AE40E00E1DE0C /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */; };
 		A04995FE1F4BC4730042F11B /* FoldingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */; };
 		A04996001F4BC8870042F11B /* CustomFoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */; };
+		A04AB0741F5E52350025A25E /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AB0731F5E52350025A25E /* Destination.swift */; };
+		A080F8AC1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A080F8AB1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift */; };
 		A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */; };
 		A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */; };
 		A08BD4FA1F46948C004CE47C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F91F46948C004CE47C /* Section.swift */; };
@@ -453,6 +455,8 @@
 		A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A04995FD1F4BC4730042F11B /* FoldingCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoldingCustomView.xib; sourceTree = "<group>"; };
 		A04995FF1F4BC8870042F11B /* CustomFoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFoldingCell.swift; sourceTree = "<group>"; };
+		A04AB0731F5E52350025A25E /* Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		A080F8AB1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableHeaderView.xib; sourceTree = "<group>"; };
 		A08BD4F91F46948C004CE47C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -742,6 +746,7 @@
 				A09716D11F4C435200205CF8 /* HardData.json */,
 				A0A1EB921F56DA3500A04C3F /* RecordTraffic.swift */,
 				A093461D1F5803B90067E589 /* Traffic.swift */,
+				A04AB0731F5E52350025A25E /* Destination.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -755,6 +760,7 @@
 				A03DD5AC1F53D90900FB203A /* StationTableViewCell.swift */,
 				A09AEB5C1F5528D500414FC4 /* TrafficItemView.xib */,
 				A09AEB601F55292700414FC4 /* TrafficItemView.swift */,
+				A080F8AB1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -1317,6 +1323,7 @@
 			files = (
 				A093461E1F5803B90067E589 /* Traffic.swift in Sources */,
 				A09E04911F4A7CFD0007CF9D /* CustomCell.swift in Sources */,
+				A04AB0741F5E52350025A25E /* Destination.swift in Sources */,
 				A08BD4FA1F46948C004CE47C /* Section.swift in Sources */,
 				A0A2902C1F44B5DE00A7FD65 /* ConstraintMakerPriortizable.swift in Sources */,
 				A047505C1F3ABCA700E1DE0C /* UIViewController.swift in Sources */,
@@ -1332,6 +1339,7 @@
 				A04750551F3AB62F00E1DE0C /* LeftController.swift in Sources */,
 				A0A2902F1F44B5DE00A7FD65 /* ConstraintOffsetTarget.swift in Sources */,
 				A0A290231F44B5DE00A7FD65 /* ConstraintLayoutGuide.swift in Sources */,
+				A080F8AC1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift in Sources */,
 				A09AEB671F55591F00414FC4 /* StationViewController.swift in Sources */,
 				A0A290281F44B5DE00A7FD65 /* ConstraintMaker.swift in Sources */,
 				A0A1EB551F569C2C00A04C3F /* RecordError.swift in Sources */,
