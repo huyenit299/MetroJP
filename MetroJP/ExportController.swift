@@ -70,11 +70,77 @@ class ExportController: UIViewController, UITextFieldDelegate, MFMailComposeView
                     break
                 }
     }
+    
+    func checkValidate(fromDate: String, toDate: String) -> Bool {
+        if (fromDate <= toDate) {
+            return true
+        }
+        return false
+    }
 
+    func checkEmptyAndValidate(fromDate: String, toDate: String) -> Bool {
+        var error = false
+        if (fromDate.isEmpty) {
+            error = true
+            let alert = UIAlertController(title: "Error", message: "Please fill start date", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        if (toDate.isEmpty) {
+            error = true
+            let alert = UIAlertController(title: "Error", message: "Please fill end date", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        let isLower = checkValidate(fromDate: fromDate, toDate: toDate)
+        if (!isLower) {
+            error = true
+            let alert = UIAlertController(title: "Error", message: "End date must be greater than or equal start date", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                return
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        return error
+    }
+    
     @IBAction func btnExportClick(_ sender: Any) {
         let fromDate = tfFrom.text
         let toDate = tfTo.text
-        writeFile(fromDate: fromDate!, toDate: toDate!)
+//        if (fromDate?.isEmpty)! {
+//            let alert = UIAlertController(title: "Error", message: "Please fill start date", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+//                return
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//        
+//        if (toDate?.isEmpty)! {
+//            let alert = UIAlertController(title: "Error", message: "Please fill end date", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+//                return
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//        
+//        let isLower = checkValidate(fromDate: fromDate!, toDate: toDate!)
+//        if (!isLower) {
+//            let alert = UIAlertController(title: "Error", message: "End date must be greater than or equal start date", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+//                return
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//            
+//        }
+        if (!checkEmptyAndValidate(fromDate: fromDate!, toDate: toDate!)) {
+            writeFile(fromDate: fromDate!, toDate: toDate!)
+        }
     }
     
     
