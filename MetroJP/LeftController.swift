@@ -8,8 +8,8 @@
 
 import UIKit
 
-class LeftController: UIViewController {
-
+class LeftController: UIViewController, UITextFieldDelegate {
+    var exportViewController: UIViewController!
     @IBAction func btnLogoutClick(_ sender: Any) {
        dismiss(animated: true, completion: nil)
     }
@@ -22,5 +22,12 @@ class LeftController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func btnExportCSVClick(_ sender: Any) {
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let exportViewController = storyboard.instantiateViewController(withIdentifier: "ExportController") as! ExportController
+        self.exportViewController = UINavigationController(rootViewController: exportViewController)
+        self.slideMenuController()?.changeMainViewController(self.exportViewController, close: true)
     }
 }

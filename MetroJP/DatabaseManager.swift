@@ -60,7 +60,22 @@ class DatabaseManagement {
                 let list = try self.db!.prepare(self.tblRecordTraffic)
                  for t in list {
                     print("id: \(t[id]) ; target = \(String(describing: t[price]))")
-                    listRecordTraffic.append(RecordTrafficModel(id: Int((t[id])), date: (t[date]), target: (t[target]), from: (t[from]), to: (t[to]), traffic: (t[traffics]), price: (t[price]), note: (t[note])))
+                    listRecordTraffic.append(RecordTrafficModel(id: Int(t[id]), date: (t[date]), target: (t[target]), from: (t[from]), to: (t[to]), traffic: (t[traffics]), price: (t[price]), note: (t[note])))
+                }
+            } catch {
+                print(error)
+            }
+        }
+        return listRecordTraffic
+    }
+    
+    func queryAllRecordTraffic(fromDate: String, toDate: String) -> [RecordTrafficModel] {
+        var listRecordTraffic: Array<RecordTrafficModel> = []
+        if (db != nil) {
+            do {
+                let list = try self.db!.prepare("SELECT * FROM RecordTraffic WHERE date >= '" + fromDate + "' AND date <= '" + toDate+"'")
+                for t in list {
+                    listRecordTraffic.append(RecordTrafficModel(id: Int(t[0] as! Int64), date: t[1] as! String, target: t[2] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[3] as! String, price: t[6] as! String, note: t[7] as! String))
                 }
             } catch {
                 print(error)
@@ -124,6 +139,21 @@ class DatabaseManagement {
                 let list = try self.db!.prepare(self.tblTraffic)
                 for t in list {
                     listTraffic.append(TrafficModel(id: Int((t[id])), name: (t[name]), select: false))
+                }
+            } catch {
+                print(error)
+            }
+        }
+        return listTraffic
+    }
+    
+    func queryMapTraffic() -> [String: String] {
+        var listTraffic: [String: String] = [:]
+        if (db != nil) {
+            do {
+                let list = try self.db!.prepare(self.tblTraffic)
+                for t in list {
+                    listTraffic[String(t[id])] = t[name]
                 }
             } catch {
                 print(error)

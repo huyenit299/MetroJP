@@ -284,10 +284,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemUpload.title = "アップロード"
         itemUpload.icon = UIImage(named: "ic_cloud_upload_white_48pt")
         itemUpload.handler = { (item) in
-            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            self.fab.close()
+            let scr = self.storyboard?.instantiateViewController(withIdentifier: "ExportViewController") as! ExportController
+            self.navigationController?.pushViewController(scr, animated: true)
         }
 
         let addRecord = FloatyItem()

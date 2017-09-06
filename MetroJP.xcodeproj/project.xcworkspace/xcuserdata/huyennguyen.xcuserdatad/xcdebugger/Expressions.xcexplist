@@ -80,6 +80,22 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "LeftController.btnExportCSVClick(Any) -&gt; ():LeftController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.slideMenuController()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ExportController.writeFile(fromDate : String, toDate : String) -&gt; ():ExportController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "listAllTraffic[id]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "StationViewController.backClick(Any) -&gt; ():StationViewController.swift">
          <PersistentStrings>
             <PersistentString

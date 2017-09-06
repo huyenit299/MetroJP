@@ -210,13 +210,13 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case tfFrom:
-            type = Constant().TYPE_FROM
+            type = Constant.TYPE_FROM
             break
         case tfTo:
-            type = Constant().TYPE_TO
+            type = Constant.TYPE_TO
             break
         case tfDate:
-            type = Constant().TYPE_RECORD
+            type = Constant.TYPE_RECORD
             break
         default:
             break
@@ -238,13 +238,13 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     //get date selected
     func getDateSelected(date: String, id: Int) {
         switch id {
-        case Constant().TYPE_FROM:
+        case Constant.TYPE_FROM:
             fromDate = date
             break
-        case Constant().TYPE_TO:
+        case Constant.TYPE_TO:
             toDate = date
             break
-        case Constant().TYPE_RECORD:
+        case Constant.TYPE_RECORD:
             recordDate = date
             break
         default:

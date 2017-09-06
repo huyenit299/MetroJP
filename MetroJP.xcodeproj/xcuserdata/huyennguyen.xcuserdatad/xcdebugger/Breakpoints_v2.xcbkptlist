@@ -1944,11 +1944,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526280068.301982"
+            timestampString = "526361982.68531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "queryRecordTraffic(trafficId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1960,11 +1960,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526280068.301982"
+            timestampString = "526361982.68531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "queryRecordTraffic(trafficId:)"
             landmarkType = "7">
             <Locations>
@@ -2023,11 +2023,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526280068.301982"
+            timestampString = "526361982.68531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "queryRecordTraffic(trafficId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2039,11 +2039,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526280068.301982"
+            timestampString = "526361982.68531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "queryRecordTraffic(trafficId:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2103,11 +2103,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526275686.975965"
+            timestampString = "526375832.178087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "addDestination(_name:_type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2119,11 +2119,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526280068.301982"
+            timestampString = "526375832.178087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "queryAllDestination(_type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2199,11 +2199,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526290213.802311"
+            timestampString = "526375832.178087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "queryAllDestination(_type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2215,11 +2215,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526290216.682743"
+            timestampString = "526375832.178087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "queryAllDestination(_type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2231,11 +2231,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/DatabaseManager.swift"
-            timestampString = "526290344.149814"
+            timestampString = "526375832.178087"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "queryAllDestination(_type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2269,6 +2269,326 @@
             startingLineNumber = "165"
             endingLineNumber = "165"
             landmarkName = "filterTableView(ind:text:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/DatabaseManager.swift"
+            timestampString = "526361982.68531"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "queryAllRecordTraffic(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/DatabaseManager.swift"
+            timestampString = "526361888.883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "queryAllRecordTraffic(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/LeftController.swift"
+            timestampString = "526366361.441999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "btnExportCSVClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/LeftController.swift"
+            timestampString = "526366361.441999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "btnExportCSVClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/LeftController.swift"
+            timestampString = "526366361.441999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "btnExportCSVClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportViewController.swift"
+            timestampString = "526367267.939113"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/DatabaseManager.swift"
+            timestampString = "526372690.133394"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "queryAllRecordTraffic(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/DatabaseManager.swift"
+            timestampString = "526374630.430119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "queryMapTraffic()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/DatabaseManager.swift"
+            timestampString = "526374716.073384"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "queryMapTraffic()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "writeFile(fromDate:toDate:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MetroJP.ExportController.writeFile (fromDate : Swift.String, toDate : Swift.String) -&gt; ()"
+                  moduleName = "MetroJP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/ExportController.swift"
+                  timestampString = "526377546.513801"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "3345">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MetroJP.ExportController.writeFile (fromDate : Swift.String, toDate : Swift.String) -&gt; ()"
+                  moduleName = "MetroJP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/ExportController.swift"
+                  timestampString = "526377546.518012"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "6227">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MetroJP/ExportController.swift"
+            timestampString = "526379641.123655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "writeFile(fromDate:toDate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

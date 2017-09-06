@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import MessageUI
 
 class Utils {
     public static func convertStringToDate (formatStyle: String, dateString: String) -> Date{
