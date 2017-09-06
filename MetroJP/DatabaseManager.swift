@@ -69,6 +69,7 @@ class DatabaseManagement {
         return listRecordTraffic
     }
     
+    
     func queryAllRecordTraffic(fromDate: String, toDate: String) -> [RecordTrafficModel] {
         var listRecordTraffic: Array<RecordTrafficModel> = []
         if (db != nil) {
@@ -119,9 +120,9 @@ class DatabaseManagement {
         return false
     }
     
-    func deleteRecordTraffic(trafficId: Int64) -> Bool {
+    func deleteRecordTraffic(trafficId: Int) -> Bool {
         do {
-            let tblFilterTraffic = tblRecordTraffic.filter(id == trafficId)
+            let tblFilterTraffic = tblRecordTraffic.filter(id == Int64(trafficId))
             try db!.run(tblFilterTraffic.delete())
             print("delete sucessfully")
             return true

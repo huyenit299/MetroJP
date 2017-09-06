@@ -230,7 +230,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
                 tableView.setEditing(false, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
-                    if DatabaseManagement.shared.deleteRecordTraffic(trafficId: Int64(self.listRecord[indexPath.section].list[indexPath.row]!.id)) {
+                    if DatabaseManagement.shared.deleteRecordTraffic(trafficId: self.listRecord[indexPath.section].list[indexPath.row]!.id) {
                         self.listRecord[indexPath.section].list.remove(at: indexPath.row)
                         tableView.reloadData()
                     }
@@ -253,16 +253,18 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemSearch.title = "検索"
         itemSearch.icon = UIImage(named: "ic_search_white_48pt")
         itemSearch.handler = { (item) in
-            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: { (item) in
-                let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                self.fab.close()
-                }
-))
-            self.present(alert, animated: true, completion: nil)
-            self.fab.close()
+//            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: { (item) in
+//                let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+//                self.fab.close()
+//                }
+//))
+//            self.present(alert, animated: true, completion: nil)
+//            self.fab.close()
+            let scr = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+            self.navigationController?.pushViewController(scr, animated: true)
         }
         
         

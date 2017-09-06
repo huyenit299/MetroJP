@@ -1095,36 +1095,6 @@
             </objects>
             <point key="canvasLocation" x="6180" y="-560"/>
         </scene>
-        <!--Favorite View Controller-->
-        <scene sceneID="gKO-0n-688">
-            <objects>
-                <tabBarController storyboardIdentifier="Favorite" id="ifp-Eb-umj" customClass="FavoriteViewController" customModule="MetroJP" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Gsy-ZN-Ycw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="20" height="20"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" red="1" green="0.3668884664" blue="0.1755321879" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="dividerThickness">
-                                <real key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Kdv-QV-BjO" kind="relationship" relationship="viewControllers" id="QWz-13-KCM"/>
-                        <segue destination="Ywu-iv-BNL" kind="relationship" relationship="viewControllers" id="CQK-9t-yuY"/>
-                        <segue destination="sGF-yu-7nm" kind="relationship" relationship="viewControllers" id="jZD-4w-9ol"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U5t-ko-Fe0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3995" y="-81"/>
-        </scene>
         <!--Left Controller-->
         <scene sceneID="Pii-pB-xk7">
             <objects>
@@ -1178,6 +1148,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1j-Qh-Za0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-697.5" y="17.95774647887324"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="LGd-hF-IO4">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="a8g-Ck-Fdd" customClass="SearchViewController" customModule="MetroJP" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9dp-vx-jid"/>
+                        <viewControllerLayoutGuide type="bottom" id="9DT-kJ-iGb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nAX-pd-JDk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-le-pNo">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QOL-Vi-mlo">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="i7V-sT-tHG" customClass="SearchItemTableViewCell" customModule="MetroJP" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i7V-sT-tHG" id="hEZ-nv-I8y">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFh-ql-m5S">
+                                                    <rect key="frame" x="20" y="10" width="280" height="23.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eFh-ql-m5S" firstAttribute="leading" secondItem="hEZ-nv-I8y" secondAttribute="leading" constant="20" id="0Di-g5-Uhn"/>
+                                                <constraint firstAttribute="trailing" secondItem="eFh-ql-m5S" secondAttribute="trailing" constant="20" id="ZzC-hj-9ss"/>
+                                                <constraint firstItem="eFh-ql-m5S" firstAttribute="top" secondItem="hEZ-nv-I8y" secondAttribute="top" constant="10" id="m2O-9c-Qev"/>
+                                                <constraint firstAttribute="bottom" secondItem="eFh-ql-m5S" secondAttribute="bottom" constant="10" id="oYy-Nu-QFK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbSearchItem" destination="eFh-ql-m5S" id="RkX-Za-uXc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4Rx-le-pNo" firstAttribute="leading" secondItem="nAX-pd-JDk" secondAttribute="leading" id="3EJ-8A-V10"/>
+                            <constraint firstAttribute="trailing" secondItem="QOL-Vi-mlo" secondAttribute="trailing" id="ELV-GA-fhN"/>
+                            <constraint firstAttribute="trailing" secondItem="4Rx-le-pNo" secondAttribute="trailing" id="Ue3-Pz-Lmx"/>
+                            <constraint firstItem="9DT-kJ-iGb" firstAttribute="top" secondItem="QOL-Vi-mlo" secondAttribute="bottom" id="nMp-SI-woI"/>
+                            <constraint firstItem="QOL-Vi-mlo" firstAttribute="top" secondItem="4Rx-le-pNo" secondAttribute="bottom" id="ogt-6s-6u1"/>
+                            <constraint firstItem="4Rx-le-pNo" firstAttribute="top" secondItem="9dp-vx-jid" secondAttribute="bottom" id="u56-6f-OMe"/>
+                            <constraint firstItem="QOL-Vi-mlo" firstAttribute="leading" secondItem="nAX-pd-JDk" secondAttribute="leading" id="y5K-en-ewj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="4Rx-le-pNo" id="f1S-C6-NEp"/>
+                        <outlet property="searchDisplayController" destination="zgv-3I-ACn" id="A6B-qt-QhL"/>
+                        <outlet property="tablePlace" destination="QOL-Vi-mlo" id="NmH-0R-ND1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrx-UT-FCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="zgv-3I-ACn">
+                    <connections>
+                        <outlet property="delegate" destination="a8g-Ck-Fdd" id="SsZ-Fc-xgK"/>
+                        <outlet property="searchContentsController" destination="a8g-Ck-Fdd" id="t6p-td-Gc7"/>
+                        <outlet property="searchResultsDataSource" destination="a8g-Ck-Fdd" id="p9R-UE-sNi"/>
+                        <outlet property="searchResultsDelegate" destination="a8g-Ck-Fdd" id="wgf-3Z-SrT"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-722" y="694"/>
         </scene>
         <!--Export Controller-->
         <scene sceneID="LMO-7R-EIP">
