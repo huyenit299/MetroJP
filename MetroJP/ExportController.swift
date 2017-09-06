@@ -16,13 +16,18 @@ class ExportController: UIViewController, UITextFieldDelegate, MFMailComposeView
     @IBOutlet weak var tfFrom: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addLeftBarButtonWithImage(UIImage(named: "ic_menu_black_24dp.png")!)
+        let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_keyboard_arrow_left_white_48pt.png")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backToPrevious))
+        navigationItem.leftBarButtonItem = leftButton
         self.title = "Export"
         datePickerView.datePickerMode = UIDatePickerMode.date
         tfTo.delegate = self
         tfFrom.delegate = self
     }
 
+    override func backToPrevious() {
+        self.navigationController?.popViewController(animated: true)
+//        self.dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

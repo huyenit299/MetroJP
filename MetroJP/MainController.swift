@@ -284,7 +284,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemUpload.title = "アップロード"
         itemUpload.icon = UIImage(named: "ic_cloud_upload_white_48pt")
         itemUpload.handler = { (item) in
-            let scr = self.storyboard?.instantiateViewController(withIdentifier: "ExportViewController") as! ExportController
+            let scr = self.storyboard?.instantiateViewController(withIdentifier: "ExportController") as! ExportController
             self.navigationController?.pushViewController(scr, animated: true)
         }
 

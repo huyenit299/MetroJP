@@ -1146,20 +1146,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMo-Hm-qF5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maa-D5-X6T">
                                 <rect key="frame" x="20" y="100" width="280" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="b7N-PW-ulM"/>
-                                </constraints>
-                                <state key="normal" title="Export CSV"/>
-                                <connections>
-                                    <action selector="btnExportCSVClick:" destination="Sg7-Sa-187" eventType="touchUpInside" id="uzJ-id-FVR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maa-D5-X6T">
-                                <rect key="frame" x="20" y="160" width="280" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="lMR-4U-R4B"/>
+                                    <constraint firstAttribute="height" constant="40" id="DCd-eb-qhN"/>
                                 </constraints>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -1173,17 +1163,17 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uMo-Hm-qF5" firstAttribute="leading" secondItem="Z51-qi-E7a" secondAttribute="leading" constant="20" id="4E1-nN-pHc"/>
-                            <constraint firstItem="uMo-Hm-qF5" firstAttribute="top" secondItem="paY-nb-kB6" secondAttribute="bottom" constant="20" id="7yt-0D-UWJ"/>
+                            <constraint firstItem="maa-D5-X6T" firstAttribute="top" secondItem="paY-nb-kB6" secondAttribute="bottom" constant="20" id="3b3-hf-l6X"/>
+                            <constraint firstItem="maa-D5-X6T" firstAttribute="leading" secondItem="Z51-qi-E7a" secondAttribute="leading" constant="20" id="EXk-3X-IGV"/>
                             <constraint firstAttribute="trailing" secondItem="paY-nb-kB6" secondAttribute="trailing" constant="20" id="F7e-b0-qMT"/>
-                            <constraint firstAttribute="trailing" secondItem="uMo-Hm-qF5" secondAttribute="trailing" constant="20" id="In9-Xj-26Q"/>
-                            <constraint firstItem="maa-D5-X6T" firstAttribute="leading" secondItem="Z51-qi-E7a" secondAttribute="leading" constant="20" id="RDh-aA-gqv"/>
                             <constraint firstItem="paY-nb-kB6" firstAttribute="leading" secondItem="Z51-qi-E7a" secondAttribute="leading" constant="20" id="bzy-hu-ChQ"/>
-                            <constraint firstAttribute="trailing" secondItem="maa-D5-X6T" secondAttribute="trailing" constant="20" id="kUY-83-0SI"/>
                             <constraint firstItem="paY-nb-kB6" firstAttribute="top" secondItem="tGl-xV-xJ1" secondAttribute="bottom" constant="20" id="oC2-17-dDg"/>
-                            <constraint firstItem="maa-D5-X6T" firstAttribute="top" secondItem="uMo-Hm-qF5" secondAttribute="bottom" constant="20" id="of6-vM-f7z"/>
+                            <constraint firstAttribute="trailing" secondItem="maa-D5-X6T" secondAttribute="trailing" constant="20" id="oVh-Gh-MgP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lbUsername" destination="paY-nb-kB6" id="23d-mw-ZAF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1j-Qh-Za0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
