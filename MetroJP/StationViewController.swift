@@ -9,10 +9,7 @@
 import UIKit
 import CoreData
 
-var fromDate: String = ""
-var toDate: String = ""
-var recordDate: String = ""
-class StationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DateSelectedProtocol, SelectSwitchDelegate {
+class StationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, SelectSwitchDelegate {
     var listTraffic: Array<TrafficModel> = []
     @IBOutlet weak var tfNote: UITextField!
     @IBOutlet weak var tfAmount: UITextField!
@@ -25,9 +22,10 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tfTo: UITextField!
     var id: Int = -1
     var record = RecordTrafficModel()
+    let datePickerView:UIDatePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        datePickerView.datePickerMode = UIDatePickerMode.date
         let rightButton: UIBarButtonItem = UIBarButtonItem(title: "完了", style: UIBarButtonItemStyle.plain, target: self, action: #selector(menuButtonTapped))
          navigationItem.rightBarButtonItem = rightButton
         
@@ -39,8 +37,6 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         initData()
         
         tfDate.delegate = self
-        tfFrom.delegate = self
-        tfTo.delegate = self
         
         let nib = UINib(nibName: "TrafficItemView", bundle: nil)
         tableStation.register(nib, forCellReuseIdentifier: "TrafficItemView")
@@ -127,6 +123,11 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
                 changedData = true
             }catch {
                 print(error)
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
         } else {
             do {
@@ -136,16 +137,24 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
                 changedData = true
             }catch {
                 print(error)
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                    self.navigationController?.popViewController(animated: true)
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
         }
         
-        do {
-            try
-                DatabaseManagement.shared.queryAllRecordTraffic()
-        }catch {
-             print(error)
+        if (changedData) {
+            let alert = UIAlertController(title: "", message: "Save successfully", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+           
         }
     }
+    
     
     @IBAction func backClick(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -153,13 +162,10 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     
    
     func initData() {
-        print("init data")
         listTraffic = DatabaseManagement.shared.queryAllTraffic()
         if (id >= 0) {
             let record = DatabaseManagement.shared.queryRecordTraffic(trafficId: Int64(id)) as RecordTrafficModel
-            recordDate = record.date
-            fromDate = record.from
-            toDate = record.to
+            tfDate.text = record.date
             tfFrom.text = record.from
             tfTo.text = record.to
             tfNote.text = record.note
@@ -208,52 +214,19 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        switch textField {
-        case tfFrom:
-            type = Constant.TYPE_FROM
-            break
-        case tfTo:
-            type = Constant.TYPE_TO
-            break
-        case tfDate:
-            type = Constant.TYPE_RECORD
-            break
-        default:
-            break
-        }
-        
-        if (textField == tfFrom || textField == tfTo || textField == tfDate) {
-            let scr = storyboard?.instantiateViewController(withIdentifier: "calendarCollection") as! CalendarController
-            scr.tableProtocol = self
-            self.navigationController?.pushViewController(scr, animated: true)
+        if (textField == tfDate) {
+            textField.inputView = datePickerView
+            datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControlEvents.valueChanged)
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        tfDate.text = recordDate
-        tfFrom.text = fromDate
-        tfTo.text = toDate
-    }
-    
-    //get date selected
-    func getDateSelected(date: String, id: Int) {
-        switch id {
-        case Constant.TYPE_FROM:
-            fromDate = date
-            break
-        case Constant.TYPE_TO:
-            toDate = date
-            break
-        case Constant.TYPE_RECORD:
-            recordDate = date
-            break
-        default:
-            break
-        }
+    func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Constant.DATE_STANDARD
+        tfDate.text = dateFormatter.string(from: sender.date)
     }
     
     func clickSwitch(row: Int) {
-        print("select11="+String(row))
         listTraffic[row].select = !listTraffic[row].select
     }
 
