@@ -93,9 +93,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var count = 0
     func menuButtonTapped() {
-        print("aaaab right")
-        self.title = "" + String(count)
-        count = count + 1
+        let scr = self.storyboard?.instantiateViewController(withIdentifier: "ExportController") as! ExportController
+        self.navigationController?.pushViewController(scr, animated: true)
     }
 
 

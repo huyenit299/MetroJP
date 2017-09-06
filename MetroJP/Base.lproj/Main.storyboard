@@ -28,19 +28,29 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="emd-d3-Y7r"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal">
+                                    <string key="title" base64-UTF8="YES">
+44Ot44Kw44Kk44OzDQoAA
+</string>
+                                </state>
                                 <connections>
                                     <action selector="goToMainScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3jk-ut-npL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssj-7m-8RQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssj-7m-8RQ">
                                 <rect key="frame" x="20" y="84" width="280" height="21"/>
+                                <string key="text" base64-UTF8="YES">
+44Oh44O844Or44Ki44OJ44Os44K5Og0KAA
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBp-Xe-LoK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBp-Xe-LoK">
                                 <rect key="frame" x="20" y="155" width="280" height="21"/>
+                                <string key="text" base64-UTF8="YES">
+44OR44K544Ov44O844OJOg0KAA
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
