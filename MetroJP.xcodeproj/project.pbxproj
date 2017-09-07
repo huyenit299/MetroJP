@@ -141,6 +141,7 @@
 		A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; };
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */; };
+		A0E1D79E1F6124EA003B5C2B /* PopupMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -631,6 +632,7 @@
 		A0C0930C1F45866700E4614F /* DateSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveData.xcdatamodel; sourceTree = "<group>"; };
+		A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMonthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -806,6 +808,7 @@
 				A04AB0921F5EA4A50025A25E /* RegisterViewController.swift */,
 				A09619041F5FBC5C007A65A2 /* ExportController.swift */,
 				A06B82621F5FF92100000706 /* SearchViewController.swift */,
+				A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -1143,6 +1146,7 @@
 				TargetAttributes = {
 					A047501B1F3AAFF500E1DE0C = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = UP872A86W2;
 						ProvisioningStyle = Automatic;
 					};
 					A04750321F3AAFF500E1DE0C = {
@@ -1550,6 +1554,7 @@
 				A09716D51F4C43E400205CF8 /* ParseJson.swift in Sources */,
 				A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */,
 				A04750551F3AB62F00E1DE0C /* LeftController.swift in Sources */,
+				A0E1D79E1F6124EA003B5C2B /* PopupMonthViewController.swift in Sources */,
 				A0A2902F1F44B5DE00A7FD65 /* ConstraintOffsetTarget.swift in Sources */,
 				A0A290231F44B5DE00A7FD65 /* ConstraintLayoutGuide.swift in Sources */,
 				A080F8AC1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift in Sources */,
@@ -1810,7 +1815,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UP872A86W2;
 				INFOPLIST_FILE = MetroJP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1825,7 +1830,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UP872A86W2;
 				INFOPLIST_FILE = MetroJP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

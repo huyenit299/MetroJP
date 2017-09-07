@@ -51,6 +51,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
+        if (isSearching) {
+            scr.id = self.dataSearching[indexPath.row].id
+        } else {
+            scr.id = self.data[indexPath.row].id
+        }
+        self.navigationController?.pushViewController(scr, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
     {
         let update = UITableViewRowAction(style: .normal, title: "Edit") { action, index in

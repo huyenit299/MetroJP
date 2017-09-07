@@ -23,6 +23,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     var id: Int = -1
     var record = RecordTrafficModel()
     let datePickerView:UIDatePicker = UIDatePicker()
+    var isFavorite = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         datePickerView.datePickerMode = UIDatePickerMode.date
@@ -119,7 +120,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         if (id <= 0) {
             do {
                 try
-                    DatabaseManagement.shared.addRecordTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!)
+                    DatabaseManagement.shared.addRecordTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!, _isFavorite: isFavorite)
                 changedData = true
             }catch {
                 print(error)
@@ -131,7 +132,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         } else {
             do {
-                let recordTraffic = RecordTrafficModel(id: id, date: tfDate.text!, target: tfTarget.text!, from: tfFrom.text!, to: tfTo.text!, traffic: traffic, price: tfAmount.text!, note: tfNote.text!)
+                let recordTraffic = RecordTrafficModel(id: id, date: tfDate.text!, target: tfTarget.text!, from: tfFrom.text!, to: tfTo.text!, traffic: traffic, price: tfAmount.text!, note: tfNote.text!, isFavorite: isFavorite)
                 try
                     DatabaseManagement.shared.updateRecordTraffic(trafficId: Int64(id), newTraffic: recordTraffic)
                 changedData = true
@@ -171,6 +172,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
             tfNote.text = record.note
             tfAmount.text = record.price
             tfTarget.text = record.target
+            isFavorite = record.isFavorite
             let traffic = record.traffic
             if (!traffic.isEmpty) {
                 let listTraffic = traffic.components(separatedBy: ",") as Array<String>

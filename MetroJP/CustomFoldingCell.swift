@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FoldingCell
 
 class CustomFoldingCell: FoldingCell {
 

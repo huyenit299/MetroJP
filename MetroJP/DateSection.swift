@@ -13,6 +13,7 @@ class DateSection {
     var totalPrice: String = ""
     var list = Array<RecordTrafficModel?>()
     var expand: Bool = false
+    var active: Bool = false
     init() {
     }
     

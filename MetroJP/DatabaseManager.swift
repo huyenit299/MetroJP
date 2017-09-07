@@ -21,6 +21,7 @@ class DatabaseManagement {
     let traffics = Expression<String>("traffic")
     let price = Expression<String>("price")
     let note = Expression<String>("note")
+    let isFavorite = Expression<Int>("isFavorite")
     
     //table traffic
     let tblTraffic = Table("Traffic")
@@ -29,7 +30,6 @@ class DatabaseManagement {
     //table destination
     let tblDestination = Table("Destination")
     let type = Expression<Int>("type")
-
     
     private init() {
         do {
@@ -41,9 +41,9 @@ class DatabaseManagement {
         }
     }
     
-    func addRecordTraffic(_date: String, _target: String, _from: String, _to: String, _traffics: String, _price: String, _note: String) -> Int64? {
+    func addRecordTraffic(_date: String, _target: String, _from: String, _to: String, _traffics: String, _price: String, _note: String, _isFavorite: Int) -> Int64? {
         do {
-            let insert = tblRecordTraffic.insert(date <- _date, target <- _target, from <- _from, to <- _to, traffics <- _traffics, price <- _price, note <- _note)
+            let insert = tblRecordTraffic.insert(date <- _date, target <- _target, from <- _from, to <- _to, traffics <- _traffics, price <- _price, note <- _note, isFavorite <- _isFavorite)
             let id = try db!.run(insert)
             print("Insert to tblTraffic successfully")
             return id
@@ -53,14 +53,26 @@ class DatabaseManagement {
         }
     }
     
+    func addRecordTraffic(record: RecordTrafficModel) -> Int64? {
+        do {
+            let insert = tblRecordTraffic.insert(date <- record.date, target <- record.target, from <- record.from, to <- record.to, traffics <- record.traffic, price <- record.price, note <- record.note, isFavorite <- record.isFavorite)
+            let id = try db!.run(insert)
+            print("Insert to tblTraffic successfully")
+            return id
+        } catch {
+            print("Cannot insert to database")
+            return nil
+        }
+    }
+
+    
     func queryAllRecordTraffic() -> [RecordTrafficModel] {
         var listRecordTraffic: Array<RecordTrafficModel> = []
         if (db != nil) {
             do {
-                let list = try self.db!.prepare(self.tblRecordTraffic)
+                let list = try self.db!.prepare("SELECT * FROM RecordTraffic ORDER BY date DESC")
                  for t in list {
-                    print("id: \(t[id]) ; target = \(String(describing: t[price]))")
-                    listRecordTraffic.append(RecordTrafficModel(id: Int(t[id]), date: (t[date]), target: (t[target]), from: (t[from]), to: (t[to]), traffic: (t[traffics]), price: (t[price]), note: (t[note])))
+                    listRecordTraffic.append(RecordTrafficModel(id: Int(t[0] as! Int64), date: t[1] as! String, target: t[2] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[3] as! String, price: t[6] as! String, note: t[7] as! String, isFavorite: Int(t[8] as! Int64)))
                 }
             } catch {
                 print(error)
@@ -76,7 +88,22 @@ class DatabaseManagement {
             do {
                 let list = try self.db!.prepare("SELECT * FROM RecordTraffic WHERE date >= '" + fromDate + "' AND date <= '" + toDate+"'")
                 for t in list {
-                    listRecordTraffic.append(RecordTrafficModel(id: Int(t[0] as! Int64), date: t[1] as! String, target: t[2] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[3] as! String, price: t[6] as! String, note: t[7] as! String))
+                    listRecordTraffic.append(RecordTrafficModel(id: Int(t[0] as! Int64), date: t[1] as! String, target: t[2] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[3] as! String, price: t[6] as! String, note: t[7] as! String, isFavorite: t[8] as! Int))
+                }
+            } catch {
+                print(error)
+            }
+        }
+        return listRecordTraffic
+    }
+    
+    func queryAllFavorite(type: Int) -> [RecordTrafficModel] {
+        var listRecordTraffic: Array<RecordTrafficModel> = []
+        if (db != nil) {
+            do {
+                let list = try self.db!.prepare("SELECT * FROM RecordTraffic WHERE isFavorite = 1")
+                for t in list {
+                    listRecordTraffic.append(RecordTrafficModel(id: Int(t[0] as! Int64), date: t[1] as! String, target: t[2] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[3] as! String, price: t[6] as! String, note: t[7] as! String, isFavorite: Int(t[8] as! Int64)))
                 }
             } catch {
                 print(error)
@@ -93,7 +120,7 @@ class DatabaseManagement {
                  let list = try self.db!.prepare(tbTrafficFilter)
                  for t in list {
                     print("id: \(t[id]) ; target = \(String(describing: t[price]))")
-                    record = RecordTrafficModel(id: Int(t[id]), date: t[date], target: t[target], from: t[from], to: t[to], traffic: t[traffics], price: t[price], note: t[note])
+                    record = RecordTrafficModel(id: Int(t[id]), date: t[date], target: t[target], from: t[from], to: t[to], traffic: t[traffics], price: t[price], note: t[note], isFavorite: t[isFavorite])
                 }
             } catch {
                 print(error)
@@ -107,7 +134,7 @@ class DatabaseManagement {
         let tbTrafficFilter = tblRecordTraffic.filter(id == trafficId)
         do {
             let update = tbTrafficFilter.update([
-                    date <- newTraffic.date, target <- newTraffic.target, from <- newTraffic.from, to <- newTraffic.to, traffics <- newTraffic.traffic, price <- newTraffic.price, note <- newTraffic.note
+                    date <- newTraffic.date, target <- newTraffic.target, from <- newTraffic.from, to <- newTraffic.to, traffics <- newTraffic.traffic, price <- newTraffic.price, note <- newTraffic.note, isFavorite <- newTraffic.isFavorite
                 ])
             if try db!.run(update) > 0 {
                 print("Update traffic successfully")
@@ -243,5 +270,4 @@ class DatabaseManagement {
      *End Destination
      */
 }
-
 

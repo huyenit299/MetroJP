@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import  FoldingCell
+//import  FoldingCell
 
 class FoldingCellTableController: UITableViewController {
     let kCloseCellHeight: CGFloat = 179

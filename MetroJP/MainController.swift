@@ -27,6 +27,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     var listRecordTraffic: Array<RecordTrafficModel> = []
     
     var selectIndexPath: IndexPath!
+    var tableView: UITableView!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -90,7 +91,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-    
+
     var count = 0
     func menuButtonTapped() {
         let scr = self.storyboard?.instantiateViewController(withIdentifier: "ExportController") as! ExportController
@@ -133,7 +134,6 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         let nib = UINib(nibName: "ExpandableHeaderView", bundle: nil)
         mainTable.register(nib, forHeaderFooterViewReuseIdentifier: "expandableHeaderView")
         
-        
         initPullToRefresh()
     }
 
@@ -147,19 +147,29 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (listRecord[section].list.isEmpty) {
-            return 0
+        if tableView == self.mainTable{
+            if (listRecord[section].list.isEmpty) {
+                return 0
+            }
+            return listRecord[section].list.count
         }
-        return listRecord[section].list.count
+        else {
+            return listRecord.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainTableViewCell
-        cell.lblPrice.text = listRecord[indexPath.section].list[indexPath.row]?.price
-        cell.lblName.text = listRecord[indexPath.section].list[indexPath.row]?.target
-        cell.lblId.text = listRecord[indexPath.section].list[indexPath.row]?.date
-
-        return cell
+        if tableView == self.mainTable{
+            let cell: MainTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MainTableViewCell
+            cell.lblPrice.text = listRecord[indexPath.section].list[indexPath.row]?.price
+            cell.lblName.text = listRecord[indexPath.section].list[indexPath.row]?.target
+            cell.lblId.text = listRecord[indexPath.section].list[indexPath.row]?.date
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TrafficItemView") as! TrafficItemView
+            cell.lbStation.text = listRecord[indexPath.row].month
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -170,10 +180,14 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if (listRecord.isEmpty) {
-            return 0
+        if tableView == self.mainTable{
+            if (listRecord.isEmpty) {
+                return 0
+            }
+            return listRecord.count
+        } else {
+            return 1
         }
-        return listRecord.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -196,9 +210,31 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func clickMore(section: Int) {
-        let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        self.listRecord[section].expand = !self.listRecord[section].expand
+        mainTable.beginUpdates()
+        mainTable.reloadSections([section], with: .none)
+        mainTable.endUpdates()
+//        let alrController = UIAlertController(title: "\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//        
+//        let margin:CGFloat = 8.0
+//       
+//        let rect =  CGRect(x: margin, y: margin, width: alrController.view.bounds.size.width - margin * 4.0, height: 100.0)
+//        tableView = UITableView(frame: rect)
+//        let nibPopup = UINib(nibName: "TrafficItemView", bundle: nil)
+//        tableView.register(nibPopup, forCellReuseIdentifier: "TrafficItemView")
+////        tableView.delegate = self
+//        tableView.dataSource = self
+//        tableView.backgroundColor = UIColor.green
+//        alrController.view.addSubview(tableView)
+//        
+//        let somethingAction = UIAlertAction(title: "Something", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in print("something")})
+//        
+//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
+//        
+//        alrController.addAction(somethingAction)
+//        alrController.addAction(cancelAction)
+//        
+//        self.present(alrController, animated: true, completion:nil)
     }
     
     func clickAdd(section: Int, month: String) {
@@ -219,24 +255,69 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         return true
     }
     
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        let copy = UITableViewRowAction(style: .destructive, title: "複製") { action, index in
+            print("copy")
+            if (DatabaseManagement.shared.addRecordTraffic(record: self.listRecord[indexPath.section].list[indexPath.row]!)! > 0 ) {
+                self.initData()
+                self.mainTable.reloadData()
+            }
+        }
+        copy.backgroundColor = UIColor.gray
+        
+        // お気に入りに追加
+        let addToFavorite = UITableViewRowAction(style: .normal, title: "お気に入りに追加") { action, index in
+            print("addToFavorite")
+            let record = self.listRecord[indexPath.section].list[indexPath.row]
+            record?.isFavorite = 1
+            if (DatabaseManagement.shared.updateRecordTraffic(trafficId: Int64((self.listRecord[indexPath.section].list[indexPath.row]?.id)!), newTraffic: record!)) {
+                self.listRecord[indexPath.section].list[indexPath.row] = record
+                tableView.setEditing(false, animated: true)
+            }
+        }
+        addToFavorite.backgroundColor = UIColor.blue
+        
+        let delete = UITableViewRowAction(style: .default, title: "削除") { action, index in
             let alert = UIAlertController(title: "", message: "削除しますよろしいですか", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "キアソセル", style: .default,
-            handler: {(alert:UIAlertAction!) in
-                tableView.setEditing(false, animated: true)
+                                          handler: {(alert:UIAlertAction!) in
+                                            tableView.setEditing(false, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
-                    if DatabaseManagement.shared.deleteRecordTraffic(trafficId: self.listRecord[indexPath.section].list[indexPath.row]!.id) {
-                        self.listRecord[indexPath.section].list.remove(at: indexPath.row)
-                        tableView.reloadData()
-                    }
+                if DatabaseManagement.shared.deleteRecordTraffic(trafficId: self.listRecord[indexPath.section].list[indexPath.row]!.id) {
+                    self.listRecord[indexPath.section].list.remove(at: indexPath.row)
+                    tableView.reloadData()
+                }
             }))
             self.present(alert, animated: true, completion: nil)
         }
+        
+        if (self.listRecord[indexPath.section].list[indexPath.row]?.isFavorite == 0) {
+            return [delete, addToFavorite, copy]
+        } else {
+            return [delete, copy]
+        }
     }
+
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if (editingStyle == .delete) {
+////            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            let alert = UIAlertController(title: "", message: "削除しますよろしいですか", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "キアソセル", style: .default,
+//            handler: {(alert:UIAlertAction!) in
+//                tableView.setEditing(false, animated: true)
+//            }))
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+//                    if DatabaseManagement.shared.deleteRecordTraffic(trafficId: self.listRecord[indexPath.section].list[indexPath.row]!.id) {
+//                        self.listRecord[indexPath.section].list.remove(at: indexPath.row)
+//                        tableView.reloadData()
+//                    }
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//    }
     
     func getDateSelected (date: String, id: Int) {
         
@@ -252,16 +333,6 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         itemSearch.title = "検索"
         itemSearch.icon = UIImage(named: "ic_search_white_48pt")
         itemSearch.handler = { (item) in
-//            let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: { (item) in
-//                let alert = UIAlertController(title: "titlePosition nil", message: "titlePosition nil will be left", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "ok...", style: .default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-//                self.fab.close()
-//                }
-//))
-//            self.present(alert, animated: true, completion: nil)
-//            self.fab.close()
             let scr = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
             self.navigationController?.pushViewController(scr, animated: true)
         }
@@ -311,5 +382,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.view.addSubview(fab)
     }
+    
+    
 }
 

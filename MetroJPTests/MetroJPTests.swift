@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import MetroJP
 
 class MetroJPTests: XCTestCase {
     
