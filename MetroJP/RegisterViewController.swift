@@ -10,6 +10,9 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var lbPassConfirm: UITextField!
+    @IBOutlet weak var lbPass: UITextField!
+    @IBOutlet weak var lbUsername: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "ユーザー登録"
@@ -20,4 +23,9 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func btnRegisterClick(_ sender: Any) {
+        let username = lbUsername.text
+        let pass = lbPass.text
+        WebservicesHelper.addUser(username: username!, password: pass!)
+    }
 }

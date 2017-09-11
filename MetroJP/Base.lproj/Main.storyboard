@@ -210,6 +210,9 @@
 55m76YyyAA
 </string>
                                 </state>
+                                <connections>
+                                    <action selector="btnRegisterClick:" destination="1wC-xH-1fW" eventType="touchUpInside" id="IwI-8n-P9F"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-dq-22s">
                                 <rect key="frame" x="30" y="293" width="260" height="30"/>
@@ -260,6 +263,11 @@
                             <constraint firstAttribute="trailing" secondItem="iGo-TK-U6c" secondAttribute="trailing" constant="30" id="yke-N8-jN2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lbPass" destination="66r-5T-ok4" id="RZd-NF-iua"/>
+                        <outlet property="lbPassConfirm" destination="Qj6-dq-22s" id="5ph-PT-Bn0"/>
+                        <outlet property="lbUsername" destination="2pB-oY-jvF" id="jGC-Vl-ivQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fix-MQ-xX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

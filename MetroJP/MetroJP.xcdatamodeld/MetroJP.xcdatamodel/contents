@@ -17,11 +17,12 @@
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Traffic" positionX="-63" positionY="0" width="128" height="90"/>
         <element name="RecordTraffic" positionX="-54" positionY="9" width="128" height="165"/>
+        <element name="Traffic" positionX="-63" positionY="0" width="128" height="90"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

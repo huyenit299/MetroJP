@@ -15,4 +15,6 @@ class Constant {
   public static let MONTH_YEAR_STANDARD = "yyyy-MM"
   public static let MY_LIST = 0
   public static let SHARED_LIST = 1
+    
+   public static var token: String = ""
 }

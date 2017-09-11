@@ -59,6 +59,7 @@
 		A06B82631F5FF92100000706 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B82621F5FF92100000706 /* SearchViewController.swift */; };
 		A06B82811F60013F00000706 /* SearchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06B82801F60013F00000706 /* SearchItemTableViewCell.swift */; };
 		A080F8AC1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A080F8AB1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift */; };
+		A084C0D81F669DCD00E37A4D /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084C0D71F669DCD00E37A4D /* FavoriteModel.swift */; };
 		A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */; };
 		A08BD4F81F46946E004CE47C /* ExpandableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */; };
 		A08BD4FA1F46948C004CE47C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08BD4F91F46948C004CE47C /* Section.swift */; };
@@ -137,10 +138,11 @@
 		A0A2903B1F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A290191F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift */; };
 		A0ABAAF31F46DA5900274E30 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */; };
 		A0BCF0391F503339000D5BA9 /* StationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BCF0381F503339000D5BA9 /* StationItemView.swift */; };
+		A0BF201B1F62DFF2000091B3 /* WebserviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF201A1F62DFF2000091B3 /* WebserviceHelper.swift */; };
+		A0BF20391F62DFFE000091B3 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF20381F62DFFE000091B3 /* APIUrl.swift */; };
 		A0C0930D1F45866700E4614F /* DateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0930C1F45866700E4614F /* DateSection.swift */; };
 		A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; };
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */; };
 		A0E1D79E1F6124EA003B5C2B /* PopupMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -555,6 +557,7 @@
 		A06B82621F5FF92100000706 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A06B82801F60013F00000706 /* SearchItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchItemTableViewCell.swift; sourceTree = "<group>"; };
 		A080F8AB1F5E4A63004FA4E1 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		A084C0D71F669DCD00E37A4D /* FavoriteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		A08BD4F51F469445004CE47C /* ExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableHeaderView.swift; sourceTree = "<group>"; };
 		A08BD4F71F46946E004CE47C /* ExpandableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableHeaderView.xib; sourceTree = "<group>"; };
 		A08BD4F91F46948C004CE47C /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -629,9 +632,10 @@
 		A0A290191F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A0BCF0381F503339000D5BA9 /* StationItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationItemView.swift; sourceTree = "<group>"; };
+		A0BF201A1F62DFF2000091B3 /* WebserviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceHelper.swift; sourceTree = "<group>"; };
+		A0BF20381F62DFFE000091B3 /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		A0C0930C1F45866700E4614F /* DateSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveData.xcdatamodel; sourceTree = "<group>"; };
 		A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMonthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -753,7 +757,6 @@
 				A0A1EB761F56D4A300A04C3F /* SQLite.xcodeproj */,
 				A09AEB681F55710F00414FC4 /* IQKeyboardManager.xcodeproj */,
 				A09AEB461F55052200414FC4 /* SnapKit.xcodeproj */,
-				A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */,
 				A09716B41F4C1F8200205CF8 /* JTAppleCalendar.xcodeproj */,
 				A031132D1F4AF2DF00B6EA55 /* Floaty.xcodeproj */,
 				A031131D1F4AEB9300B6EA55 /* Material.xcodeproj */,
@@ -857,6 +860,7 @@
 				A0A1EB921F56DA3500A04C3F /* RecordTraffic.swift */,
 				A093461D1F5803B90067E589 /* Traffic.swift */,
 				A04AB0731F5E52350025A25E /* Destination.swift */,
+				A084C0D71F669DCD00E37A4D /* FavoriteModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -956,6 +960,8 @@
 				A0A1EB6C1F56CCF100A04C3F /* DatabaseManager.swift */,
 				A09346051F57F80F0067E589 /* LeftPaddedTextField.swift */,
 				A094E5631F5902C000FBDEE5 /* Utils.swift */,
+				A0BF201A1F62DFF2000091B3 /* WebserviceHelper.swift */,
+				A0BF20381F62DFFE000091B3 /* APIUrl.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1543,8 +1549,10 @@
 				A04AB0741F5E52350025A25E /* Destination.swift in Sources */,
 				A08BD4FA1F46948C004CE47C /* Section.swift in Sources */,
 				A0A2902C1F44B5DE00A7FD65 /* ConstraintMakerPriortizable.swift in Sources */,
+				A084C0D81F669DCD00E37A4D /* FavoriteModel.swift in Sources */,
 				A047505C1F3ABCA700E1DE0C /* UIViewController.swift in Sources */,
 				A0A2902B1F44B5DE00A7FD65 /* ConstraintMakerFinalizable.swift in Sources */,
+				A0BF20391F62DFFE000091B3 /* APIUrl.swift in Sources */,
 				A0A290241F44B5DE00A7FD65 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				A0A290351F44B5DE00A7FD65 /* ConstraintView+Extensions.swift in Sources */,
 				A0A2902D1F44B5DE00A7FD65 /* ConstraintMakerRelatable.swift in Sources */,
@@ -1553,6 +1561,7 @@
 				A0A290371F44B5DE00A7FD65 /* Debugging.swift in Sources */,
 				A09716D51F4C43E400205CF8 /* ParseJson.swift in Sources */,
 				A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */,
+				A0BF201B1F62DFF2000091B3 /* WebserviceHelper.swift in Sources */,
 				A04750551F3AB62F00E1DE0C /* LeftController.swift in Sources */,
 				A0E1D79E1F6124EA003B5C2B /* PopupMonthViewController.swift in Sources */,
 				A0A2902F1F44B5DE00A7FD65 /* ConstraintOffsetTarget.swift in Sources */,
@@ -1585,7 +1594,6 @@
 				A094E5951F591AA100FBDEE5 /* DGElasticPullToRefreshView.swift in Sources */,
 				A0C0930D1F45866700E4614F /* DateSection.swift in Sources */,
 				A09346061F57F80F0067E589 /* LeftPaddedTextField.swift in Sources */,
-				A0CBF5341F4D1F8400EA323A /* SaveData.xcdatamodeld in Sources */,
 				A04750281F3AAFF500E1DE0C /* MetroJP.xcdatamodeld in Sources */,
 				A09716D01F4C39AD00205CF8 /* FavoriteViewController.swift in Sources */,
 				A03113101F4AD95900B6EA55 /* SectionTableCell.swift in Sources */,
@@ -1943,16 +1951,6 @@
 			);
 			currentVersion = A04750271F3AAFF500E1DE0C /* MetroJP.xcdatamodel */;
 			path = MetroJP.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		A0CBF5321F4D1F8400EA323A /* SaveData.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */,
-			);
-			currentVersion = A0CBF5331F4D1F8400EA323A /* SaveData.xcdatamodel */;
-			path = SaveData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

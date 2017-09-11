@@ -8,14 +8,18 @@
 
 import UIKit
 
-class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
-    var myList = Array<RecordTrafficModel>();
-    var sharedList = Array<RecordTrafficModel>();
+protocol FavoriteDelegate {
+    func getListFavorite(listFavorite: Array<FavoriteModel>)
+}
+
+class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, FavoriteDelegate{
+    var myList = Array<FavoriteModel>();
+    var sharedList = Array<FavoriteModel>();
     var selectingtab = Constant.MY_LIST
     @IBOutlet weak var segmentController: UISegmentedControl!
     @IBOutlet weak var tableFavorite: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    var dataSearching = Array<RecordTrafficModel>()
+    var dataSearching = Array<FavoriteModel>()
     var isSearching: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +28,11 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
         
         searchBar.showsCancelButton = true
         searchBar.showsScopeBar = true
+        
         myList = DatabaseManagement.shared.queryAllFavorite(type: Constant.MY_LIST)
+        
+        WebservicesHelper.getListFavorite(delegate: self, type: selectingtab)
+
         self.tableFavorite.dataSource = self
         self.tableFavorite.delegate = self
         searchBar.delegate = self
@@ -36,21 +44,22 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         selectingtab = sender.selectedSegmentIndex
         print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
-        switch sender.selectedSegmentIndex {
-        case Constant.MY_LIST:
-            if (myList.isEmpty) {
-                myList = DatabaseManagement.shared.queryAllFavorite(type: Constant.MY_LIST)
-            }
-            break
-        case Constant.SHARED_LIST:
-            if (sharedList.isEmpty) {
-                sharedList = DatabaseManagement.shared.queryAllFavorite(type: Constant.SHARED_LIST)
-            }
-            break
-        default:
-            break
-        }
-        tableFavorite.reloadData()
+//        switch sender.selectedSegmentIndex {
+//        case Constant.MY_LIST:
+//            if (myList.isEmpty) {
+//                myList = DatabaseManagement.shared.queryAllFavorite(type: Constant.MY_LIST)
+//            }
+//            break
+//        case Constant.SHARED_LIST:
+//            if (sharedList.isEmpty) {
+//                sharedList = DatabaseManagement.shared.queryAllFavorite(type: Constant.SHARED_LIST)
+//            }
+//            break
+//        default:
+//            break
+//        }
+//        tableFavorite.reloadData()
+         WebservicesHelper.getListFavorite(delegate: self, type: selectingtab)
     }
 
     override func didReceiveMemoryWarning() {
@@ -123,28 +132,44 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
             let alert = UIAlertController(title: "", message: "削除しますよろしいですか", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "キアソセル", style: .default,
                                           handler: {(alert:UIAlertAction!) in
+                                            var id = -1
+                                            switch self.selectingtab {
+                                            case Constant.MY_LIST:
+                                                id = Int(self.myList[indexPath.row].id)
+                                                break
+                                            case Constant.SHARED_LIST:
+                                                id = Int(self.sharedList[indexPath.row].id)
+                                                break
+                                            default:
+                                                break
+                                            }
+                                            WebservicesHelper.deleteFavorite(favoriteId: id)
                                             tableView.setEditing(false, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
                 var id = -1
-                var record = RecordTrafficModel()
+                var sessionId = -1
+                var common = 0
+                var record = FavoriteModel()
                 switch self.selectingtab {
                 case Constant.MY_LIST:
                     id = Int(self.myList[indexPath.row].id)
                     record = self.myList[indexPath.row]
-                    record.isFavorite = 0
+                    sessionId = self.myList[indexPath.row].session_id
+                    common = self.myList[indexPath.row].common
                     break
                 case Constant.SHARED_LIST:
                     id = Int(self.sharedList[indexPath.row].id)
                     record = self.sharedList[indexPath.row]
-                    record.isFavorite = 0
+                    sessionId = self.sharedList[indexPath.row].session_id
+                    common = self.sharedList[indexPath.row].common
                     break
                 default:
                     break
                 }
 
-               
-                if DatabaseManagement.shared.updateRecordTraffic(trafficId: Int64(id), newTraffic: record){
+               WebservicesHelper.updateFavorite(favoriteId: id, sessionId: sessionId, common: common)
+                if DatabaseManagement.shared.updateFavorite(favoriteId: Int64(id), newTraffic: record){
                     switch self.selectingtab {
                     case Constant.MY_LIST:
                         self.myList.remove(at: indexPath.row)
@@ -180,13 +205,13 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
         switch ind {
         case Constant.MY_LIST:
             //fix of not searching when backspacing
-            dataSearching = myList.filter({ (mod) -> Bool in
+            dataSearching = self.myList.filter({ (mod) -> Bool in
                 return mod.target.lowercased().contains(text.lowercased())
             })
             self.tableFavorite.reloadData()
         case Constant.SHARED_LIST:
             //fix of not searching when backspacing
-            dataSearching = sharedList.filter({ (mod) -> Bool in
+            dataSearching = self.sharedList.filter({ (mod) -> Bool in
                 return mod.target.lowercased().contains(text.lowercased())
             })
             self.tableFavorite.reloadData()
@@ -205,4 +230,19 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
             filterTableView(ind: selectingtab, text: searchBar.text!)
         }
     }
+    
+    func getListFavorite(listFavorite: Array<FavoriteModel>) {
+        switch selectingtab {
+        case Constant.MY_LIST:
+           myList = listFavorite
+           break
+        case Constant.SHARED_LIST:
+            sharedList = listFavorite
+            break
+        default:
+            break
+        }
+        tableFavorite.reloadData()
+    }
+
 }

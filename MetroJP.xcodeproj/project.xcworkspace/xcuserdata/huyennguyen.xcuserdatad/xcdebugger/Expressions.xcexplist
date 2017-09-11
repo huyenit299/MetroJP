@@ -11,6 +11,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DatabaseManagement.queryAllTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "t[date]">
+            </PersistentString>
+            <PersistentString
+               value = "item[self.date]">
+            </PersistentString>
+            <PersistentString
+               value = "t[target]">
+            </PersistentString>
+            <PersistentString
+               value = "list">
+            </PersistentString>
+            <PersistentString
+               value = "list.count">
+            </PersistentString>
+            <PersistentString
+               value = "t[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FavoriteController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:FavoriteController.swift">
          <PersistentStrings>
             <PersistentString
@@ -22,12 +45,51 @@
          contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "static ParseJson.loginParser(jsonData : Data) -&gt; String:ParseJson.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "object-&gt;data">
+            </PersistentString>
+            <PersistentString
+               value = "object[&quot;data&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainController.(tableView(UITableView, editActionsForRowAt : IndexPath) -&gt; [UITableViewRowAction]?).(closure #2):MainController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.listRecord[indexPath.section].list[indexPath.row]!.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static ParseJson.listFavoriteParser(jsonData : Data, delegate : FavoriteDelegate) -&gt; ():ParseJson.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "object">
+            </PersistentString>
+            <PersistentString
+               value = "session[&quot;date&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "object[&quot;data&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "session[&quot;id&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ExportController.writeFile(fromDate : String, toDate : String) -&gt; ():ExportController.swift">
          <PersistentStrings>
             <PersistentString
                value = "listAllTraffic[id]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainController.initData() -&gt; ():MainController.swift">
       </ContextState>
       <ContextState
          contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
@@ -65,10 +127,49 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static ParseJson.listSessionParser(jsonData : Data) -&gt; [RecordTrafficModel]:ParseJson.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(data as AnyObject).value(forKey: &quot;listSession&quot;) ">
+            </PersistentString>
+            <PersistentString
+               value = "data">
+            </PersistentString>
+            <PersistentString
+               value = "data.value(forKey: &quot;listSession&quot;)">
+            </PersistentString>
+            <PersistentString
+               value = "object[&quot;data&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "item[&quot;listSession&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "i[&quot;1&quot;] as NSDictionary">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
          <PersistentStrings>
             <PersistentString
                value = "t[date]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static WebservicesHelper.getToken() -&gt; String:WebserviceHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "res.value(forKey: &quot;token&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static WebservicesHelper.addSession(date : String, target : String, traffic : String, from : String, to : String, fare : String, remarks : String) -&gt; ():WebserviceHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "token">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -88,29 +189,6 @@
             </PersistentString>
             <PersistentString
                value = "t[7]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DatabaseManagement.queryAllTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "t[date]">
-            </PersistentString>
-            <PersistentString
-               value = "item[self.date]">
-            </PersistentString>
-            <PersistentString
-               value = "t[target]">
-            </PersistentString>
-            <PersistentString
-               value = "list">
-            </PersistentString>
-            <PersistentString
-               value = "list.count">
-            </PersistentString>
-            <PersistentString
-               value = "t[1]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

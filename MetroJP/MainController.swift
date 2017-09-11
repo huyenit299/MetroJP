@@ -7,16 +7,21 @@
 //
 
 import UIKit
-import Alamofire
 import JTAppleCalendar
 import Floaty
+import CoreData
+import Foundation
 
 protocol DateSelectedProtocol {
     func getDateSelected (date: String, id: Int)//id of row
 }
 
+protocol SessionListDelegate {
+    func getSessionList (listRecordTraffic: Array<RecordTrafficModel>)
+}
+
 var changedData = false
-class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate {
+class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate, SessionListDelegate {
 
     var fab = Floaty()
     @IBOutlet weak var mainTable: UITableView!
@@ -68,9 +73,31 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         mainTable.dg_setPullToRefreshBackgroundColor(mainTable.backgroundColor!)
     }
     
+    func getToken() -> String {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            if result.count > 0 {
+                for res in result as! [NSManagedObject] {
+                    if let token = res.value(forKey: "token") as? String {
+                        print("return token-" + token)
+                        return token
+                    }
+                }
+            }
+        }
+        catch {
+            print(error)
+        }
+        return ""
+    }
+    
     func initData() {
         listRecord.removeAll()
-        listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic()
         if (!listRecordTraffic.isEmpty) {
             for item in listRecordTraffic {
                 var list: Array<RecordTrafficModel> = []
@@ -108,28 +135,13 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         layoutFAB()
         
-//        listRecord = ParseJson().readJson()
-        
+        listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic()
         initData()
+        WebservicesHelper.getListSession(sessionDelegate: self)
         
         mainTable.dataSource = self
         mainTable.delegate = self
 
-    
-//        Alamofire.request("https://httpbin.org/get").responseJSON { response in
-//            print("Request: \(String(describing: response.request))")   // original url request
-//            print("Response: \(String(describing: response.response))") // http url response
-//            print("Result: \(response.result)")                         // response serialization result
-//            
-//            if let json = response.result.value {
-//                print("JSON: \(json)") // serialized json response
-//            }
-//            
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
-//            }
-//        }
-        
         selectIndexPath = IndexPath(row: -1, section: -1)
         let nib = UINib(nibName: "ExpandableHeaderView", bundle: nil)
         mainTable.register(nib, forHeaderFooterViewReuseIdentifier: "expandableHeaderView")
@@ -259,6 +271,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     {
         let copy = UITableViewRowAction(style: .destructive, title: "複製") { action, index in
             print("copy")
+            let record = self.listRecord[indexPath.section].list[indexPath.row]!
+            WebservicesHelper.addSession(date: record.date, target: record.target, traffic: record.traffic, from: record.from, to: record.to, fare: record.price, remarks: record.note)
             if (DatabaseManagement.shared.addRecordTraffic(record: self.listRecord[indexPath.section].list[indexPath.row]!)! > 0 ) {
                 self.initData()
                 self.mainTable.reloadData()
@@ -271,6 +285,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
             print("addToFavorite")
             let record = self.listRecord[indexPath.section].list[indexPath.row]
             record?.isFavorite = 1
+            WebservicesHelper.addFavorite(sessionId: self.listRecord[indexPath.section].list[indexPath.row]!.id, common: true)
             if (DatabaseManagement.shared.updateRecordTraffic(trafficId: Int64((self.listRecord[indexPath.section].list[indexPath.row]?.id)!), newTraffic: record!)) {
                 self.listRecord[indexPath.section].list[indexPath.row] = record
                 tableView.setEditing(false, animated: true)
@@ -285,6 +300,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
                                             tableView.setEditing(false, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
+                WebservicesHelper.deleteSession(sessionId: self.listRecord[indexPath.section].list[indexPath.row]!.id)
                 if DatabaseManagement.shared.deleteRecordTraffic(trafficId: self.listRecord[indexPath.section].list[indexPath.row]!.id) {
                     self.listRecord[indexPath.section].list.remove(at: indexPath.row)
                     tableView.reloadData()
@@ -383,6 +399,10 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(fab)
     }
     
-    
+    func getSessionList (listRecordTraffic: Array<RecordTrafficModel>) {
+        self.listRecordTraffic = listRecordTraffic
+        initData()
+    }
+
 }
 

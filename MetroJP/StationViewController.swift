@@ -98,26 +98,10 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
             return
         }
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let record = NSEntityDescription.insertNewObject(forEntityName: "RecordTraffic", into: context)
-        record.setValue(tfDate.text, forKey: "date")
-        record.setValue(tfTarget.text, forKey: "target")
-        record.setValue(tfFrom.text, forKey: "from")
-        record.setValue(tfTo.text, forKey: "to")
-        record.setValue(tfAmount.text, forKey: "price")
-        record.setValue(tfNote.text, forKey: "note")
-        record.setValue(traffic, forKey: "listTraffic")
-        record.setValue(1, forKey: "id")
-        do {
-            try context.save()
-            print("SAVE record")
-        }
-        catch {
-            print("error")
-        }
+       
         
         if (id <= 0) {
+             WebservicesHelper.addSession(date: tfDate.text!, target: tfTarget.text!, traffic: traffic, from: tfFrom.text!, to: tfTo.text!, fare: tfAmount.text!, remarks: tfNote.text!)
             do {
                 try
                     DatabaseManagement.shared.addRecordTraffic(_date: tfDate.text!, _target: tfTarget.text!, _from: tfFrom.text!, _to: tfTo.text!, _traffics: traffic, _price: tfAmount.text!, _note: tfNote.text!, _isFavorite: isFavorite)
@@ -131,6 +115,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.present(alert, animated: true, completion: nil)
             }
         } else {
+            WebservicesHelper.updateSession(sessionId: id, date: tfDate.text!, target: tfTarget.text!, traffic: traffic, from: tfFrom.text!, to: tfTo.text!, fare: tfAmount.text!, remarks: tfNote.text!)
             do {
                 let recordTraffic = RecordTrafficModel(id: id, date: tfDate.text!, target: tfTarget.text!, from: tfFrom.text!, to: tfTo.text!, traffic: traffic, price: tfAmount.text!, note: tfNote.text!, isFavorite: isFavorite)
                 try

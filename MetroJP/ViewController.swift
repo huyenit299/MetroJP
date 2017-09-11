@@ -8,8 +8,13 @@
 
 import UIKit
 import CoreData
+import Foundation
 
-class ViewController: UIViewController {
+protocol LoginDelegate {
+    func loginComplete(tokenRes: String)
+}
+
+class ViewController: UIViewController, LoginDelegate {
     
     @IBOutlet weak var lbUsername: UITextField!
     @IBOutlet weak var lbPassword: UITextField!
@@ -19,7 +24,7 @@ class ViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        request.returnsObjectsAsFaults = false
+//        request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
             if result.count > 0 {
@@ -30,6 +35,9 @@ class ViewController: UIViewController {
                     
                     if let password = res.value(forKey: "password") as? String {
                         lbPassword.text = password
+                    }
+                    if let token = res.value(forKey: "token") as? String {
+                        print("return token-" + token)
                     }
                 }
             }
@@ -44,12 +52,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func saveUserToCoreData(username: String, password: String) {
+    func saveUserToCoreData(username: String, password: String, token: String) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
         newUser.setValue(username, forKey: "username")
         newUser.setValue(password, forKey: "password")
+        newUser.setValue(token, forKey: "token")
         do {
             try context.save()
             print("SAVE")
@@ -66,12 +75,19 @@ class ViewController: UIViewController {
     @IBAction func goToMainScreen(_ sender: AnyObject) {
         let username = lbUsername.text
         let password = lbPassword.text
-        saveUserToCoreData(username: username!, password: password!)
-
+        WebservicesHelper.login(username: username!, password: password!,loginDelegate: self)
+     
+    }
+    
+    func loginComplete(tokenRes: String) {
+        Constant.token = tokenRes
+        print("token-" + Constant.token)
+        let username = lbUsername.text
+        let password = lbPassword.text
+        saveUserToCoreData(username: username!, password: password!, token: Constant.token)
+        
         let scr = storyboard?.instantiateViewController(withIdentifier: "Slide") as! SlideViewController
-//        let scr = storyboard?.instantiateViewController(withIdentifier: "FoldingCellTable") as! FoldingCellTableController
         present(scr, animated: true, completion: nil)
-//        navigationController?.pushViewController(scr, animated: true)
     }
 }
 
