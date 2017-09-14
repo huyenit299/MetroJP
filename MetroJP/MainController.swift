@@ -12,16 +12,10 @@ import Floaty
 import CoreData
 import Foundation
 
-protocol DateSelectedProtocol {
-    func getDateSelected (date: String, id: Int)//id of row
-}
 
-protocol SessionListDelegate {
-    func getSessionList (listRecordTraffic: Array<RecordTrafficModel>)
-}
 
 var changedData = false
-class MainController: UIViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate, SessionListDelegate {
+class MainController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate, SessionListDelegate, ChangeMonthDelegate {
 
     var fab = Floaty()
     @IBOutlet weak var mainTable: UITableView!
@@ -33,6 +27,8 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var selectIndexPath: IndexPath!
     var tableView: UITableView!
+    // create the concurrent queue
+    let asyncQueue = DispatchQueue(label: "loadSession", attributes: .concurrent)
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -64,9 +60,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
         mainTable.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
             print("pull to refresh")
-            self?.initData()
-            self?.mainTable.reloadData()
-            // Do not forget to call dg_stopLoading() at the end
+            self?.loadData()
             self?.mainTable.dg_stopLoading()
             }, loadingView: loadingView)
         mainTable.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
@@ -117,14 +111,34 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             }
         }
+        self.loading.hideActivityIndicator(uiView: self.view)
+        self.mainTable.reloadData()
+        self.mainTable.endUpdates()
     }
 
-    var count = 0
+    
     func menuButtonTapped() {
         let scr = self.storyboard?.instantiateViewController(withIdentifier: "ExportController") as! ExportController
         self.navigationController?.pushViewController(scr, animated: true)
     }
-
+    
+    //load data from local if no internet connection, else load from API
+    func loadData() {
+        if ((self.manager?.isReachable)!) {
+            self.asyncQueue.async {
+                self.loading.showActivityIndicator(uiView: self.view)
+                WebservicesHelper.getListMonth()
+                WebservicesHelper.getListSession(sessionDelegate: self)
+            }
+        } else {
+           
+               self.loading.showActivityIndicator(uiView: self.view)
+                self.listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic()
+//                DispatchQueue.main.async {
+                    self.initData()
+//                }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,11 +148,9 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.navigationItem.rightBarButtonItem?.action = #selector(menuButtonTapped)
         
         layoutFAB()
-        
-        listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic()
-        initData()
-        WebservicesHelper.getListSession(sessionDelegate: self)
-        
+
+        loadData()
+
         mainTable.dataSource = self
         mainTable.delegate = self
 
@@ -204,9 +216,15 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         print("hello")
+        if (tableView == self.mainTable) {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "expandableHeaderView") as! ExpandableHeaderView
          headerView.customInit(date: listRecord[section].month, price_right: listRecord[section].totalPrice, section: section, delegate: self)
+//         listRecord[section].x = headerView.btnMore.frame.origin.x
+//         listRecord[section].y = headerView.btnMore.frame.origin.y
         return headerView
+        }  else {
+            return UIView()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -222,31 +240,16 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func clickMore(section: Int) {
-        self.listRecord[section].expand = !self.listRecord[section].expand
-        mainTable.beginUpdates()
-        mainTable.reloadSections([section], with: .none)
-        mainTable.endUpdates()
-//        let alrController = UIAlertController(title: "\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-//        
-//        let margin:CGFloat = 8.0
-//       
-//        let rect =  CGRect(x: margin, y: margin, width: alrController.view.bounds.size.width - margin * 4.0, height: 100.0)
-//        tableView = UITableView(frame: rect)
-//        let nibPopup = UINib(nibName: "TrafficItemView", bundle: nil)
-//        tableView.register(nibPopup, forCellReuseIdentifier: "TrafficItemView")
-////        tableView.delegate = self
-//        tableView.dataSource = self
-//        tableView.backgroundColor = UIColor.green
-//        alrController.view.addSubview(tableView)
-//        
-//        let somethingAction = UIAlertAction(title: "Something", style: UIAlertActionStyle.default, handler: {(alert: UIAlertAction!) in print("something")})
-//        
-//        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {(alert: UIAlertAction!) in print("cancel")})
-//        
-//        alrController.addAction(somethingAction)
-//        alrController.addAction(cancelAction)
-//        
-//        self.present(alrController, animated: true, completion:nil)
+        let popOverVC = storyboard?.instantiateViewController(withIdentifier: "PopupMonthViewController") as! PopupMonthViewController
+        self.addChildViewController(popOverVC)
+        let rect = CGRect(x: 20, y: 100, width: Int(popOverVC.view.bounds.size.width - 80), height: Int(44 * (listRecord.count + 1)))
+//        let rect =  CGRect(x: x, y: y, width: popOverVC.view.bounds.size.width - 80, height: CFloat(100))
+        popOverVC.view.frame = rect
+        popOverVC.delegate = self
+        popOverVC.listRecord = listRecord
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+        
     }
     
     func clickAdd(section: Int, month: String) {
@@ -256,11 +259,16 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectIndexPath = indexPath
-        row = indexPath.row
-        let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
-        scr.id = (listRecord[indexPath.section].list[indexPath.row]?.id)!
-        self.navigationController?.pushViewController(scr, animated: true)
+        
+        if tableView == self.mainTable{
+            self.selectIndexPath = indexPath
+            row = indexPath.row
+            let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
+            scr.id = (listRecord[indexPath.section].list[indexPath.row]?.id)!
+            self.navigationController?.pushViewController(scr, animated: true)
+        } else {
+            print("dddd")
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -286,7 +294,7 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
             let record = self.listRecord[indexPath.section].list[indexPath.row]
             record?.isFavorite = 1
             WebservicesHelper.addFavorite(sessionId: self.listRecord[indexPath.section].list[indexPath.row]!.id, common: true)
-            if (DatabaseManagement.shared.updateRecordTraffic(trafficId: Int64((self.listRecord[indexPath.section].list[indexPath.row]?.id)!), newTraffic: record!)) {
+            if (DatabaseManagement.shared.updateRecordTraffic(trafficId: Int((self.listRecord[indexPath.section].list[indexPath.row]?.id)!), newTraffic: record!)) {
                 self.listRecord[indexPath.section].list[indexPath.row] = record
                 tableView.setEditing(false, animated: true)
             }
@@ -316,25 +324,6 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if (editingStyle == .delete) {
-////            tableView.deleteRows(at: [indexPath], with: .automatic)
-//            let alert = UIAlertController(title: "", message: "削除しますよろしいですか", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "キアソセル", style: .default,
-//            handler: {(alert:UIAlertAction!) in
-//                tableView.setEditing(false, animated: true)
-//            }))
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
-//                    if DatabaseManagement.shared.deleteRecordTraffic(trafficId: self.listRecord[indexPath.section].list[indexPath.row]!.id) {
-//                        self.listRecord[indexPath.section].list.remove(at: indexPath.row)
-//                        tableView.reloadData()
-//                    }
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//    }
-    
     func getDateSelected (date: String, id: Int) {
         
         
@@ -399,10 +388,20 @@ class MainController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(fab)
     }
     
+    //delegate session list
     func getSessionList (listRecordTraffic: Array<RecordTrafficModel>) {
-        self.listRecordTraffic = listRecordTraffic
-        initData()
+        if (listRecordTraffic.isEmpty) {
+            self.loading.hideActivityIndicator(uiView: self.view)
+        }
+        DispatchQueue.main.async {
+            self.listRecordTraffic = listRecordTraffic
+            self.initData()
+        }
     }
-
+    
+    func changeMonth (month: String) {
+        print("AAAAA-" + month)
+        WebservicesHelper.getListSession(sessionDelegate: self, month: month)
+    }
 }
 

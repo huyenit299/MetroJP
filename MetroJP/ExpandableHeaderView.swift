@@ -8,15 +8,12 @@
 
 import UIKit
 
-protocol ExpandableHeaderViewDelegate {
-    func toggleSection(header: ExpandableHeaderView, section: Int)
-    func clickMore(section: Int)
-    func clickAdd(section: Int, month: String)
-}
+
 class ExpandableHeaderView: UITableViewHeaderFooterView {
     var delegate: ExpandableHeaderViewDelegate?
     var section: Int!
 
+    @IBOutlet weak var btnMore: UIButton!
     @IBOutlet weak var lbName: UILabel!
 
     @IBOutlet weak var btnAddNew: UIButton!

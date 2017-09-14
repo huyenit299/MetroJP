@@ -113,7 +113,7 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
                 scr.id = self.myList[indexPath.row].id
                 self.navigationController?.pushViewController(scr, animated: true)
             }
-            break
+             break
         case Constant.SHARED_LIST:
             if (!sharedList.isEmpty) {
                 let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
@@ -143,7 +143,6 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
                                             default:
                                                 break
                                             }
-                                            WebservicesHelper.deleteFavorite(favoriteId: id)
                                             tableView.setEditing(false, animated: true)
             }))
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
@@ -168,8 +167,8 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
                     break
                 }
 
-               WebservicesHelper.updateFavorite(favoriteId: id, sessionId: sessionId, common: common)
-                if DatabaseManagement.shared.updateFavorite(favoriteId: Int64(id), newTraffic: record){
+                WebservicesHelper.deleteFavorite(favoriteId: id)
+                if DatabaseManagement.shared.deleteFavorite(favoriteId: id){
                     switch self.selectingtab {
                     case Constant.MY_LIST:
                         self.myList.remove(at: indexPath.row)
@@ -181,6 +180,7 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
                         break
                     }
                     tableView.reloadData()
+                    tableView.setEditing(false, animated: true)
                     changedData = true
                 }
             }))

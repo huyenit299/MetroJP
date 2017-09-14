@@ -10,14 +10,15 @@ import UIKit
 import CoreData
 import Foundation
 
+
 protocol LoginDelegate {
     func loginComplete(tokenRes: String)
 }
 
-class ViewController: UIViewController, LoginDelegate {
-    
+class ViewController: BaseViewController, LoginDelegate {
     @IBOutlet weak var lbUsername: UITextField!
     @IBOutlet weak var lbPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //storing core data
@@ -75,6 +76,7 @@ class ViewController: UIViewController, LoginDelegate {
     @IBAction func goToMainScreen(_ sender: AnyObject) {
         let username = lbUsername.text
         let password = lbPassword.text
+        loading.showActivityIndicator(uiView: self.view)
         WebservicesHelper.login(username: username!, password: password!,loginDelegate: self)
      
     }
@@ -85,6 +87,8 @@ class ViewController: UIViewController, LoginDelegate {
         let username = lbUsername.text
         let password = lbPassword.text
         saveUserToCoreData(username: username!, password: password!, token: Constant.token)
+        
+        loading.hideActivityIndicator(uiView: self.view)
         
         let scr = storyboard?.instantiateViewController(withIdentifier: "Slide") as! SlideViewController
         present(scr, animated: true, completion: nil)

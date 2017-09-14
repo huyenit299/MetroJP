@@ -3,6 +3,139 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "t[date]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManagement.queryAllFavorite(type : Int) -&gt; [FavoriteModel]:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "t[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static ParseJson.loginParser(jsonData : Data) -&gt; String:ParseJson.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "object-&gt;data">
+            </PersistentString>
+            <PersistentString
+               value = "object[&quot;data&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static WebservicesHelper.getToken() -&gt; String:WebserviceHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "res.value(forKey: &quot;token&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static WebservicesHelper.(getListSession(sessionDelegate : SessionListDelegate, month : String) -&gt; ()).(closure #1):WebserviceHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "month">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CalendarController.viewDidLoad() -&gt; ():CalendarController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "type">
+            </PersistentString>
+            <PersistentString
+               value = "tableProtocol">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FavoriteController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:FavoriteController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sharedList.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainController.initData() -&gt; ():MainController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "StationViewController.saveDataClick(Any) -&gt; ():StationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Int(tfAmount.text!)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainController.(tableView(UITableView, editActionsForRowAt : IndexPath) -&gt; [UITableViewRowAction]?).(closure #2):MainController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.listRecord[indexPath.section].list[indexPath.row]!.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StationViewController.getDateSelected(date : String, id : Int) -&gt; ():StationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static WebservicesHelper.addSession(date : String, target : String, traffic : String, from : String, to : String, fare : String, remarks : String) -&gt; ():WebserviceHelper.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "token">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DatabaseManagement.queryAllRecordTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "t[8]">
+            </PersistentString>
+            <PersistentString
+               value = "t[7]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableStation.bottomAnchor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static ParseJson.listFavoriteParser(jsonData : Data, delegate : FavoriteDelegate) -&gt; ():ParseJson.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "object">
+            </PersistentString>
+            <PersistentString
+               value = "session[&quot;date&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "object[&quot;data&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "session[&quot;id&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "StationViewController.backClick(Any) -&gt; ():StationViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -34,95 +167,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "FavoriteController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:FavoriteController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "sharedList.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "CreateNewRecordControllerViewController.viewDidAppear(Bool) -&gt; ():CreateNewRecordControllerViewController.swift">
       </ContextState>
       <ContextState
-         contextName = "static ParseJson.loginParser(jsonData : Data) -&gt; String:ParseJson.swift">
+         contextName = "LeftController.btnExportCSVClick(Any) -&gt; ():LeftController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "object-&gt;data">
-            </PersistentString>
-            <PersistentString
-               value = "object[&quot;data&quot;]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainController.(tableView(UITableView, editActionsForRowAt : IndexPath) -&gt; [UITableViewRowAction]?).(closure #2):MainController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.listRecord[indexPath.section].list[indexPath.row]!.id">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static ParseJson.listFavoriteParser(jsonData : Data, delegate : FavoriteDelegate) -&gt; ():ParseJson.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "object">
-            </PersistentString>
-            <PersistentString
-               value = "session[&quot;date&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "object[&quot;data&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "session[&quot;id&quot;]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ExportController.writeFile(fromDate : String, toDate : String) -&gt; ():ExportController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "listAllTraffic[id]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MainController.initData() -&gt; ():MainController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "tableStation.bottomAnchor">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CalendarController.viewDidLoad() -&gt; ():CalendarController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "type">
-            </PersistentString>
-            <PersistentString
-               value = "tableProtocol">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "StationViewController.getDateSelected(date : String, id : Int) -&gt; ():StationViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "type">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "StationViewController.saveDataClick(Any) -&gt; ():StationViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "Int(tfAmount.text!)">
+               value = "self.slideMenuController()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -150,45 +201,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DatabaseManagement.queryRecordTraffic(trafficId : Int64) -&gt; RecordTrafficModel:DatabaseManager.swift">
+         contextName = "ExportController.writeFile(fromDate : String, toDate : String) -&gt; ():ExportController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "t[date]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static WebservicesHelper.getToken() -&gt; String:WebserviceHelper.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "res.value(forKey: &quot;token&quot;)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static WebservicesHelper.addSession(date : String, target : String, traffic : String, from : String, to : String, fare : String, remarks : String) -&gt; ():WebserviceHelper.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "token">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "LeftController.btnExportCSVClick(Any) -&gt; ():LeftController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.slideMenuController()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DatabaseManagement.queryAllRecordTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "t[8]">
-            </PersistentString>
-            <PersistentString
-               value = "t[7]">
+               value = "listAllTraffic[id]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -11,11 +11,11 @@ import Foundation
 class Destination {
     var name: String = ""
     var type:Int = 1 //1: my list, 2: shared list
-    var id: Int64 = -1
+    var id: Int = -1
     init() {
     }
     
-    init (id: Int64, name: String, type: Int) {
+    init (id: Int, name: String, type: Int) {
         self.name = name
         self.type = type
         self.id = id

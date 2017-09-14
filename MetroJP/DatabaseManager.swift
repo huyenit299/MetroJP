@@ -13,7 +13,7 @@ class DatabaseManagement {
     
     //table recordTraffic
     let tblRecordTraffic = Table("RecordTraffic")
-    let id = Expression<Int64>("id")
+    let id = Expression<Int>("id")
     let date = Expression<String>("date")
     let target = Expression<String>("target")
     let from = Expression<String>("from")
@@ -74,7 +74,7 @@ class DatabaseManagement {
         do {
             try self.db?.transaction {
                 for record in list {
-                    let insert = self.tblRecordTraffic.insert(self.id <- Int64(record.id), self.date <- record.date, self.target <- record.target, self.from <- record.from, self.to <- record.to, self.traffics <- record.traffic, self.price <- record.price, self.note <- record.note, self.isFavorite <- record.isFavorite)
+                    let insert = self.tblRecordTraffic.insert(self.id <- record.id, self.date <- record.date, self.target <- record.target, self.from <- record.from, self.to <- record.to, self.traffics <- record.traffic, self.price <- record.price, self.note <- record.note, self.isFavorite <- record.isFavorite)
                     let id = try self.db!.run(insert)
                     if (id > 0) {
                         count = count + 1
@@ -92,7 +92,7 @@ class DatabaseManagement {
         do {
             try self.db?.transaction {
                 for record in list {
-                    let insert = self.tblFavorite.insert(self.id <- Int64(record.id), self.date <- record.date, self.target <- record.target, self.from <- record.from, self.to <- record.to, self.traffics <- record.traffic, self.price <- record.price, self.note <- record.note, self.session_id <- record.session_id, self.common <- record.common)
+                    let insert = self.tblFavorite.insert(self.id <- Int(record.id), self.date <- record.date, self.target <- record.target, self.from <- record.from, self.to <- record.to, self.traffics <- record.traffic, self.price <- record.price, self.note <- record.note, self.session_id <- record.session_id, self.common <- record.common)
                     let id = try self.db!.run(insert)
                     if (id > 0) {
                         count = count + 1
@@ -143,7 +143,7 @@ class DatabaseManagement {
             do {
                 let list = try self.db!.prepare("SELECT * FROM Favorite WHERE common = " + String(type))
                 for t in list {
-                    listFavorite.append(FavoriteModel(id: Int(t[0] as! Int64), date: t[2] as! String, target: t[3] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[9] as! String, price: t[6] as! String, note: t[7] as! String, session_id: t[1] as! Int, common: t[8] as! Int))
+                    listFavorite.append(FavoriteModel(id: t[0] as! Int, date: t[2] as! String, target: t[3] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[9] as! String, price: t[6] as! String, note: t[7] as! String, session_id: t[1] as! Int, common: t[8] as! Int))
                 }
             } catch {
                 print(error)
@@ -152,7 +152,7 @@ class DatabaseManagement {
         return listFavorite
     }
     
-    func queryRecordTraffic(trafficId: Int64) -> RecordTrafficModel {
+    func queryRecordTraffic(trafficId: Int) -> RecordTrafficModel {
         var record = RecordTrafficModel()
         if (db != nil) {
             do {
@@ -170,7 +170,7 @@ class DatabaseManagement {
     }
 
     
-    func updateRecordTraffic(trafficId:Int64, newTraffic: RecordTrafficModel) -> Bool {
+    func updateRecordTraffic(trafficId:Int, newTraffic: RecordTrafficModel) -> Bool {
         let tbTrafficFilter = tblRecordTraffic.filter(id == trafficId)
         do {
             let update = tbTrafficFilter.update([
@@ -186,7 +186,7 @@ class DatabaseManagement {
         return false
     }
     
-    func updateFavorite(favoriteId:Int64, newTraffic: FavoriteModel) -> Bool {
+    func updateFavorite(favoriteId:Int, newTraffic: FavoriteModel) -> Bool {
         let tbFavoriteFilter = tblFavorite.filter(id == favoriteId)
         do {
             let update = tbFavoriteFilter.update([
@@ -204,7 +204,7 @@ class DatabaseManagement {
     
     func deleteRecordTraffic(trafficId: Int) -> Bool {
         do {
-            let tblFilterTraffic = tblRecordTraffic.filter(id == Int64(trafficId))
+            let tblFilterTraffic = tblRecordTraffic.filter(id == Int(trafficId))
             try db!.run(tblFilterTraffic.delete())
             print("delete sucessfully")
             return true
@@ -217,7 +217,7 @@ class DatabaseManagement {
     
     func deleteFavorite(favoriteId: Int) -> Bool {
         do {
-            let tblFilterFavorite = tblFavorite.filter(id == Int64(favoriteId))
+            let tblFilterFavorite = tblFavorite.filter(id == favoriteId)
             try db!.run(tblFilterFavorite.delete())
             print("delete sucessfully")
             return true
@@ -316,7 +316,7 @@ class DatabaseManagement {
         return listDestination
     }
     
-    func queryDestination(destinationId: Int64) -> Destination {
+    func queryDestination(destinationId: Int) -> Destination {
         var destination = Destination()
         if (db != nil) {
             do {
@@ -333,7 +333,7 @@ class DatabaseManagement {
     }
     
     
-    func updateDestination(destinationId: Int64, newDestination: Destination) -> Bool {
+    func updateDestination(destinationId: Int, newDestination: Destination) -> Bool {
         let tbDestinationFilter = tblDestination.filter(id == destinationId)
         do {
             let update = tbDestinationFilter.update([
@@ -349,7 +349,7 @@ class DatabaseManagement {
         return false
     }
     
-    func deleteDestination(destinationId: Int64) -> Bool {
+    func deleteDestination(destinationId: Int) -> Bool {
         do {
             let tbDestinationFilter = tblDestination.filter(id == destinationId)
             try db!.run(tbDestinationFilter.delete())

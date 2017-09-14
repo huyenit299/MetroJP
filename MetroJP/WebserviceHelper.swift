@@ -107,9 +107,53 @@ class WebservicesHelper {
         }
     }
 
+    public static func getListMonth() {
+        //        let token = getToken()
+        let token = Constant.token
+        if (!(token.isEmpty)) {
+            let parameters: Parameters = ["token": token]
+            Alamofire.request(LIST_MONTH, method: .get,parameters: parameters, headers: headers).responseJSON { response in
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
+                
+                if let json = response.result.value {
+                    print("JSON: \(json)") // serialized json response
+                }
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                    
+                }
+            }
+        }
+    }
+    
+    public static func getListSession(sessionDelegate: SessionListDelegate, month: String) {
+//        let token = getToken()
+        let token = Constant.token
+        if (!(token.isEmpty)) {
+            let parameters: Parameters = ["token": token, "month": month ?? ""]
+            Alamofire.request(LIST_SESSION, method: .get,parameters: parameters, headers: headers).responseJSON { response in
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
+                
+                if let json = response.result.value {
+                    print("JSON: \(json)") // serialized json response
+                }
+                if (response.response == nil ) {
+                    sessionDelegate.getSessionList(listRecordTraffic: Array<RecordTrafficModel>())
+                }
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                    ParseJson.listSessionParser(jsonData: data, delegate: sessionDelegate)
+                }
+            }
+        }
+    }
     
     public static func getListSession(sessionDelegate: SessionListDelegate) {
-//        let token = getToken()
+        //        let token = getToken()
         let token = Constant.token
         if (!(token.isEmpty)) {
             let parameters: Parameters = ["token": token ]
@@ -129,6 +173,7 @@ class WebservicesHelper {
             }
         }
     }
+
     
     public static func addSession(date: String, target:String, traffic: String, from: String, to: String, fare: String, remarks: String) {
         let token = Constant.token

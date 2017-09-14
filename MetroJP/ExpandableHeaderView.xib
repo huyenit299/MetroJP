@@ -68,6 +68,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="btnMore" destination="664-tM-jqG" id="KlD-gj-AuI"/>
                 <outlet property="lbName" destination="i5U-KB-dev" id="Xjc-YG-Shm"/>
                 <outlet property="lbPrice" destination="pb7-II-ZEi" id="CJO-aJ-CUz"/>
             </connections>

@@ -14,6 +14,8 @@ class DateSection {
     var list = Array<RecordTrafficModel?>()
     var expand: Bool = false
     var active: Bool = false
+    var x: CFloat = 0.0
+    var y: CFloat = 0.0 //cordinate of button open popup
     init() {
     }
     

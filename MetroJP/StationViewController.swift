@@ -115,11 +115,11 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.present(alert, animated: true, completion: nil)
             }
         } else {
-            WebservicesHelper.updateSession(sessionId: id, date: tfDate.text!, target: tfTarget.text!, traffic: traffic, from: tfFrom.text!, to: tfTo.text!, fare: tfAmount.text!, remarks: tfNote.text!)
+            WebservicesHelper.updateSession(sessionId: Int(id), date: tfDate.text!, target: tfTarget.text!, traffic: traffic, from: tfFrom.text!, to: tfTo.text!, fare: tfAmount.text!, remarks: tfNote.text!)
             do {
-                let recordTraffic = RecordTrafficModel(id: id, date: tfDate.text!, target: tfTarget.text!, from: tfFrom.text!, to: tfTo.text!, traffic: traffic, price: tfAmount.text!, note: tfNote.text!, isFavorite: isFavorite)
+                let recordTraffic = RecordTrafficModel(id: Int(id), date: tfDate.text!, target: tfTarget.text!, from: tfFrom.text!, to: tfTo.text!, traffic: traffic, price: tfAmount.text!, note: tfNote.text!, isFavorite: isFavorite)
                 try
-                    DatabaseManagement.shared.updateRecordTraffic(trafficId: Int64(id), newTraffic: recordTraffic)
+                    DatabaseManagement.shared.updateRecordTraffic(trafficId: Int(id), newTraffic: recordTraffic)
                 changedData = true
             }catch {
                 print(error)
@@ -150,7 +150,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     func initData() {
         listTraffic = DatabaseManagement.shared.queryAllTraffic()
         if (id >= 0) {
-            let record = DatabaseManagement.shared.queryRecordTraffic(trafficId: Int64(id)) as RecordTrafficModel
+            let record = DatabaseManagement.shared.queryRecordTraffic(trafficId: id) as RecordTrafficModel
             tfDate.text = record.date
             tfFrom.text = record.from
             tfTo.text = record.to

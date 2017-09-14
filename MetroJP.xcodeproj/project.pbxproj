@@ -144,6 +144,12 @@
 		A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; };
 		A0C0933B1F4596DC00E4614F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0932D1F4596CD00E4614F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E1D79E1F6124EA003B5C2B /* PopupMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */; };
+		A0E4C93D1F67820500E2635D /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4C9291F6781E900E2635D /* Reachability.framework */; };
+		A0E4C93E1F67820500E2635D /* Reachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0E4C9291F6781E900E2635D /* Reachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0E4C9421F67836F00E2635D /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9411F67836F00E2635D /* ViewControllerUtils.swift */; };
+		A0E4C9441F678D0300E2635D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4C9431F678D0300E2635D /* BaseViewController.swift */; };
+		A0EA54551F690F60008ECFB1 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA54541F690F60008ECFB1 /* Protocol.swift */; };
+		A0EA547A1F692244008ECFB1 /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA54791F692244008ECFB1 /* MonthTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -476,6 +482,55 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
+		A0E4C9281F6781E900E2635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA7344721BE7678B008AFE69;
+			remoteInfo = Reachability;
+		};
+		A0E4C92A1F6781E900E2635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 00C54B111C09CD9C001C3F12;
+			remoteInfo = ReachabilityMac;
+		};
+		A0E4C92C1F6781E900E2635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57A45A2A1C197F4800384AE4;
+			remoteInfo = ReachabilityTV;
+		};
+		A0E4C92E1F6781E900E2635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA7344901BE76820008AFE69;
+			remoteInfo = ReachabilitySample;
+		};
+		A0E4C9301F6781E900E2635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 00C54B1F1C09CF67001C3F12;
+			remoteInfo = ReachabilityMacSample;
+		};
+		A0E4C9321F6781E900E2635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57A45A011C197BE800384AE4;
+			remoteInfo = ReachabilityAppleTVSample;
+		};
+		A0E4C93F1F67820500E2635D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AA7344711BE7678B008AFE69;
+			remoteInfo = Reachability;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -492,6 +547,7 @@
 				A03113341F4AF2EA00B6EA55 /* Floaty.framework in Embed Frameworks */,
 				A09618E31F5F9665007A65A2 /* SwiftKeychainWrapper.framework in Embed Frameworks */,
 				A09716CA1F4C1F9200205CF8 /* JTAppleCalendar.framework in Embed Frameworks */,
+				A0E4C93E1F67820500E2635D /* Reachability.framework in Embed Frameworks */,
 				A09AEB501F55055A00414FC4 /* SnapKit.framework in Embed Frameworks */,
 				A09AEB721F55712400414FC4 /* IQKeyboardManager.framework in Embed Frameworks */,
 			);
@@ -637,6 +693,11 @@
 		A0C0930C1F45866700E4614F /* DateSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
 		A0C093211F4596CC00E4614F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master 2/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMonthViewController.swift; sourceTree = "<group>"; };
+		A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Reachability.xcodeproj; path = "../../../Downloads/Reachability.swift-master/Reachability.xcodeproj"; sourceTree = "<group>"; };
+		A0E4C9411F67836F00E2635D /* ViewControllerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUtils.swift; sourceTree = "<group>"; };
+		A0E4C9431F678D0300E2635D /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A0EA54541F690F60008ECFB1 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		A0EA54791F692244008ECFB1 /* MonthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -651,6 +712,7 @@
 				A09619001F5F9DB5007A65A2 /* CSV.framework in Frameworks */,
 				A09AEB4F1F55055A00414FC4 /* SnapKit.framework in Frameworks */,
 				A0C0933A1F4596DC00E4614F /* Alamofire.framework in Frameworks */,
+				A0E4C93D1F67820500E2635D /* Reachability.framework in Frameworks */,
 				A09618E21F5F9665007A65A2 /* SwiftKeychainWrapper.framework in Frameworks */,
 				A09AEB711F55712400414FC4 /* IQKeyboardManager.framework in Frameworks */,
 				A09716C91F4C1F9200205CF8 /* JTAppleCalendar.framework in Frameworks */,
@@ -752,6 +814,7 @@
 		A04750131F3AAFF500E1DE0C = {
 			isa = PBXGroup;
 			children = (
+				A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */,
 				A09618E81F5F9DAA007A65A2 /* CSV.xcodeproj */,
 				A09618C21F5F9659007A65A2 /* SwiftKeychainWrapper.xcodeproj */,
 				A0A1EB761F56D4A300A04C3F /* SQLite.xcodeproj */,
@@ -812,6 +875,8 @@
 				A09619041F5FBC5C007A65A2 /* ExportController.swift */,
 				A06B82621F5FF92100000706 /* SearchViewController.swift */,
 				A0E1D79D1F6124EA003B5C2B /* PopupMonthViewController.swift */,
+				A0E4C9431F678D0300E2635D /* BaseViewController.swift */,
+				A0EA54541F690F60008ECFB1 /* Protocol.swift */,
 			);
 			path = MetroJP;
 			sourceTree = "<group>";
@@ -868,6 +933,7 @@
 		A04750601F3AE3F000E1DE0C /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				A0EA54791F692244008ECFB1 /* MonthTableViewCell.swift */,
 				A04750611F3AE40E00E1DE0C /* MainTableViewCell.swift */,
 				A031130F1F4AD95900B6EA55 /* SectionTableCell.swift */,
 				A0BCF0381F503339000D5BA9 /* StationItemView.swift */,
@@ -962,6 +1028,7 @@
 				A094E5631F5902C000FBDEE5 /* Utils.swift */,
 				A0BF201A1F62DFF2000091B3 /* WebserviceHelper.swift */,
 				A0BF20381F62DFFE000091B3 /* APIUrl.swift */,
+				A0E4C9411F67836F00E2635D /* ViewControllerUtils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1074,6 +1141,19 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		A0E4C90D1F6781E800E2635D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0E4C9291F6781E900E2635D /* Reachability.framework */,
+				A0E4C92B1F6781E900E2635D /* Reachability.framework */,
+				A0E4C92D1F6781E900E2635D /* Reachability.framework */,
+				A0E4C92F1F6781E900E2635D /* ReachabilitySample.app */,
+				A0E4C9311F6781E900E2635D /* ReachabilityMacSample.app */,
+				A0E4C9331F6781E900E2635D /* ReachabilityAppleTVSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1098,6 +1178,7 @@
 				A0A1EB911F56D4D700A04C3F /* PBXTargetDependency */,
 				A09618E51F5F9665007A65A2 /* PBXTargetDependency */,
 				A09619031F5F9DB5007A65A2 /* PBXTargetDependency */,
+				A0E4C9401F67820500E2635D /* PBXTargetDependency */,
 			);
 			name = MetroJP;
 			productName = MetroJP;
@@ -1202,6 +1283,10 @@
 				{
 					ProductGroup = A031131E1F4AEB9300B6EA55 /* Products */;
 					ProjectRef = A031131D1F4AEB9300B6EA55 /* Material.xcodeproj */;
+				},
+				{
+					ProductGroup = A0E4C90D1F6781E800E2635D /* Products */;
+					ProjectRef = A0E4C90C1F6781E800E2635D /* Reachability.xcodeproj */;
 				},
 				{
 					ProductGroup = A09AEB471F55052200414FC4 /* Products */;
@@ -1478,6 +1563,48 @@
 			remoteRef = A0C093381F4596CD00E4614F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		A0E4C9291F6781E900E2635D /* Reachability.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Reachability.framework;
+			remoteRef = A0E4C9281F6781E900E2635D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A0E4C92B1F6781E900E2635D /* Reachability.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Reachability.framework;
+			remoteRef = A0E4C92A1F6781E900E2635D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A0E4C92D1F6781E900E2635D /* Reachability.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Reachability.framework;
+			remoteRef = A0E4C92C1F6781E900E2635D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A0E4C92F1F6781E900E2635D /* ReachabilitySample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ReachabilitySample.app;
+			remoteRef = A0E4C92E1F6781E900E2635D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A0E4C9311F6781E900E2635D /* ReachabilityMacSample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ReachabilityMacSample.app;
+			remoteRef = A0E4C9301F6781E900E2635D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A0E4C9331F6781E900E2635D /* ReachabilityAppleTVSample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ReachabilityAppleTVSample.app;
+			remoteRef = A0E4C9321F6781E900E2635D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1553,16 +1680,19 @@
 				A047505C1F3ABCA700E1DE0C /* UIViewController.swift in Sources */,
 				A0A2902B1F44B5DE00A7FD65 /* ConstraintMakerFinalizable.swift in Sources */,
 				A0BF20391F62DFFE000091B3 /* APIUrl.swift in Sources */,
+				A0EA547A1F692244008ECFB1 /* MonthTableViewCell.swift in Sources */,
 				A0A290241F44B5DE00A7FD65 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				A0A290351F44B5DE00A7FD65 /* ConstraintView+Extensions.swift in Sources */,
 				A0A2902D1F44B5DE00A7FD65 /* ConstraintMakerRelatable.swift in Sources */,
 				A0A2903A1F44B5DE00A7FD65 /* LayoutConstraintItem.swift in Sources */,
 				A04750621F3AE40E00E1DE0C /* MainTableViewCell.swift in Sources */,
 				A0A290371F44B5DE00A7FD65 /* Debugging.swift in Sources */,
+				A0E4C9421F67836F00E2635D /* ViewControllerUtils.swift in Sources */,
 				A09716D51F4C43E400205CF8 /* ParseJson.swift in Sources */,
 				A08BD4F61F469445004CE47C /* ExpandableHeaderView.swift in Sources */,
 				A0BF201B1F62DFF2000091B3 /* WebserviceHelper.swift in Sources */,
 				A04750551F3AB62F00E1DE0C /* LeftController.swift in Sources */,
+				A0E4C9441F678D0300E2635D /* BaseViewController.swift in Sources */,
 				A0E1D79E1F6124EA003B5C2B /* PopupMonthViewController.swift in Sources */,
 				A0A2902F1F44B5DE00A7FD65 /* ConstraintOffsetTarget.swift in Sources */,
 				A0A290231F44B5DE00A7FD65 /* ConstraintLayoutGuide.swift in Sources */,
@@ -1600,6 +1730,7 @@
 				A094E5921F591AA100FBDEE5 /* DGElasticPullToRefreshExtensions.swift in Sources */,
 				A094E5911F591AA100FBDEE5 /* DGElasticPullToRefreshConstants.swift in Sources */,
 				A094E5931F591AA100FBDEE5 /* DGElasticPullToRefreshLoadingView.swift in Sources */,
+				A0EA54551F690F60008ECFB1 /* Protocol.swift in Sources */,
 				A0A1EB931F56DA3500A04C3F /* RecordTraffic.swift in Sources */,
 				A047505F1F3AC2B600E1DE0C /* Record.swift in Sources */,
 				A0A2901D1F44B5DE00A7FD65 /* ConstraintConstantTarget.swift in Sources */,
@@ -1700,6 +1831,11 @@
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
 			targetProxy = A0C0933C1F4596DC00E4614F /* PBXContainerItemProxy */;
+		};
+		A0E4C9401F67820500E2635D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Reachability;
+			targetProxy = A0E4C93F1F67820500E2635D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
