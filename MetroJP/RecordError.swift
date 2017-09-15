@@ -22,4 +22,6 @@ class RecordError {
     public static let PASS_MATCH = "2 passwords don't match. Please check again."
     public static let REGISTER_SUCCESS = "Register successfully!"
     public static let REGISTER_FAILURE = "There was an error when register. Please try again."
+    public static let UPDATE_USER_SUCCESS = "Update user successfully!"
+    public static let UPDATE_USER_FAILURE = "There was an error when update user. Please try again."
 }

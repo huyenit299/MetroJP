@@ -98,12 +98,23 @@ class WebservicesHelper {
             }
     }
     
-    public static func updateUser(username: String, password: String) {
+    public static func updateUser(username: String, password: String, delegate: RegisterUserDelegate) {
         let token = Constant.token
         if (!(token.isEmpty)) {
             let parameters: Parameters = ["token": token, "username": username, "password": password]
             Alamofire.request(UPDATE_SESSION, method: .post,parameters: parameters, headers: headers).responseJSON { response in
-                print(response)
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
+                
+                if let json = response.result.value {
+                    print("JSON: \(json)") // serialized json response
+                }
+                
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                    ParseJson.addUserParser(jsonData: data, delegate: delegate)
+                }
             }
         }
     }

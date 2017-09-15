@@ -70,6 +70,7 @@ class ViewController: BaseViewController, LoginDelegate {
 
     @IBAction func btnRegisterClick(_ sender: Any) {
         let scr = storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        scr.isEdit = false
         self.navigationController?.pushViewController(scr, animated: true)
         
     }

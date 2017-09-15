@@ -12,7 +12,7 @@ import CoreData
 class LeftController: UIViewController, UITextFieldDelegate {
     var exportViewController: UIViewController!
     
-    @IBOutlet weak var lbUsername: UILabel!
+    @IBOutlet weak var btnName: UIButton!
     @IBAction func btnLogoutClick(_ sender: Any) {
        dismiss(animated: true, completion: nil)
     }
@@ -21,6 +21,11 @@ class LeftController: UIViewController, UITextFieldDelegate {
         showUserInfo()
     }
 
+    @IBAction func btnNameClick(_ sender: Any) {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        scr.isEdit = true
+        self.navigationController?.pushViewController(scr, animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,10 +33,6 @@ class LeftController: UIViewController, UITextFieldDelegate {
     
     @IBAction func btnExportCSVClick(_ sender: Any) {
          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let exportViewController = storyboard.instantiateViewController(withIdentifier: "ExportController") as! ExportController
-//        self.exportViewController = UINavigationController(rootViewController: exportViewController)
-//        self.slideMenuController()?.changeMainViewController(self.exportViewController, close: true)
-        
         let scr = storyboard.instantiateViewController(withIdentifier: "ExportController") as! ExportController
         self.navigationController?.pushViewController(scr, animated: true)
     }
@@ -47,7 +48,7 @@ class LeftController: UIViewController, UITextFieldDelegate {
             if result.count > 0 {
                 for res in result as! [NSManagedObject] {
                     if let username = res.value(forKey: "username") as? String {
-                        lbUsername.text = username
+                        btnName.setTitle(username, for: .normal)
                     }
                 }
             }

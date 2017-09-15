@@ -1124,17 +1124,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paY-nb-kB6">
-                                <rect key="frame" x="20" y="40" width="280" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="9sT-S3-4vX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maa-D5-X6T">
-                                <rect key="frame" x="20" y="100" width="280" height="40"/>
+                                <rect key="frame" x="20" y="90" width="280" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DCd-eb-qhN"/>
                                 </constraints>
@@ -1147,19 +1138,26 @@
                                     <action selector="btnLogoutClick:" destination="Sg7-Sa-187" eventType="touchUpInside" id="b3C-VB-5Qw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj6-7m-bUT">
+                                <rect key="frame" x="26" y="40" width="258" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnNameClick:" destination="Sg7-Sa-187" eventType="touchUpInside" id="A4d-uG-QVS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="maa-D5-X6T" firstAttribute="top" secondItem="paY-nb-kB6" secondAttribute="bottom" constant="20" id="3b3-hf-l6X"/>
+                            <constraint firstItem="vj6-7m-bUT" firstAttribute="leading" secondItem="Z51-qi-E7a" secondAttribute="leadingMargin" constant="10" id="9fE-b6-Z25"/>
                             <constraint firstItem="maa-D5-X6T" firstAttribute="leading" secondItem="Z51-qi-E7a" secondAttribute="leading" constant="20" id="EXk-3X-IGV"/>
-                            <constraint firstAttribute="trailing" secondItem="paY-nb-kB6" secondAttribute="trailing" constant="20" id="F7e-b0-qMT"/>
-                            <constraint firstItem="paY-nb-kB6" firstAttribute="leading" secondItem="Z51-qi-E7a" secondAttribute="leading" constant="20" id="bzy-hu-ChQ"/>
-                            <constraint firstItem="paY-nb-kB6" firstAttribute="top" secondItem="tGl-xV-xJ1" secondAttribute="bottom" constant="20" id="oC2-17-dDg"/>
+                            <constraint firstItem="vj6-7m-bUT" firstAttribute="top" secondItem="tGl-xV-xJ1" secondAttribute="bottom" constant="20" id="lZF-cb-rNf"/>
                             <constraint firstAttribute="trailing" secondItem="maa-D5-X6T" secondAttribute="trailing" constant="20" id="oVh-Gh-MgP"/>
+                            <constraint firstItem="maa-D5-X6T" firstAttribute="top" secondItem="vj6-7m-bUT" secondAttribute="bottom" constant="20" id="xg1-Nj-Trg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vj6-7m-bUT" secondAttribute="trailing" constant="20" id="zih-Mv-5AA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lbUsername" destination="paY-nb-kB6" id="23d-mw-ZAF"/>
+                        <outlet property="btnName" destination="vj6-7m-bUT" id="7jI-or-2oK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1j-Qh-Za0" userLabel="First Responder" sceneMemberID="firstResponder"/>
