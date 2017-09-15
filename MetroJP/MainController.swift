@@ -36,8 +36,9 @@ class MainController: BaseViewController, UITableViewDataSource, UITableViewDele
         super.viewWillAppear(animated)
         print("back e=" + String(changedData))
         if (changedData) {
-            self.initData()
-            self.mainTable.reloadData()
+//            self.initData()
+            loadData()
+//            self.mainTable.reloadData()
             changedData = false
         }
     }
