@@ -28,7 +28,7 @@ class ParseJson {
         return ""
     }
     
-    public static func addUserParser (jsonData: Data) -> UserModel {
+    public static func addUserParser (jsonData: Data, delegate: RegisterUserDelegate) -> UserModel {
         var user = UserModel()
         do {
             let json = try JSONSerialization.jsonObject(with: jsonData, options: [])
@@ -36,7 +36,7 @@ class ParseJson {
                 // json is a dictionary
                 print("string-" + String(describing: object))
                 let item = object["data"] as! NSDictionary
-                if let userObj = item["data"] as? [AnyObject] {
+                if let userObj = item["data"] as? [String: Any] {
                     if let username = userObj["username"] as? String {
                         print(username)
                         user.username = username
@@ -54,6 +54,7 @@ class ParseJson {
         }catch {
             print(error.localizedDescription)
         }
+        delegate.addUser(user: user)
         return user
     }
     

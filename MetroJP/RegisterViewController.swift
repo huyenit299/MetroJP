@@ -56,7 +56,7 @@ class RegisterViewController: BaseViewController, RegisterUserDelegate {
         }
         
         loading.showActivityIndicator(uiView: self.view)
-        WebservicesHelper.addUser(username: username!, password: pass!)
+        WebservicesHelper.addUser(username: username!, password: pass!, delegate: self)
     }
     
     func addUser (user: UserModel) {

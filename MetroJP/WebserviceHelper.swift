@@ -79,7 +79,7 @@ class WebservicesHelper {
         }
     }
     
-    public static func addUser(username: String, password: String) {
+    public static func addUser(username: String, password: String, delegate: RegisterUserDelegate) {
         let parameters: Parameters = ["username": username, "password": password]
         Alamofire.request(REGISTER, method: .post,parameters: parameters, headers: headers).responseJSON { response in
                             print("Request: \(String(describing: response.request))")   // original url request
@@ -92,13 +92,14 @@ class WebservicesHelper {
                 
                             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                                 print("Data: \(utf8Text)") // original server data as UTF8 string
+                                ParseJson.addUserParser(jsonData: data, delegate: delegate)
                             }
 
             }
     }
     
     public static func updateUser(username: String, password: String) {
- let token = Constant.token
+        let token = Constant.token
         if (!(token.isEmpty)) {
             let parameters: Parameters = ["token": token, "username": username, "password": password]
             Alamofire.request(UPDATE_SESSION, method: .post,parameters: parameters, headers: headers).responseJSON { response in
