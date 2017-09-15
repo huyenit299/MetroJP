@@ -9,8 +9,8 @@
 import Foundation
 
 
-let SERVER_URL = "http://192.168.1.218:8018"
-//let SERVER_URL = "http://192.168.1.126:8018"
+//let SERVER_URL = "http://192.168.1.218:8018"
+let SERVER_URL = "http://192.168.1.126:8018"
 let LOGIN = SERVER_URL + "/user/login"
 let LOGOUT = SERVER_URL + "/user/logout"
 let REGISTER = SERVER_URL + "/user/add"

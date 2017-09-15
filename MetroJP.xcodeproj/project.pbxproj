@@ -137,6 +137,10 @@
 		A0A2903A1F44B5DE00A7FD65 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A290171F44B5DE00A7FD65 /* LayoutConstraintItem.swift */; };
 		A0A2903B1F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A290191F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift */; };
 		A0ABAAF31F46DA5900274E30 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */; };
+		A0B639791F6B77B700ACA958 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = A0B639751F6B77B700ACA958 /* Contents.json */; };
+		A0B6397A1F6B77B700ACA958 /* ic_done.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B639761F6B77B700ACA958 /* ic_done.png */; };
+		A0B6397B1F6B77B700ACA958 /* ic_done_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B639771F6B77B700ACA958 /* ic_done_2x.png */; };
+		A0B6397C1F6B77B700ACA958 /* ic_done_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B639781F6B77B700ACA958 /* ic_done_3x.png */; };
 		A0BCF0391F503339000D5BA9 /* StationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BCF0381F503339000D5BA9 /* StationItemView.swift */; };
 		A0BF201B1F62DFF2000091B3 /* WebserviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF201A1F62DFF2000091B3 /* WebserviceHelper.swift */; };
 		A0BF20391F62DFFE000091B3 /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF20381F62DFFE000091B3 /* APIUrl.swift */; };
@@ -687,6 +691,10 @@
 		A0A290181F44B5DE00A7FD65 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
 		A0A290191F44B5DE00A7FD65 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A0B639751F6B77B700ACA958 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		A0B639761F6B77B700ACA958 /* ic_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_done.png; sourceTree = "<group>"; };
+		A0B639771F6B77B700ACA958 /* ic_done_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_done_2x.png; sourceTree = "<group>"; };
+		A0B639781F6B77B700ACA958 /* ic_done_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_done_3x.png; sourceTree = "<group>"; };
 		A0BCF0381F503339000D5BA9 /* StationItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationItemView.swift; sourceTree = "<group>"; };
 		A0BF201A1F62DFF2000091B3 /* WebserviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebserviceHelper.swift; sourceTree = "<group>"; };
 		A0BF20381F62DFFE000091B3 /* APIUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
@@ -902,6 +910,7 @@
 		A04750561F3ABAD800E1DE0C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0B639741F6B77B700ACA958 /* ic_done.imageset */,
 				A094E5A41F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt.imageset */,
 				A02F56751F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt.imageset */,
 				A02F566C1F4C064B00133269 /* ic_keyboard_arrow_left_white_48pt.imageset */,
@@ -1115,6 +1124,18 @@
 				A0ABAAF21F46DA5900274E30 /* UserNotifications.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0B639741F6B77B700ACA958 /* ic_done.imageset */ = {
+			isa = PBXGroup;
+			children = (
+				A0B639751F6B77B700ACA958 /* Contents.json */,
+				A0B639761F6B77B700ACA958 /* ic_done.png */,
+				A0B639771F6B77B700ACA958 /* ic_done_2x.png */,
+				A0B639781F6B77B700ACA958 /* ic_done_3x.png */,
+			);
+			name = ic_done.imageset;
+			path = ../../../../Downloads/ic_done_black_24dp/ios/ic_done.imageset;
 			sourceTree = "<group>";
 		};
 		A0C093221F4596CC00E4614F /* Products */ = {
@@ -1615,6 +1636,8 @@
 				A03113541F4AFBE500B6EA55 /* ic_cloud_upload_white_48pt_3x.png in Resources */,
 				A047502D1F3AAFF500E1DE0C /* LaunchScreen.storyboard in Resources */,
 				A03113731F4AFBF400B6EA55 /* ic_search_white_48pt_2x.png in Resources */,
+				A0B6397A1F6B77B700ACA958 /* ic_done.png in Resources */,
+				A0B6397C1F6B77B700ACA958 /* ic_done_3x.png in Resources */,
 				A094E5A91F596F5200FBDEE5 /* Contents.json in Resources */,
 				A094E5AA1F596F5200FBDEE5 /* ic_keyboard_arrow_down_white_48pt.png in Resources */,
 				A031132B1F4AEEF900B6EA55 /* ic_add_circle_outline_white_3x.png in Resources */,
@@ -1624,6 +1647,7 @@
 				A047502A1F3AAFF500E1DE0C /* Assets.xcassets in Resources */,
 				A031132A1F4AEEF900B6EA55 /* ic_add_circle_outline_white_2x.png in Resources */,
 				A09716D21F4C435200205CF8 /* HardData.json in Resources */,
+				A0B6397B1F6B77B700ACA958 /* ic_done_2x.png in Resources */,
 				A047505A1F3ABB5000E1DE0C /* ic_menu_black_24dp.png in Resources */,
 				A09AEB5D1F5528D500414FC4 /* TrafficItemView.xib in Resources */,
 				A03113901F4AFC9000B6EA55 /* ic_star_border_white_48dp.png in Resources */,
@@ -1632,6 +1656,7 @@
 				A03113721F4AFBF400B6EA55 /* ic_search_white_48pt.png in Resources */,
 				A03113521F4AFBE500B6EA55 /* ic_cloud_upload_white_48pt.png in Resources */,
 				A02F567C1F4C065E00133269 /* ic_keyboard_arrow_right_white_48pt_2x.png in Resources */,
+				A0B639791F6B77B700ACA958 /* Contents.json in Resources */,
 				A04995FE1F4BC4730042F11B /* FoldingCustomView.xib in Resources */,
 				A03113531F4AFBE500B6EA55 /* ic_cloud_upload_white_48pt_2x.png in Resources */,
 				A0A290381F44B5DE00A7FD65 /* Info.plist in Resources */,

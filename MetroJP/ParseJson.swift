@@ -168,6 +168,36 @@ class ParseJson {
         }
     }
     
+    public static func listMonthParser(jsonData: Data, delegate: ListMonthDelegate)->Array<String>{
+        var listMonths: Array<String> = []
+        do {
+            let json = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            if let object = json as? [String: Any] {
+                // json is a dictionary
+                print("string-" + String(describing: object))
+                let item = object["data"] as! NSDictionary
+                if let sessions = item["listMonth"] as? [AnyObject] {
+                    for session in sessions {
+                        if let date = session["date"] as? String {
+                            listMonths.append(Utils.convertStringDateToStringDate(formatFromStyle: Constant.DATE_STANDARD, formatToStyle: Constant.MONTH_YEAR_STANDARD, dateString: date))
+                        }
+                    }
+                }
+            } else if let object = json as? [Any] {
+                // json is an array
+                print("aray=" + String(describing: object))
+            } else {
+                print("JSON is invalid")
+            }
+            delegate.getListMonth(months: listMonths)
+        } catch {
+            print(error.localizedDescription)
+            delegate.getListMonth(months: listMonths)
+        }
+        return listMonths
+    }
+
+    
     public func readJson() -> Array<DateSection>{
         var listRecord = Array<DateSection>()
         do {

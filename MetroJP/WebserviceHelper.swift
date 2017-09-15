@@ -107,7 +107,7 @@ class WebservicesHelper {
         }
     }
 
-    public static func getListMonth() {
+    public static func getListMonth(delegate: ListMonthDelegate) {
         //        let token = getToken()
         let token = Constant.token
         if (!(token.isEmpty)) {
@@ -122,7 +122,7 @@ class WebservicesHelper {
                 }
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                     print("Data: \(utf8Text)") // original server data as UTF8 string
-                    
+                    ParseJson.listMonthParser(jsonData: data, delegate: delegate)
                 }
             }
         }

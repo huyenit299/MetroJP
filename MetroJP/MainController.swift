@@ -15,7 +15,7 @@ import Foundation
 
 
 var changedData = false
-class MainController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate, SessionListDelegate, ChangeMonthDelegate {
+class MainController: BaseViewController, UITableViewDataSource, UITableViewDelegate, ExpandableHeaderViewDelegate, FloatyDelegate, SessionListDelegate, ChangeMonthDelegate, ListMonthDelegate {
 
     var fab = Floaty()
     @IBOutlet weak var mainTable: UITableView!
@@ -29,6 +29,8 @@ class MainController: BaseViewController, UITableViewDataSource, UITableViewDele
     var tableView: UITableView!
     // create the concurrent queue
     let asyncQueue = DispatchQueue(label: "loadSession", attributes: .concurrent)
+    var listMonths = Array<String>();
+    var currentMonth: String = ""
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -127,8 +129,8 @@ class MainController: BaseViewController, UITableViewDataSource, UITableViewDele
         if ((self.manager?.isReachable)!) {
             self.asyncQueue.async {
                 self.loading.showActivityIndicator(uiView: self.view)
-                WebservicesHelper.getListMonth()
-                WebservicesHelper.getListSession(sessionDelegate: self)
+                WebservicesHelper.getListMonth(delegate: self)
+                WebservicesHelper.getListSession(sessionDelegate: self, month: self.currentMonth)
             }
         } else {
            
@@ -148,6 +150,8 @@ class MainController: BaseViewController, UITableViewDataSource, UITableViewDele
         self.navigationItem.rightBarButtonItem?.action = #selector(menuButtonTapped)
         
         layoutFAB()
+        let date = Date()
+        currentMonth = Utils.convertDateToString(formatStyle: Constant.MONTH_YEAR_STANDARD, date: date)
 
         loadData()
 
@@ -242,11 +246,11 @@ class MainController: BaseViewController, UITableViewDataSource, UITableViewDele
     func clickMore(section: Int) {
         let popOverVC = storyboard?.instantiateViewController(withIdentifier: "PopupMonthViewController") as! PopupMonthViewController
         self.addChildViewController(popOverVC)
-        let rect = CGRect(x: 20, y: 100, width: Int(popOverVC.view.bounds.size.width - 80), height: Int(44 * (listRecord.count + 1)))
+        let rect = CGRect(x: 20, y: 100, width: Int(popOverVC.view.bounds.size.width - 80), height: Int(44 * (listMonths.count + 1)))
 //        let rect =  CGRect(x: x, y: y, width: popOverVC.view.bounds.size.width - 80, height: CFloat(100))
         popOverVC.view.frame = rect
         popOverVC.delegate = self
-        popOverVC.listRecord = listRecord
+        popOverVC.listMonth = listMonths
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
         
@@ -401,7 +405,12 @@ class MainController: BaseViewController, UITableViewDataSource, UITableViewDele
     
     func changeMonth (month: String) {
         print("AAAAA-" + month)
+        currentMonth = month
         WebservicesHelper.getListSession(sessionDelegate: self, month: month)
+    }
+    
+    func getListMonth (months: Array<String>) {
+        listMonths = months
     }
 }
 

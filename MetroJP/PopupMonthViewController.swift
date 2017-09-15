@@ -11,7 +11,8 @@ import UIKit
 class PopupMonthViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var naviBar: UINavigationBar!
-    var listRecord = Array<DateSection>()
+    var listMonth = Array<String>()
+    var currentMonth: String = ""
     @IBOutlet weak var tablePopup: UITableView!
     var delegate: ChangeMonthDelegate? = nil
     override func viewDidLoad() {
@@ -44,17 +45,22 @@ class PopupMonthViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listRecord.count
+        return listMonth.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MonthTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MonthTableViewCell
-        cell.lbMonth.text = listRecord[indexPath.section].list[indexPath.row]?.date
+        cell.lbMonth.text = listMonth[indexPath.row]
+        if (currentMonth == listMonth[indexPath.row]) {
+            cell.btnCheck.isHidden = false
+        } else {
+            cell.btnCheck.isHidden = true
+        }
         return cell
     }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            delegate?.changeMonth(month: listRecord[indexPath.row].month)
+            delegate?.changeMonth(month: listMonth[indexPath.row])
          self.view.removeFromSuperview()
 
     }

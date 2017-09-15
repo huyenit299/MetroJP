@@ -16,6 +16,10 @@ protocol SessionListDelegate {
     func getSessionList (listRecordTraffic: Array<RecordTrafficModel>)
 }
 
+protocol ListMonthDelegate {
+    func getListMonth (months: Array<String>)
+}
+
 protocol ChangeMonthDelegate {
     func changeMonth (month: String)
 }
