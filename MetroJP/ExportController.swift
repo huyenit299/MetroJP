@@ -130,7 +130,7 @@ class ExportController: BaseViewController, UITextFieldDelegate, MFMailComposeVi
         
     }
     
-    func writeFile(list: Array<RecordTrafficModel>) -> String {
+    func writeFile(list: Array<RecordTrafficModel>) -> Bool {
 //        let listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic(fromDate: fromDate, toDate: toDate)
         let fromDate = tfFrom.text
         let toDate = tfTo.text
@@ -164,7 +164,7 @@ class ExportController: BaseViewController, UITextFieldDelegate, MFMailComposeVi
             }
         }
         csv.stream.close()
-        return filePath
+        return true
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?){
@@ -172,8 +172,13 @@ class ExportController: BaseViewController, UITextFieldDelegate, MFMailComposeVi
     }
     
     func getSessionList (listRecordTraffic: Array<RecordTrafficModel>) {
-        writeFile(list: listRecordTraffic)
+        let save = writeFile(list: listRecordTraffic)
         loading.hideActivityIndicator(uiView: self.view)
+        if (save) {
+            let alert = UIAlertController(title: "", message: RecordError().EXPORT_DONE, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
         if (isSendMail) {
             isSendMail = false
             let fromDate = tfFrom.text

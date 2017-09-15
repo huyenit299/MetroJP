@@ -15,4 +15,5 @@ class RecordError {
     public let LACK_TO = "Please input the place you end"
     public let LACK_PRICE = "Please input the price of your trip"
     public let LACK_TRAFFIC = "Please select the way you move"
+    public let EXPORT_DONE = "Export done!"
 }
