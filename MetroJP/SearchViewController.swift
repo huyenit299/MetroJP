@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class SearchViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, SessionListDelegate {
 
     @IBOutlet weak var tablePlace: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -16,13 +16,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var data = Array<RecordTrafficModel>()
     var isSearching: Bool = false
 
+    var listRecordTraffic: Array<RecordTrafficModel> = []
+    let asyncQueue = DispatchQueue(label: "loadSession", attributes: .concurrent)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "検索"
-        data = DatabaseManagement.shared.queryAllRecordTraffic()
+//        data = DatabaseManagement.shared.queryAllRecordTraffic()
         tablePlace.dataSource = self
         tablePlace.delegate = self
         searchBar.delegate = self
+        WebservicesHelper.getListSession(sessionDelegate: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,6 +121,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         } else {
             isSearching = true
             filterTableView(text: searchBar.text!)
+        }
+    }
+    
+    //delegate session list
+    func getSessionList (listRecordTraffic: Array<RecordTrafficModel>) {
+        if (listRecordTraffic.isEmpty) {
+            self.loading.hideActivityIndicator(uiView: self.view)
+        }
+        DispatchQueue.main.async {
+            self.data = listRecordTraffic
+            self.tablePlace.reloadData()
         }
     }
 }

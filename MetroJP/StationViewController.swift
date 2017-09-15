@@ -35,6 +35,11 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
 
         self.title = "外出先編集"
         
+        if (id < 0) {
+            let date = Date()
+            tfDate.text  = Utils.convertDateToString(formatStyle: Constant.DATE_STANDARD, date: date)
+        }
+        
         initData()
         
         tfDate.delegate = self

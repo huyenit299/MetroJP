@@ -196,9 +196,9 @@ class WebservicesHelper {
     }
     
     public static func updateSession(sessionId: Int, date: String, target:String, traffic: String, from: String, to: String, fare: String, remarks: String) {
- let token = Constant.token
+        let token = Constant.token
         if (!(token.isEmpty)) {
-            let parameters: Parameters = ["token": token, "id": sessionId, "date": date, "target": target, "traffic": traffic, "from": String(), "to": to, "fare": fare, "remarks": remarks  ]
+            let parameters: Parameters = ["token": token, "id": sessionId, "date": date, "target": target, "traffic": traffic, "from": from, "to": to, "fare": fare, "remarks": remarks  ]
             Alamofire.request(UPDATE_SESSION, method: .post,parameters: parameters, headers: headers).responseJSON { response in
                 print("Request: \(String(describing: response.request))")   // original url request
                 print("Response: \(String(describing: response.response))") // http url response

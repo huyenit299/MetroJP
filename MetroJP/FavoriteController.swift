@@ -110,14 +110,14 @@ class FavoriteController: UIViewController, UITableViewDataSource, UITableViewDe
         case Constant.MY_LIST:
             if (!myList.isEmpty) {
                 let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
-                scr.id = self.myList[indexPath.row].id
+                scr.id = self.myList[indexPath.row].session_id
                 self.navigationController?.pushViewController(scr, animated: true)
             }
              break
         case Constant.SHARED_LIST:
             if (!sharedList.isEmpty) {
                 let scr = storyboard?.instantiateViewController(withIdentifier: "StationViewController") as! StationViewController
-                scr.id = self.sharedList[indexPath.row].id
+                scr.id = self.sharedList[indexPath.row].session_id
                 self.navigationController?.pushViewController(scr, animated: true)
             }
             break

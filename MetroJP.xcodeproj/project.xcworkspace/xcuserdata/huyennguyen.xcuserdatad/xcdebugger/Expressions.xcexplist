@@ -57,6 +57,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "StationViewController.initData() -&gt; ():StationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FavoriteController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:FavoriteController.swift">
          <PersistentStrings>
             <PersistentString
@@ -84,6 +92,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static ParseJson.listFavoriteParser(jsonData : Data, delegate : FavoriteDelegate) -&gt; ():ParseJson.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "object">
+            </PersistentString>
+            <PersistentString
+               value = "session[&quot;date&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "object[&quot;data&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "session[&quot;id&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "StationViewController.getDateSelected(date : String, id : Int) -&gt; ():StationViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -100,17 +125,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "DatabaseManagement.queryAllRecordTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "t[8]">
-            </PersistentString>
-            <PersistentString
-               value = "t[7]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "CreateNewRecordControllerViewController.autoLayout() -&gt; ():CreateNewRecordControllerViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -119,19 +133,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "static ParseJson.listFavoriteParser(jsonData : Data, delegate : FavoriteDelegate) -&gt; ():ParseJson.swift">
+         contextName = "DatabaseManagement.queryAllRecordTraffic() -&gt; [RecordTrafficModel]:DatabaseManager.swift">
          <PersistentStrings>
             <PersistentString
-               value = "object">
+               value = "t[8]">
             </PersistentString>
             <PersistentString
-               value = "session[&quot;date&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "object[&quot;data&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "session[&quot;id&quot;]">
+               value = "t[7]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
