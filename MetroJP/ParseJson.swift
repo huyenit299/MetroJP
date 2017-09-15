@@ -28,6 +28,35 @@ class ParseJson {
         return ""
     }
     
+    public static func addUserParser (jsonData: Data) -> UserModel {
+        var user = UserModel()
+        do {
+            let json = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            if let object = json as? [String: Any] {
+                // json is a dictionary
+                print("string-" + String(describing: object))
+                let item = object["data"] as! NSDictionary
+                if let userObj = item["data"] as? [AnyObject] {
+                    if let username = userObj["username"] as? String {
+                        print(username)
+                        user.username = username
+                    }
+                    if let password = userObj["password"] as? String {
+                        print(password)
+                        user.password = password
+                    }
+                    if let token = userObj["token"] as? String {
+                        print(token)
+                        user.token = token
+                    }
+                }
+            }
+        }catch {
+            print(error.localizedDescription)
+        }
+        return user
+    }
+    
     public static func listSessionParser(jsonData: Data, delegate: SessionListDelegate)->Array<RecordTrafficModel>{
         var listRecordTraffic: Array<RecordTrafficModel> = []
         do {

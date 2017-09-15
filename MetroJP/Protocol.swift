@@ -29,3 +29,7 @@ protocol ExpandableHeaderViewDelegate {
     func clickMore(section: Int)
     func clickAdd(section: Int, month: String)
 }
+
+protocol RegisterUserDelegate {
+    func addUser (user: UserModel)
+}
