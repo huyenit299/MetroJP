@@ -139,16 +139,16 @@ class DatabaseManagement {
     
     func queryAllFavorite(type: Int) -> [FavoriteModel] {
         var listFavorite: Array<FavoriteModel> = []
-        if (db != nil) {
-            do {
-                let list = try self.db!.prepare("SELECT * FROM Favorite WHERE common = " + String(type))
-                for t in list {
-                    listFavorite.append(FavoriteModel(id: t[0] as! Int, date: t[2] as! String, target: t[3] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[9] as! String, price: t[6] as! String, note: t[7] as! String, session_id: t[1] as! Int, common: t[8] as! Int))
-                }
-            } catch {
-                print(error)
-            }
-        }
+//        if (db != nil) {
+//            do {
+//                let list = try self.db!.prepare("SELECT * FROM Favorite WHERE common = " + String(type))
+//                for t in list {
+//                    listFavorite.append(FavoriteModel(id: t[0] as! Int, date: t[2] as! String, target: t[3] as! String, from: t[4] as! String, to: t[5] as! String, traffic: t[9] as! String, price: t[6] as! String, note: t[7] as! String, session_id: t[1] as! Int, common: t[8] as! Int))
+//                }
+//            } catch {
+//                print(error)
+//            }
+//        }
         return listFavorite
     }
     

@@ -11,7 +11,7 @@ import Alamofire
 
 class BaseViewController: UIViewController {
     let loading = ViewControllerUtils()
-    let manager = NetworkReachabilityManager(host: "https://www.google.com.")
+    let manager = NetworkReachabilityManager(host: "www.google.com")
 
     override func viewWillAppear(_ animated: Bool) {
         manager?.listener = { status in

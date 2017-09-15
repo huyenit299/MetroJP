@@ -1211,6 +1211,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="9yG-Qf-Ls8" firstAttribute="leading" secondItem="JJm-TC-xnQ" secondAttribute="leading" constant="20" id="3Ay-Og-57t"/>
+                                                    </constraints>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDL-au-PVJ">
                                                     <rect key="frame" x="280" y="4" width="20" height="30"/>
@@ -1218,13 +1221,13 @@
                                                         <constraint firstAttribute="width" constant="20" id="BmL-xF-mqV"/>
                                                         <constraint firstAttribute="height" constant="44" id="T5T-IC-cpE"/>
                                                     </constraints>
-                                                    <state key="normal" image="ic_done.png"/>
+                                                    <state key="normal" image="ic_done.png" backgroundImage="ic_done.png"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yDL-au-PVJ" secondAttribute="trailing" constant="20" id="Cnq-Bc-l8L"/>
                                                 <constraint firstItem="JJm-TC-xnQ" firstAttribute="centerY" secondItem="s3O-KG-XAn" secondAttribute="centerY" id="Vtp-Ct-nND"/>
-                                                <constraint firstAttribute="trailing" secondItem="yDL-au-PVJ" secondAttribute="trailing" constant="20" id="aVp-W1-3iA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1344,7 +1347,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri4-w1-1VG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri4-w1-1VG">
                                 <rect key="frame" x="20" y="50" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0An-pA-xRj"/>
