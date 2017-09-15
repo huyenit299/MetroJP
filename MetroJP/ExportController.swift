@@ -10,10 +10,11 @@ import UIKit
 import CSV
 import MessageUI
 
-class ExportController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
+class ExportController: BaseViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate, SessionListDelegate {
     let datePickerView:UIDatePicker = UIDatePicker()
     @IBOutlet weak var tfTo: UITextField!
     @IBOutlet weak var tfFrom: UITextField!
+    var isSendMail = false
     override func viewDidLoad() {
         super.viewDidLoad()
         let leftButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_keyboard_arrow_left_white_48pt.png")!, style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backToPrevious))
@@ -113,33 +114,10 @@ class ExportController: UIViewController, UITextFieldDelegate, MFMailComposeView
     @IBAction func btnExportClick(_ sender: Any) {
         let fromDate = tfFrom.text
         let toDate = tfTo.text
-//        if (fromDate?.isEmpty)! {
-//            let alert = UIAlertController(title: "Error", message: "Please fill start date", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
-//                return
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        
-//        if (toDate?.isEmpty)! {
-//            let alert = UIAlertController(title: "Error", message: "Please fill end date", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
-//                return
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-//        }
-//        
-//        let isLower = checkValidate(fromDate: fromDate!, toDate: toDate!)
-//        if (!isLower) {
-//            let alert = UIAlertController(title: "Error", message: "End date must be greater than or equal start date", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alert:UIAlertAction!) in
-//                return
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-//            
-//        }
         if (!checkEmptyAndValidate(fromDate: fromDate!, toDate: toDate!)) {
-            writeFile(fromDate: fromDate!, toDate: toDate!)
+//            writeFile(fromDate: fromDate!, toDate: toDate!)
+            loading.showActivityIndicator(uiView: self.view)
+            WebservicesHelper.getListSessionByDate(sessionDelegate: self, start: fromDate!, end: toDate!)
         }
     }
     
@@ -147,32 +125,22 @@ class ExportController: UIViewController, UITextFieldDelegate, MFMailComposeView
     @IBAction func btnExportSendMailClick(_ sender: Any) {
         let fromDate = tfFrom.text
         let toDate = tfTo.text
-        let filePath = writeFile(fromDate: fromDate!, toDate: toDate!)
-        if( MFMailComposeViewController.canSendMail() ) {
-            print("Can send email.")
-            
-            let mailComposer = MFMailComposeViewController()
-            mailComposer.mailComposeDelegate = self
-            
-            //Set the subject and message of the email
-            mailComposer.setSubject("REPORT TRAFFIC")
-            if let fileData = NSData(contentsOfFile: filePath) {
-                    print("File data loaded.")
-                    mailComposer.addAttachmentData((fileData as Data) as Data, mimeType: "text/csv", fileName: fromDate!+"_"+toDate!+".csv")
-            }
-            self.present(mailComposer, animated: true, completion: nil)
-        }
+        isSendMail = true
+        WebservicesHelper.getListSessionByDate(sessionDelegate: self, start: fromDate!, end: toDate!)
+        
     }
     
-    func writeFile(fromDate: String, toDate: String) -> String {
-        let listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic(fromDate: fromDate, toDate: toDate)
-        let filePath = "/Users/huyennguyen/Documents/ios/MetroJP/MetroJP/CSV/"+fromDate+"_"+toDate+".csv"
+    func writeFile(list: Array<RecordTrafficModel>) -> String {
+//        let listRecordTraffic = DatabaseManagement.shared.queryAllRecordTraffic(fromDate: fromDate, toDate: toDate)
+        let fromDate = tfFrom.text
+        let toDate = tfTo.text
+        let filePath = "/Users/huyennguyen/Documents/ios/MetroJP/MetroJP/CSV/"+fromDate!+"_"+toDate!+".csv"
         let stream = OutputStream(toFileAtPath: filePath, append: false)!
         let csv = try! CSVWriter(stream: stream)
         try! csv.write(row: ["id", "date", "target", "traffic", "from","to","price","note"])
-        if (!listRecordTraffic.isEmpty && listRecordTraffic.count > 0) {
+        if (!list.isEmpty && list.count > 0) {
             let listAllTraffic = DatabaseManagement.shared.queryMapTraffic()
-            for record in listRecordTraffic {
+            for record in list {
                 let traffic = record.traffic
                 var stringTraffic = ""
                 if (!traffic.isEmpty) {
@@ -201,5 +169,31 @@ class ExportController: UIViewController, UITextFieldDelegate, MFMailComposeView
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?){
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func getSessionList (listRecordTraffic: Array<RecordTrafficModel>) {
+        writeFile(list: listRecordTraffic)
+        loading.hideActivityIndicator(uiView: self.view)
+        if (isSendMail) {
+            isSendMail = false
+            let fromDate = tfFrom.text
+            let toDate = tfTo.text
+            let filePath = "/Users/huyennguyen/Documents/ios/MetroJP/MetroJP/CSV/"+fromDate!+"_"+toDate!+".csv"
+            if( MFMailComposeViewController.canSendMail() ) {
+                print("Can send email.")
+                
+                let mailComposer = MFMailComposeViewController()
+                mailComposer.mailComposeDelegate = self
+                
+                //Set the subject and message of the email
+                mailComposer.setSubject("REPORT TRAFFIC")
+                if let fileData = NSData(contentsOfFile: filePath) {
+                    print("File data loaded.")
+                    mailComposer.addAttachmentData((fileData as Data) as Data, mimeType: "text/csv", fileName: fromDate!+"_"+toDate!+".csv")
+                }
+                self.present(mailComposer, animated: true, completion: nil)
+            }
+
+        }
     }
 }

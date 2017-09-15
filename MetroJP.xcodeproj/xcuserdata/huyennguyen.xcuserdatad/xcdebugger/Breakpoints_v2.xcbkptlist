@@ -2279,12 +2279,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2295,12 +2295,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2359,12 +2359,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2375,12 +2375,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2391,12 +2391,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2407,12 +2407,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2423,12 +2423,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2439,12 +2439,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2487,12 +2487,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/ExportController.swift"
-            timestampString = "526390277.103751"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "writeFile(fromDate:toDate:)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "writeFile(list:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3047,11 +3047,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "addSession(date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3287,11 +3287,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "addSession(date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3303,11 +3303,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "addSession(date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
             <Locations>
@@ -3351,11 +3351,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "addSession(date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3367,11 +3367,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "addSession(date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3687,11 +3687,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "getListFavorite(delegate:type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3751,11 +3751,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "283"
+            endingLineNumber = "283"
             landmarkName = "addFavorite(sessionId:common:)"
             landmarkType = "7">
             <Locations>
@@ -3799,11 +3799,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527052294.433807"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "addFavorite(sessionId:common:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5073,11 +5073,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527149053.198711"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "updateSession(sessionId:date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5089,11 +5089,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527149053.717801"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "updateSession(sessionId:date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5105,11 +5105,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MetroJP/WebserviceHelper.swift"
-            timestampString = "527149055.627809"
+            timestampString = "527152159.566105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "updateSession(sessionId:date:target:traffic:from:to:fare:remarks:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -5345,7 +5345,7 @@
                   moduleName = "MetroJP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/StationViewController.swift"
-                  timestampString = "527150992.844906"
+                  timestampString = "527152326.442559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -5360,7 +5360,7 @@
                   moduleName = "MetroJP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/StationViewController.swift"
-                  timestampString = "527150992.847102"
+                  timestampString = "527152326.445899"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -5393,7 +5393,7 @@
                   moduleName = "MetroJP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/StationViewController.swift"
-                  timestampString = "527150992.852457"
+                  timestampString = "527152326.452333"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -5408,7 +5408,7 @@
                   moduleName = "MetroJP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/StationViewController.swift"
-                  timestampString = "527150992.854642"
+                  timestampString = "527152326.454603"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -5441,7 +5441,7 @@
                   moduleName = "MetroJP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/StationViewController.swift"
-                  timestampString = "527150992.860878"
+                  timestampString = "527152326.461193"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -5456,7 +5456,7 @@
                   moduleName = "MetroJP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/huyennguyen/Documents/ios/MetroJP/MetroJP/StationViewController.swift"
-                  timestampString = "527150992.86327"
+                  timestampString = "527152326.463916"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
