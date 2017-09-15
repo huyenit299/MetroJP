@@ -19,6 +19,10 @@ class RegisterViewController: BaseViewController, RegisterUserDelegate {
         super.viewDidLoad()
         self.title = "ユーザー登録"
         if (isEdit) {
+            self.addLeftBarButtonWithImage(UIImage(named: "ic_keyboard_arrow_left_white_48pt")!)
+            self.title = "ユーザー登録"
+            self.navigationItem.leftBarButtonItem?.action = #selector(menuButtonTapped)
+            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -43,6 +47,11 @@ class RegisterViewController: BaseViewController, RegisterUserDelegate {
         }
     }
 
+    func menuButtonTapped() {
+        let scr = storyboard?.instantiateViewController(withIdentifier: "Slide") as! SlideViewController
+         self.slideMenuController()?.changeMainViewController(scr, close: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,7 +68,7 @@ class RegisterViewController: BaseViewController, RegisterUserDelegate {
             return
         }
         
-        if (Utils.isValidEmailAddress(emailAddressString: username!)) {
+        if (!Utils.isValidEmailAddress(emailAddressString: username!)) {
             let alert = UIAlertController(title: "", message: RecordError.EMAIL_VALIDATE, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)

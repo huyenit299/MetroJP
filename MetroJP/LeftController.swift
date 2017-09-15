@@ -24,7 +24,8 @@ class LeftController: UIViewController, UITextFieldDelegate {
     @IBAction func btnNameClick(_ sender: Any) {
         let scr = storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         scr.isEdit = true
-        self.navigationController?.pushViewController(scr, animated: true)
+        self.slideMenuController()?.changeMainViewController(scr, close: true)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

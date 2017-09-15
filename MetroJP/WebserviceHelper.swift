@@ -102,7 +102,7 @@ class WebservicesHelper {
         let token = Constant.token
         if (!(token.isEmpty)) {
             let parameters: Parameters = ["token": token, "username": username, "password": password]
-            Alamofire.request(UPDATE_SESSION, method: .post,parameters: parameters, headers: headers).responseJSON { response in
+            Alamofire.request(EDIT_USER, method: .post,parameters: parameters, headers: headers).responseJSON { response in
                 print("Request: \(String(describing: response.request))")   // original url request
                 print("Response: \(String(describing: response.response))") // http url response
                 print("Result: \(response.result)")                         // response serialization result
